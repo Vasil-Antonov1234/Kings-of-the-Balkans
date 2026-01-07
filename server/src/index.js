@@ -9,11 +9,14 @@ const server = express();
 // Add cors
 server.use(cors());
 
-// Add routes
-server.use(routes);
+// Add json parser
+server.use(express.json());
 
 server.get("/", (req, res) => {
     res.send([]);
 });
+
+// Add routes
+server.use(routes);
 
 server.listen(5000, () => console.log("Server is listening on http://localhost:5000..."))
