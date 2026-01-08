@@ -3,9 +3,9 @@
     height: 200px;
 }
 
-/* .article img:hover {
+.article img:hover {
     opacity: 0.4;
-} */
+}
 
 .article {
     display: flexbox;
@@ -37,5 +37,20 @@
 
 .link {
     text-decoration: none;
-    color: black;
+    color: black
+}
+
+.details {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 21px;
+    margin-top: 7px;
+    color: white;
+    margin-top: -114px;
+    display: none;
+}
+
+.article:hover .details {
+    display: block;
+    position: absolute;
+    left: 130px;
 }
