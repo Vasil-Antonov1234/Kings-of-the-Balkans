@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import DogCard from "../dog-card/DogCard.jsx";
+import styles from "./Dogs.module.css";
 
 export default function Dogs() {
     const [dogs, setDogs] = useState([]);
@@ -21,8 +22,8 @@ export default function Dogs() {
     });
     
     return (
-        <>
+        <section className={styles["section"]}>
             {dogs.map((dog) => <DogCard key={dog._id} dog={dog} />)}
-        </>
+        </section>
     );
 }
