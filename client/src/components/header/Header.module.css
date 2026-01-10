@@ -45,3 +45,25 @@
 .nav-container {
     display: inline-block;
 }
+
+@media only screen and (max-width: 600px) {
+    .nav-bar {
+        display: block;
+        width: 64%;
+        margin-top: -14px;
+    }
+
+    .logo {
+        display: block;
+    }
+
+    .link{
+        display: block;
+    }
+
+    .header {
+        display: grid;
+        position: absolute;
+        padding: 14px;
+    }
+}
