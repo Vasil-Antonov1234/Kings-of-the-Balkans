@@ -35,4 +35,13 @@
 .header {
     display: flex;
     gap: 30px;
+    align-items: center;
+}
+
+.image-container {
+    display: inline-block;
+}
+
+.nav-container {
+    display: inline-block;
 }
