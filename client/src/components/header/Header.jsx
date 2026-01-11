@@ -9,11 +9,24 @@ export default function Header() {
 
             <div className={styles["nav-container"]}>
                 <nav className={styles["nav-bar"]}>
-                    <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/">Home</NavLink>
-                    <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/dogs">Dogs</NavLink>
+                    <ul>
+                        <li>
+                            <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/">Home</NavLink>
+                        </li>
+                        <li>
+                            <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/dogs">Dogs</NavLink>
+                        </li>
+                        <li>
+                            <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/about">About</NavLink>
+                        </li>
+                    </ul>
                 </nav>
+                <div className={styles["small-nav-bar"]}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-
         </header>
     );
 }
