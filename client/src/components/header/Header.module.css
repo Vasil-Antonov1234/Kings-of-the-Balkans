@@ -1,5 +1,5 @@
 .nav-bar {
-    /* background-color: rgba(218, 165, 32, 0.507); */
+    background-color: rgba(218, 165, 32, 0.507);
     padding: 1em 1em;
     border: 1px solid goldenrod;
     border-radius: 4px;
@@ -45,6 +45,7 @@
     padding: 10px;
     position: sticky;
     top: 0;
+    background-color: white;
 }
 
 .image-container {
@@ -81,7 +82,7 @@
 @media only screen and (max-width: 830px) {
     .nav-container {
         width: 100%;
-        height: 100%
+        height: 100%;
     }
 
     .nav-bar {
@@ -90,24 +91,29 @@
         background-color: none;
         box-shadow: none;
         border: none;
+        background-color: transparent;
     }
 
     .nav-bar ul {
         /* display: none; */
-        display: block;
         flex-direction: column;
         align-items: start;
         width: 100%;
     }
 
+    nav {
+        display: none;
+    }
+
+    .open {
+        display: flex;
+    }
+
     .nav-bar ul li {
-        margin: 10px 0 10px 0;
-        /* border: 1px solid #ffffff;
-        padding: 10px;
-        border-radius: 9px; */
+        margin: 4px 0 4px 0;
         display: block;
-        /* font-size: 19px;
-        background-color: goldenrod; */
+        width: 100%;
+        text-align: center;
     }
 
     .link {
@@ -141,6 +147,7 @@
     .header {
         flex-direction: column;
         align-items: start;
+        margin-bottom: -10px;
     }
 
     .logo {
