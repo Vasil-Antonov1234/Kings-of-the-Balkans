@@ -1,3 +1,21 @@
+.header {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.nav-container {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
 .nav-bar {
     background-color: rgba(218, 165, 32, 0.507);
     padding: 1em 1em;
@@ -5,7 +23,7 @@
     border-radius: 4px;
     display: flex;
     gap: 10px;
-    width: 400%;
+    width: 100%;
     margin-bottom: 10px;
     box-shadow: 3px 3px 7px gray;
 }
@@ -38,21 +56,7 @@
     height: 70px;
 }
 
-.header {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-    padding: 10px;
-    position: sticky;
-    top: 0;
-    background-color: white;
-}
-
 .image-container {
-    display: inline-block;
-}
-
-.nav-container {
     display: inline-block;
 }
 
@@ -79,7 +83,7 @@
     display: inline-block;
 }
 
-@media only screen and (max-width: 830px) {
+@media only screen and (max-width: 600px) {
     .nav-container {
         width: 100%;
         height: 100%;

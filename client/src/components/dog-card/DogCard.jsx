@@ -8,10 +8,11 @@ export default function DogCard({
         <Link className={styles["link"]}>
             <article className={styles["article"]}>
                 <h3>{dog.name}</h3>
-                <img src={dog.imageUrl} alt="dog image" className={styles["image"]} />
-                <span className={styles["details"]}>Details</span>
+                <div className={styles["img-container"]}>
+                    <img src={dog.imageUrl} alt="dog image" className={styles["image"]} />
+                </div>
             </article>
+            <span className={styles["details"]}>Details</span>
         </Link>
-
     );
 }
