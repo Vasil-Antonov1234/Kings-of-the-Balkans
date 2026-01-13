@@ -122,22 +122,18 @@
 
     .link {
         font-size: 19px;
-        background-color: goldenrod;
+        background-color: rgba(218, 165, 32, 0.418);
         display: block;
         border: 1px solid #ffffff;
         padding: 10px;
         border-radius: 9px;
-
-    }
-
-    .link {
-        color: white;
+        color: brown;
     }
 
     .selected {
         font-size: 19px;
-        background-color: rgba(218, 165, 32, 0.418);
-        color: brown;
+        background-color: goldenrod;
+        color: white;
         display: block;
         border: 1px solid #ffffff;
         padding: 10px;
@@ -156,6 +152,14 @@
 
     .logo {
         margin-bottom: -30px;
+    }
+
+    .header {
+        background-color: gainsboro;
+        margin: 10px;
+        width: 97%;
+        /* border: 0.3px solid darkgray; */
+        box-shadow: 1px 1px 10px gray;
     }
 
     /* .link{
