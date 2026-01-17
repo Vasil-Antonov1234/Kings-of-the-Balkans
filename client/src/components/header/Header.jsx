@@ -38,8 +38,9 @@ export default function Header() {
                         </ul>
                     </div>
                 </nav>
-                <div className={styles["small-nav-bar"]} onClick={openMenuHandler}>
-                    <span></span>
+                <span className={smallMenuOpen ? styles["x-mark"] : styles["close"]} onClick={openMenuHandler}>X</span>
+                <div className={smallMenuOpen ? styles["close"] : styles["small-nav-bar"]} onClick={openMenuHandler}>
+                    <span className={smallMenuOpen ? styles["close"] : ""}></span>
                     <span></span>
                     <span></span>
                 </div>
