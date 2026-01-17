@@ -11,6 +11,7 @@ export default function Header() {
 
     return (
         <header className={styles["header"]}>
+
             <Link to="/" className={styles["image-container"]}>
                 <img src="../../public/images/Logo.png" alt="logo" className={styles["logo"]} />
             </Link>
@@ -23,7 +24,13 @@ export default function Header() {
                                 <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/">Home</NavLink>
                             </li>
                             <li>
+                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/story">Story</NavLink>
+                            </li>
+                            <li>
                                 <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/dogs">Dogs</NavLink>
+                            </li>
+                            <li>
+                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/contacts">Contacts</NavLink>
                             </li>
                             <li>
                                 <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/about">About</NavLink>
