@@ -19,26 +19,31 @@ export default function Dogs() {
             };
 
         })();
-    });
+
+    }, []);
+
+    const males = dogs.filter((dog) => dog.gender === "Male");
+    const females = dogs.filter((dog) => dog.gender === "Female");
+    const puppies = dogs.filter((dog) => dog.gender === "Puppy");
 
     return (
         <section className={styles["section-wrapper"]}>
             <section className={styles["section-main"]}>
                 <h2>Males</h2>
                 <div className={styles["section-males"]}>
-                    {dogs.map((dog) => <DogCard key={dog._id} dog={dog} />)}
+                    {males.map((dog) => <DogCard key={dog._id} dog={dog} />)}
                 </div>
             </section>
             <section className={styles["section-main"]}>
                 <h2>Females</h2>
                 <div className={styles["section-females"]}>
-                    {dogs.map((dog) => <DogCard key={dog._id} dog={dog} />)}
+                    {females.map((dog) => <DogCard key={dog._id} dog={dog} />)}
                 </div>
             </section>
             <section className={styles["section-main"]}>
                 <h2>Puppies</h2>
                 <div className={styles["section-puppies"]}>
-                    {dogs.map((dog) => <DogCard key={dog._id} dog={dog} />)}
+                    {puppies.map((dog) => <DogCard key={dog._id} dog={dog} />)}
                 </div>
             </section>
         </section>

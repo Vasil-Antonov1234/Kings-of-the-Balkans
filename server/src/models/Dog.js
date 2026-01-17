@@ -23,6 +23,10 @@ const dogSchema = new Schema({
     imageUrl: {
         type: String,
         required: [true, "Image URL is required!"]
+    },
+    gender: {
+        type: String,
+        required: [true, "Gender is required!"]
     }
 });
 
