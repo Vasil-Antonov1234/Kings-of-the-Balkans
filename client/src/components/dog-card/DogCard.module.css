@@ -77,13 +77,11 @@
     background-color: gainsboro;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+
     .article {
         flex: 1 1 100%;
     }
-}
-
-@media (max-width: 600px) {
 
     .link {
         width: 100%;
