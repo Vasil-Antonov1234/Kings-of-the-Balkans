@@ -1,13 +1,9 @@
 .header {
-    /* display: flex;
-    gap: 1em; */
-    /* flex-wrap: wrap; */
-    width: 100%;
-    align-items: center;
+    width: 90%;
     padding: 10px;
     position: sticky;
-    top: 0;
-    background-color: white;
+    top: 4%;
+    left: 4%;
 }
 
 .nav-container {
@@ -21,17 +17,11 @@
     padding: 1em 1em;
     border: 1px solid goldenrod;
     border-radius: 4px;
-    /* display: flex;
-    gap: 10px; */
     width: 100%;
-    margin-bottom: 10px;
     box-shadow: 3px 3px 7px gray;
 }
 
 .nav-bar ul {
-    /* display: flex;
-    gap: 30%; */
-
     text-align: end;
 }
 

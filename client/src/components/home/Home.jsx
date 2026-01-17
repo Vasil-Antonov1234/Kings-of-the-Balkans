@@ -6,7 +6,7 @@ export default function Home() {
             <div className={styles["title-container"]}>
                 <h1 className={styles.title}>Kings of the Balkans</h1>
             </div>
-            <img src="../../public/images/stara-planina.webp" alt="background" className={styles["background"]} />
+            {/* <img src="../../public/images/stara-planina.webp" alt="background" className={styles["background"]} /> */}
         </div>
     )
 }
