@@ -20,10 +20,27 @@ export default function Dogs() {
 
         })();
     });
-    
+
     return (
-        <section className={styles["section"]}>
-            {dogs.map((dog) => <DogCard key={dog._id} dog={dog} />)}
+        <section className={styles["section-wrapper"]}>
+            <section className={styles["section-main"]}>
+                <h2>Males</h2>
+                <div className={styles["section-males"]}>
+                    {dogs.map((dog) => <DogCard key={dog._id} dog={dog} />)}
+                </div>
+            </section>
+            <section className={styles["section-main"]}>
+                <h2>Females</h2>
+                <div className={styles["section-females"]}>
+                    {dogs.map((dog) => <DogCard key={dog._id} dog={dog} />)}
+                </div>
+            </section>
+            <section className={styles["section-main"]}>
+                <h2>Puppies</h2>
+                <div className={styles["section-puppies"]}>
+                    {dogs.map((dog) => <DogCard key={dog._id} dog={dog} />)}
+                </div>
+            </section>
         </section>
     );
 }

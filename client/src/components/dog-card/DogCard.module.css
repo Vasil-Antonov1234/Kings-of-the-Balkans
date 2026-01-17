@@ -77,7 +77,6 @@
     background-color: gainsboro;
 }
 
-
 @media (max-width: 768px) {
     .article {
         flex: 1 1 100%;

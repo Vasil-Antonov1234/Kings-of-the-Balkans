@@ -15,5 +15,15 @@
     position: fixed;
     padding: 14px;
     display: inline;
-    top: 40%;
+    top: 30%;
+}
+
+@media (max-width: 430px) {
+    .title {
+        font-size: 340%;
+    }
+
+    .title-container {
+        top: 59%;
+    }
 }
