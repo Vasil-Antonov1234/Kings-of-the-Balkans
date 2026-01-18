@@ -4,6 +4,7 @@ import Header from "./components/header/Header.jsx";
 import Home from "./components/home/Home.jsx";
 
 import styles from "./App.module.css";
+import Footer from "./components/footer/Footer.jsx";
 
 function App() {
 
@@ -16,6 +17,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/dogs" element={<Dogs />} />
       </Routes>
+
+      <Footer />
     </div>
   );
 }
