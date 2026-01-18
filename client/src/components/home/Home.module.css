@@ -18,12 +18,14 @@
     top: 30%;
 }
 
+@media (max-width: 900px) {
+    .title-container {
+        top: 49%;
+    }
+}
+
 @media (max-width: 430px) {
     .title {
         font-size: 340%;
-    }
-
-    .title-container {
-        top: 59%;
     }
 }

@@ -40,21 +40,34 @@ h2 {
     margin: auto;
 }
 
+.loading {
+    margin-bottom: 10px;
+    /* background-color: rgba(255, 255, 255, 0.596); */
+    color: black;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), white, rgba(255, 255, 255, 0))
+}
+
 @media (max-width: 1450px) {
     .section-main {
         width: 80%;
     }
-}
 
-@media (max-width: 1450px) {
     .section-main:first-of-type {
         margin-top: 10%;
+    }
+
+    .loading {
+        margin-top: 4%;
     }
 }
 
 @media (max-width: 600px) {
     .section-main:first-of-type {
-        margin-top: 30%;
+        margin-top: 10%;
+    }
+
+    .loading {
+        margin-top: 14%;
     }
 }
 

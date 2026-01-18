@@ -3,7 +3,7 @@ import styles from "./Dogs.module.css";
 import useFetch from "../../hooks/useFetch.js";
 
 export default function Dogs() {
-    const { data } = useFetch("/data/dogs", [])
+    const { data, isPending } = useFetch("/data/dogs", [])
 
     const dogs = data;
     
@@ -13,6 +13,7 @@ export default function Dogs() {
 
     return (
         <section className={styles["section-wrapper"]}>
+            {isPending ? <h2 className={styles["loading"]}>Loading...</h2> : ""}
             <section className={styles["section-main"]}>
                 <h2>Males</h2>
                 <div className={styles["section-males"]}>

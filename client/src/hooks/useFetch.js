@@ -33,15 +33,17 @@ export default function useFetch(url, initialState) {
                 if (error.message !== "AbortError" && error.message !== "signal is aborted without reason") {
 
                     if (error.message === "Failed to fetch") {
+                        setIsPending(false);
                         return alert("Server is unavailable");
 
                     };
 
+                    setIsPending(false);
+
                     alert(error.message)
 
                 }
-
-            }
+            };
         })();
 
         return () => {
