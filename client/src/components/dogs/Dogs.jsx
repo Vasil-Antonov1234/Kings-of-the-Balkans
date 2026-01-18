@@ -16,19 +16,19 @@ export default function Dogs() {
             <section className={styles["section-main"]}>
                 <h2>Males</h2>
                 <div className={styles["section-males"]}>
-                    {males.map((dog) => <DogCard key={dog._id} dog={dog} />)}
+                    {males.length > 0 ? males.map((dog) => <DogCard key={dog._id} dog={dog} />) : <p className={styles["message"]}>We currently have no male dogs, please come back again.</p>}
                 </div>
             </section>
             <section className={styles["section-main"]}>
                 <h2>Females</h2>
                 <div className={styles["section-females"]}>
-                    {females.map((dog) => <DogCard key={dog._id} dog={dog} />)}
+                    {females.length > 0 ? females.map((dog) => <DogCard key={dog._id} dog={dog} />) : <p className={styles["message"]}>We currently have no female dogs, please come back again.</p>}
                 </div>
             </section>
             <section className={styles["section-main"]}>
                 <h2>Puppies</h2>
                 <div className={styles["section-puppies"]}>
-                    {puppies.map((dog) => <DogCard key={dog._id} dog={dog} />)}
+                    {puppies.length > 0 ? puppies.map((dog) => <DogCard key={dog._id} dog={dog} />) : <p className={styles["message"]}>We currently have no puppies, please come back again.</p>}
                 </div>
             </section>
         </section>
