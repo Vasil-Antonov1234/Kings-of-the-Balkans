@@ -27,6 +27,7 @@
     background-color: gainsboro;
     border-radius: 4px;
     box-shadow: 3px 3px 4px gray;
+    transition: transform 0.4s ease;
 }
 
 .article:hover {
