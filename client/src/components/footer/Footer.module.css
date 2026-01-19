@@ -13,7 +13,7 @@ footer {
 }
 
 p {
-    max-width: 40ch;
+    max-width: 65ch;
 }
 
 li {
@@ -31,7 +31,9 @@ h5 {
     font-weight: 900;
 }
 
-h5, p, span {
+h5,
+p,
+span {
     margin-right: 24px;
 }
 
@@ -43,4 +45,124 @@ h5, p, span {
 
 .icon-wrapper {
     display: block;
+}
+
+.logo-wrapper {
+    width: 10%;
+}
+
+.logo {
+    width: 30%;
+    margin-right: 30px;
+}
+
+.logo-fci {
+    width: 35%;
+}
+
+@media (max-width: 2800px) {
+    .logo-wrapper {
+        width: 15%;
+    }
+}
+
+@media (max-width: 2000px) {
+    .logo-wrapper {
+        width: 20%;
+    }
+}
+
+@media (max-width: 1400px) {
+    .logo-wrapper {
+        max-width: 40px;
+    }
+
+    .logo {
+        width: 50px;
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    .logo-fci {
+        width: 55px;
+    }
+
+    p {
+        max-width: 30%;
+    }
+
+    .logo-wrapper {
+        width: 10%;
+        margin-right: 30px;
+    }
+}
+
+@media (max-width: 1200px) {
+    footer {
+        display: block;
+    }
+
+    .phone,
+    .street {
+        display: flex;
+    }
+
+    p {
+        max-width: 100%;
+        text-align: center;
+        padding: 0 0 30px 0;
+        border-bottom: 1px solid white;
+    }
+
+    .address-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        max-width: 98%;
+        padding: 0 0 10px 0;
+        border-bottom: 1px solid white;
+        margin-bottom: 10px;
+    }
+
+    span {
+        margin: 0 100px 0 -10px;
+    }
+
+    .logo-wrapper {
+        display: flex;
+        max-width: unset;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .logo {
+        display: inline-block;
+        margin: 0;
+    }
+
+    .logo-fci,
+    li,
+    ul {
+        display: inline-block;
+    }
+
+    ul {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 1030px) {
+
+    .phone, .street {
+        display: block;
+    }
+
+    span {
+        margin: 0 4rem 0 0;
+    }
+
+    h5, span, p, li {
+        font-size: 12px;
+    }
 }

@@ -10,18 +10,26 @@ export default function Footer() {
         <footer>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis est cupiditate qui dolorem. Nisi, error, eveniet maiores eligendi molestias incidunt facere explicabo cupiditate nemo obcaecati laudantium sapiente illum, reiciendis voluptas?</p>
             <div className={styles["address-wrapper"]}>
-                <h5>Phone:</h5>
-                <span>+359 123 456 789</span>
-                <h5>Address:</h5>
-                <span>San Francisco 49ers, Mcallister Street, California(CA)</span>
+                <div className={styles["phone"]}>
+                    <h5>Phone:</h5>
+                    <span>+359 123 456 789</span>
+                </div>
+                <div className={styles["street"]}>
+                    <h5>Address:</h5>
+                    <span>San Francisco 49ers, Mcallister Street, California(CA)</span>
+                </div>
                 <div className={styles["icon-wrapper"]}>
                     <Link>
                         <FontAwesomeIcon icon={faSquareFacebook} className={styles["icon"]} />
                     </Link>
                     <Link>
-                        <FontAwesomeIcon icon={faEnvelope} className={styles["icon"]}/>
+                        <FontAwesomeIcon icon={faEnvelope} className={styles["icon"]} />
                     </Link>
                 </div>
+            </div>
+            <div className={styles["logo-wrapper"]}>
+                <img src="../../../public/images/Logo.png" alt="logo" className={styles["logo"]} />
+                <img src="../../../public/images/FCI_logo.svg.png" alt="logo-FCI" className={styles["logo-fci"]} />
             </div>
             <ul>
                 <li>
