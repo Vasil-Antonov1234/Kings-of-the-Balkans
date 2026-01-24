@@ -6,7 +6,7 @@ const dogsController = Router();
 dogsController.get("/males", async (req, res) => {
 
     // const dogs = await dogsService.getAll();
-    const dogs = await dogsService.getByField();
+    const dogs = await dogsService.getByField("Male");
 
     res.json(dogs || []);
 });

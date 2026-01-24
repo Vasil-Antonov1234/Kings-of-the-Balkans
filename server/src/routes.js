@@ -3,6 +3,6 @@ import dogsController from "./controllers/dogsController.js";
 
 const routes= Router();
 
-routes.use("/data/dogs/males", dogsController);
+routes.use("/dogs", dogsController);
 
 export default routes;

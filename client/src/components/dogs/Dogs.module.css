@@ -45,19 +45,8 @@
     font-weight: 900;
     top: 1vh;
     left: 2vw;
+    text-shadow: 3px 3px gray;
 }
-
-/* .message {
-    font-family: sans-serif;
-    font-weight: 900;
-    margin: auto;
-} */
-
-/* .loading {
-    margin-bottom: 10px;
-    color: black;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), white, rgba(255, 255, 255, 0))
-} */
 
 /* @media (max-width: 1450px) {
     .section-main {
