@@ -18,6 +18,12 @@
     translate: 0% -14%;
     z-index: 0;
     width: 100%;
+    transition: all 1s ease;
+}
+
+.image:hover, .image-puppies:hover {
+    width: 140%;
+    left: -20%;
 }
 
 .image-puppies {
@@ -33,12 +39,12 @@
 .select {
     position: absolute;
     z-index: 1;
-    font-size: 100px;
+    font-size: clamp(1.5rem, 1rem + 3vw, 7rem);
     color: white;
-    font-family: sans-serif;
+    font-family: "Unbounded", sans-serif;
     font-weight: 900;
-    top: 10%;
-    left: 10%;
+    top: 1vh;
+    left: 2vw;
 }
 
 /* .message {

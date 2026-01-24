@@ -74,6 +74,10 @@ p {
     flex-basis: 70%;
 }
 
+h5 {
+    margin-top: 0;
+}
+
 @media (max-width: 1075px) {
     footer {
         align-items: flex-start;
