@@ -3,9 +3,10 @@ import dogsService from "../services/dogsService.js";
 
 const dogsController = Router();
 
-dogsController.get("/", async (req, res) => {
+dogsController.get("/males", async (req, res) => {
 
-    const dogs = await dogsService.getAll();
+    // const dogs = await dogsService.getAll();
+    const dogs = await dogsService.getByField();
 
     res.json(dogs || []);
 });
