@@ -1,9 +1,25 @@
+/* @link https://utopia.fyi/type/calculator?c=320,12,1.125,1280,16,1.2,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+    --fontsize-body: clamp(0.5926rem, 0.5586rem + 0.1698vw, 0.6944rem);
+    
+    --fenfsize-heading7: clamp(0.6667rem, 0.6111rem + 0.2778vw, 0.8333rem);
+    --fenfsize-heading6: clamp(0.75rem, 0.6667rem + 0.4167vw, 1rem);
+    --fenfsize-heading5: clamp(0.8438rem, 0.725rem + 0.5938vw, 1.2rem);
+    --fenfsize-heading4: clamp(0.9492rem, 0.7856rem + 0.818vw, 1.44rem);
+    --fenfsize-heading3: clamp(1.0679rem, 0.8478rem + 1.1002vw, 1.728rem);
+    --fenfsize-heading2: clamp(1.2014rem, 0.9106rem + 1.4537vw, 2.0736rem);
+    --fenfsize-heading1: clamp(1.3515rem, 0.9726rem + 1.8947vw, 2.4883rem);
+}
+
 * {
     margin: 0;
     padding: 0;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: inherit;
 }
 
@@ -21,11 +37,16 @@ html {
 
 html {
     font-family: "Lato", sans-serif;
-    font-size: clamp(11px, 11px + 0.25vw, 16px);
+    font-size: var(--fontsize-body);
     line-height: 1.4;
 }
 
-body, input, textarea, button, select, option {
+body,
+input,
+textarea,
+button,
+select,
+option {
     font: inherit;
 }
 
@@ -33,32 +54,37 @@ p {
     padding-bottom: 1.5em;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin-top: 1em;
     margin-bottom: 0.4em;
     line-height: 1.1;
 }
 
 h1 {
-    font-size: 2em;
+    font-size: var(--fenfsize-heading1);
 }
 
 h2 {
-    font-size: 1.8em;
+    font-size: var(--fenfsize-heading2);
 }
 
 h3 {
-    font-size: 1.6em;
+    font-size: var(--fenfsize-heading3);
 }
 
 h4 {
-    font-size: 1.4em;
+    font-size: var(--fenfsize-heading4);
 }
 
 h5 {
-    font-size: 1.2em;
+    font-size: var(--fenfsize-heading5);
 }
 
 h5 {
-    font-size: 1em;
+    font-size: var(--fenfsize-heading6);
 }
