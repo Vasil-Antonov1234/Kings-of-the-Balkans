@@ -5,7 +5,7 @@ export default function DogCard({
     dog
 }) {
     return (
-        <Link className={styles["link"]}>
+        <Link to={`/dogs/${dog._id}/details`} className={styles["link"]}>
             <article className={styles["article"]}>
                 <h3>{dog.name}</h3>
                 <div className={styles["img-container"]}>
