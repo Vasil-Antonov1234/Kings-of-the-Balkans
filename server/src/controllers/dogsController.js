@@ -11,5 +11,18 @@ dogsController.get("/males", async (req, res) => {
     res.json(dogs || []);
 });
 
+dogsController.get("/females", async (req, res) => {
+
+    try {
+        const dogs = await dogsService.getByField("Female");
+
+        res.json(dogs || []);
+    } catch (error) {
+        res.status(404)
+        res.json(error.message);
+    };
+
+});
+
 
 export default dogsController;

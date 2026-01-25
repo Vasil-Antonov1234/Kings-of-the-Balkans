@@ -5,7 +5,7 @@ import mongoose from "mongoose";
 
 const server = express();
 
-// Setum mongoose
+// Setup mongoose
 try {
     await mongoose.connect("mongodb://localhost:27017", {
         dbName: "kings-of-the-balkans"

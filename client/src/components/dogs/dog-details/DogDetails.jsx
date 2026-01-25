@@ -1,9 +1,11 @@
-import useFetch from "../../hooks/useFetch.js";
+import useFetch from "../../../hooks/useFetch.js";
 import DogCard from "../dog-card/DogCard.jsx";
-import styles from "./DogMales.module.css"
+import styles from "./DogDetails.module.css"
 
-export default function DogMales() {
-    const { data, isPending } = useFetch("/dogs/males", []);
+export default function DogMales({
+    dogs
+}) {
+    const { data, isPending } = useFetch(`/dogs/${dogs}`, []);
 
     return (
         <section className={styles["wrapper"]}>

@@ -35,7 +35,6 @@ export default function useFetch(url, initialState) {
                     if (error.message === "Failed to fetch") {
                         setIsPending(false);
                         return alert("Server is unavailable");
-
                     };
 
                     setIsPending(false);
