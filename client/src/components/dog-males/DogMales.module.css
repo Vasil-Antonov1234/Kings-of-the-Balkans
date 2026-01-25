@@ -1,7 +1,5 @@
 .main-container {
-    background-color: white;
     width: 100%;
-    margin-top: 10em;
     display: flex;
     gap: 1em;
     padding: 4em;
@@ -14,8 +12,23 @@
     font-size: 4em;
 }
 
+.wrapper {
+    background-color: white;
+    padding: 30px;
+    margin-top: 10em;
+    min-height: 110em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .message {
     font-family: "Lato", sans-serif;
     font-weight: 900;
     margin: auto;
+}
+
+.line {
+    background-color: gray;
+    height: 10px;
 }
