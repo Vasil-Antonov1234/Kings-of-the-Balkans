@@ -6,6 +6,7 @@ import Home from "./components/home/Home.jsx";
 import styles from "./App.module.css";
 import Footer from "./components/footer/Footer.jsx";
 import DogDetails from "./components/dogs/dog-details/DogDetails.jsx";
+import Details from "./components/details/Details.jsx";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path="/dogs/males" element={<DogDetails dogs={"males"}/>} />
         <Route path="/dogs/females" element={<DogDetails dogs={"females"} />}/>
         <Route path="/dogs/puppies" element={<DogDetails dogs={"puppies"}/>}/>
+        <Route path="/dogs/:dogId/details" element={<Details />} />
       </Routes>
 
       <Footer />

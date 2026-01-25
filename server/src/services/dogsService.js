@@ -4,7 +4,12 @@ export default {
     getAll() {
         return Dog.find();
     },
+    
     getByField(gender) {
         return Dog.find({ gender: gender });
+    },
+    
+    getById(dogId) {
+        return Dog.findById(dogId);
     }
-};
+}
