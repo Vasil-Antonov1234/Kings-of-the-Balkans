@@ -7,10 +7,8 @@ export default function Details() {
 
     const { data: dog } = useFetch(`/dogs/${dogId}/details`);
 
-    console.log(dog);
-
     return (
-        <section>
+        <section className={styles["wrapper"]}>
             <section className={styles["container"]}>
                 <div className={styles["image-container"]}>
                     <img src={dog?.imageUrl}
