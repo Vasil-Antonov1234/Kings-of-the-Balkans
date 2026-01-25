@@ -69,7 +69,8 @@ h3 {
     position: absolute;
     top: 50%;
     left: 50%;
-    translate: -35% -21%;
+    translate: -50% -50%;
+    /* width: 100em; */
 }
 
 .line {

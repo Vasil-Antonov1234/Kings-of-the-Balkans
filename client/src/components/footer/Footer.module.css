@@ -7,12 +7,13 @@ footer {
     color: white;
     padding: 30px 10px 30px 10px;
     display: flex;
-    font-family: sans-serif;
+    font-family: "Lato", sans-serif;
     justify-content: space-evenly;
     line-height: 1.4;
     align-items: flex-start;
     gap: 20px;
     flex-wrap: wrap;
+    font-size: 1.5em;
 }
 
 .text-logo-container {
@@ -76,6 +77,16 @@ p {
 
 h5 {
     margin-top: 0;
+}
+
+.icon-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 59%;
+}
+
+.icon-wrapper a {
+    font-size: 2.4em;
 }
 
 @media (max-width: 1075px) {
