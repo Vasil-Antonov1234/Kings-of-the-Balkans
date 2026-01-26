@@ -1,15 +1,15 @@
 import Dog from "../models/Dog.js"
 
 export default {
-    getAll() {
-        return Dog.find();
+    async getAll() {
+        return await Dog.find();
     },
     
-    getByField(gender) {
-        return Dog.find({ gender: gender });
+    async getByField(gender) {
+        return await Dog.find({ gender: gender });
     },
     
-    getById(dogId) {
-        return Dog.findById(dogId);
+    async getById(dogId) {
+        return await Dog.findById(dogId);
     }
 }

@@ -7,6 +7,8 @@ export default function Details() {
 
     const { data: dog } = useFetch(`/dogs/${dogId}/details`);
 
+    console.log(dog);
+
     return (
         <section className={styles["wrapper"]}>
             <section className={styles["container"]}>
