@@ -7,6 +7,7 @@ import styles from "./App.module.css";
 import Footer from "./components/footer/Footer.jsx";
 import DogDetails from "./components/dogs/dog-details/DogDetails.jsx";
 import Details from "./components/details/Details.jsx";
+import UploadPicture from "./components/attach-picture/UploadPicture.jsx";
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Route path="/dogs/females" element={<DogDetails dogs={"females"} />}/>
         <Route path="/dogs/puppies" element={<DogDetails dogs={"puppies"}/>}/>
         <Route path="/dogs/:dogId/details" element={<Details />} />
+        <Route path="/pictures/upload-picture" element={<UploadPicture />} />
       </Routes>
 
       <Footer />
