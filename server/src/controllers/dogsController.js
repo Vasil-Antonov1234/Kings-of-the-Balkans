@@ -17,7 +17,7 @@ dogsController.get("/females", async (req, res) => {
 
         res.json(dogs || []);
     } catch (error) {
-        res.status(404);
+        res.status(400);
         res.json(error.message);
     };
 });
@@ -29,7 +29,7 @@ dogsController.get("/puppies", async (req, res) => {
 
     res.json(dogs || []);
     } catch (error) {
-        res.status(404)
+        res.status(400)
         res.json(error.message);        
     };
 });
@@ -42,7 +42,7 @@ dogsController.get("/:dogId/details", async (req, res) => {
 
         res.json(dog);
     } catch (error) {
-        res.status(404);
+        res.status(400);
         res.json(error.message);
     }
 })
