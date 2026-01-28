@@ -27,7 +27,11 @@ const dogSchema = new Schema({
     gender: {
         type: String,
         required: [true, "Gender is required!"]
-    }
+    },
+    pictures: [{
+        type: Types.ObjectId,
+        ref: "Picture"
+    }]
 });
 
 const Dog = model("Dog", dogSchema);
