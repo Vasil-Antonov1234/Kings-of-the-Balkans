@@ -1,4 +1,4 @@
-import { useParams } from "react-router";
+import { useParams, Link } from "react-router";
 import styles from "./Details.module.css"
 import useFetch from "../../hooks/useFetch.js";
 
@@ -6,8 +6,6 @@ export default function Details() {
     const { dogId } = useParams();
 
     const { data: dog } = useFetch(`/dogs/${dogId}/details`);
-
-    console.log(dog);
 
     return (
         <section className={styles["wrapper"]}>
@@ -28,6 +26,7 @@ export default function Details() {
                     <h3><span className={styles["born"]}>Lorem: </span> Consectetur adipisicing elit</h3>
                     <h3><span className={styles["born"]}>Lorem: </span> Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
                     <hr className={styles["line"]} />
+                    <Link to={`/pictures/${dogId}/upload-picture`} className={styles["attach"]}>Attach picture</Link>
                 </div>
             </section>
             <section className={styles["gallery"]}>

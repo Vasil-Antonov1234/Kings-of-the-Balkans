@@ -35,12 +35,14 @@ h3 {
     font-weight: 100;
 }
 
-.name, .sub-title {
+.name,
+.sub-title {
     font-family: "Unbounded", sans-serif;
 
 }
 
-h3, span {
+h3,
+span {
     font-family: "Lato", sans-serif;
 }
 
@@ -115,7 +117,24 @@ h3 {
     padding: 30px;
 }
 
-@media (max-width: 1200px) {    
+.attach {
+    color: white;
+    font-size: 1.75em;
+    font-weight: 700;
+    background-color: brown;
+    padding: 1em 2em;
+    /* width: 10%; */
+    min-width: 100px;
+    border-radius: 5px;
+    text-align: center;
+    transition: 1s all ease;
+}
+
+.attach:hover {
+    background-color: rgb(165, 112, 42);
+}
+
+@media (max-width: 1200px) {
 
     .wrapper {
         margin-top: 14em;

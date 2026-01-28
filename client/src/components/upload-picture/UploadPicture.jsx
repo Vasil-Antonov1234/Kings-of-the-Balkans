@@ -14,7 +14,7 @@ export default function UploadPicture() {
 
     const { formHandler, formInputRegister } = useForm(initialValues, managePictureInputHandler);
 
-    const { request } = useFetch();
+    const { request, data: dog } = useFetch(`/dogs/${dogId}/details`);
 
     async function managePictureInputHandler(values) {
 
@@ -40,11 +40,15 @@ export default function UploadPicture() {
     return (
         <section className={styles["main-ctr"]}>
             <div className={styles["wrapper"]}>
-                <h1>Upload picture</h1>
-                {/* <div className={styles["image-ctr"]}>
-                    <h2>Name</h2>
-                    <img src="https://www.akc.org/wp-content/uploads/2017/11/Doberman-Pinscher-standing-outdoors.jpg" alt="image" />
-                </div> */}
+                <h1>{dogId ? "Attach picture" : "Upload picture"}</h1>
+                {dogId ?
+                    <>
+                        <h2>{dog?.name}</h2>
+                        <div className={styles["image-ctr"]}>
+                            <img src={dog?.imageUrl} alt="image" />
+                        </div>
+                    </> : ""
+                }
                 <form action={formHandler}>
                     {/* Name */}
                     <div className={styles["name-ctr"]}>
@@ -65,15 +69,17 @@ export default function UploadPicture() {
                     </div>
 
                     {/* Pictures selection */}
-                    {/* <div className={styles["pictures-selection-wrapper"]}>
-                        <select name="pictures" id="pictures">
-                            <option value="test">test</option>
-                        </select>
-                    </div> */}
+                    {dogId ?
+                        <div className={styles["pictures-selection-wrapper"]}>
+                            <select name="pictures" id="pictures">
+                                <option value="none">-----</option>
+                            </select>
+                        </div> : ""
+                    }
 
                     {/* Submit button */}
                     <div className={styles["submit-btn-ctr"]}>
-                        <button className={styles["submit-btn"]}>Upload</button>
+                        <button className={styles["submit-btn"]}>{dogId ? "Attach" : "Upload"}</button>
                     </div>
                 </form>
             </div>
