@@ -1,11 +1,17 @@
 import styles from "./UploadPicture.module.css"
 
+const initialValues = {
+    pictureName: "",
+    pictureUrl: ""
+}
+
 export default function UploadPicture() {
     return (
         <section className={styles["main-ctr"]}>
             <div className={styles["wrapper"]}>
                 <h1>Upload picture</h1>
                 <div className={styles["image-ctr"]}>
+                    <h2>Name</h2>
                     <img src="https://www.akc.org/wp-content/uploads/2017/11/Doberman-Pinscher-standing-outdoors.jpg" alt="image" />
                 </div>
                 <form>
@@ -26,11 +32,11 @@ export default function UploadPicture() {
                     </div>
 
                     {/* Pictures selection */}
-                    <div className={styles["pictures-selection-wrapper"]}>
+                    {/* <div className={styles["pictures-selection-wrapper"]}>
                         <select name="pictures" id="pictures">
                             <option value="test">test</option>
                         </select>
-                    </div>
+                    </div> */}
 
                     {/* Submit button */}
                     <div className={styles["submit-btn-ctr"]}>

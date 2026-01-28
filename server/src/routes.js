@@ -5,6 +5,6 @@ import picturesController from "./controllers/picturesController.js";
 const routes= Router();
 
 routes.use("/dogs", dogsController);
-routes.use("/pictures/upload", picturesController);
+routes.use("/pictures", picturesController);
 
 export default routes;
