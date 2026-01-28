@@ -42,4 +42,6 @@ export default function useForm(values, callback, dogId) {
         };
 
     }, [dogId]);
+
+    return { data, changeHandler, formHandler, formInputRegister }
 };

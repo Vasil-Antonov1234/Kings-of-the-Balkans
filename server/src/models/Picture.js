@@ -1,7 +1,7 @@
 import { Schema, model } from "mongoose"
 
 const pictureSchema = new Schema({
-    name: {
+    pictureName: {
         type: String,
         required: [true, "Picture name is required!"],
         minLength: [2, "Name must be at least two characters long!"]

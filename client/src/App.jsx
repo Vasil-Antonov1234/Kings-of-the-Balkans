@@ -7,7 +7,7 @@ import styles from "./App.module.css";
 import Footer from "./components/footer/Footer.jsx";
 import DogDetails from "./components/dogs/dog-details/DogDetails.jsx";
 import Details from "./components/details/Details.jsx";
-import UploadPicture from "./components/attach-picture/UploadPicture.jsx";
+import UploadPicture from "./components/upload-picture/UploadPicture.jsx";
 
 function App() {
 
