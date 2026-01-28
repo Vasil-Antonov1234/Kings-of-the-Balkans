@@ -5,7 +5,8 @@ import { useParams } from "react-router"
 
 const initialValues = {
     pictureName: "",
-    pictureUrl: ""
+    pictureUrl: "",
+    picture: ""
 }
 
 export default function UploadPicture() {
@@ -16,16 +17,20 @@ export default function UploadPicture() {
 
     const { request, data: dog } = useFetch(`/dogs/${dogId}/details`);
     const { data: pictures } = useFetch("/pictures");
-    
+
     async function managePictureInputHandler(values) {
 
-        if (!values.pictureName) {
+        if (!dogId && !values.pictureName) {
             return alert("Picture name is required!");
         };
 
-        if (!values.pictureUrl) {
+        if (!dogId && !values.pictureUrl) {
             return alert("Picture url is required!");
         };
+
+        if (dogId && !values.picture) {
+            return alert("Picture to attach is required!")
+        }
 
         if (!dogId) {
 
@@ -34,6 +39,13 @@ export default function UploadPicture() {
             } catch (error) {
                 alert(error)
             }
+        } else {
+
+            try {
+                await request(`/pictures/${dogId}/upload-picture`, "POST", values)
+            } catch (error) {
+                alert(error);
+            };
 
         }
     }
@@ -72,9 +84,12 @@ export default function UploadPicture() {
                     {/* Pictures selection */}
                     {dogId ?
                         <div className={styles["pictures-selection-wrapper"]}>
-                            <select name="pictures" id="pictures">
+                            <select
+                                {...formInputRegister("picture")}
+                                id="pictures"
+                            >
                                 <option value="none" selected>-----</option>
-                                {pictures.map((x) => <option value={x._id}>{x.pictureName}</option>)}
+                                {pictures?.map((x) => <option value={x._id}>{x.pictureName}</option>)}
                             </select>
                         </div> : ""
                     }

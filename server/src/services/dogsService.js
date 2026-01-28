@@ -11,5 +11,12 @@ export default {
     
     async getById(dogId) {
         return await Dog.findById(dogId);
+    },
+
+    async attach(dogId, pictureId) {
+        const dog = await Dog.findById(dogId);
+        dog.pictures.push(pictureId);
+
+        return dog.save();
     }
 }

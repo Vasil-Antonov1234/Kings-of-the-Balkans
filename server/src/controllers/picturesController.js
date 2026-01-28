@@ -1,5 +1,6 @@
 import { Router } from "express";
 import picturesService from "../services/picturesService.js";
+import dogsService from "../services/dogsService.js";
 
 const picturesController = Router();
 
@@ -18,6 +19,15 @@ picturesController.post("/upload", async (req, res) => {
     } catch (error) {
         res.status(400).json(error.message);
     };
+})
+
+picturesController.post("/:dogId/upload-picture", async (req, res) => {
+    const dogId = req.params.dogId;
+    const pictureId = req.body.picture;
+
+    const result = await dogsService.attach(dogId, pictureId);
+
+    res.json(result)
 })
 
 export default picturesController;
