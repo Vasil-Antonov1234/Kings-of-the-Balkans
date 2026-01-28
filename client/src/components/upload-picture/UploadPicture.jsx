@@ -15,7 +15,8 @@ export default function UploadPicture() {
     const { formHandler, formInputRegister } = useForm(initialValues, managePictureInputHandler);
 
     const { request, data: dog } = useFetch(`/dogs/${dogId}/details`);
-
+    const { data: pictures } = useFetch("/pictures");
+    
     async function managePictureInputHandler(values) {
 
         if (!values.pictureName) {
@@ -72,7 +73,8 @@ export default function UploadPicture() {
                     {dogId ?
                         <div className={styles["pictures-selection-wrapper"]}>
                             <select name="pictures" id="pictures">
-                                <option value="none">-----</option>
+                                <option value="none" selected>-----</option>
+                                {pictures.map((x) => <option value={x._id}>{x.pictureName}</option>)}
                             </select>
                         </div> : ""
                     }
