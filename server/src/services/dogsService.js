@@ -10,7 +10,7 @@ export default {
     },
     
     async getById(dogId) {
-        return await Dog.findById(dogId);
+        return Dog.findById(dogId).populate("pictures");
     },
 
     async attach(dogId, pictureId) {

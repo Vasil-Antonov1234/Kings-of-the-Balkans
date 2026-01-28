@@ -32,13 +32,7 @@ export default function Details() {
             <section className={styles["gallery"]}>
                 <h2 className={styles["title2"]}>gallery</h2>
                 <section className={styles["gallery-container"]}>
-                    <img src="https://headsupfortails.com/cdn/shop/articles/Doberman_Pinscher_Dog_Breed_Information_2a31ffd8-3d3f-4dc2-b495-fbc47dd27ef3.jpg?v=1741084702" alt="image" className={styles["small-image"]} />
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmlr3bxXifzBy5h5oiDHLztuGgPEr06-mWHg&s" alt="image" className={styles["small-image"]} />
-                    <img src="https://headsupfortails.com/cdn/shop/articles/Doberman_Pinscher_Dog_Breed_Information_2a31ffd8-3d3f-4dc2-b495-fbc47dd27ef3.jpg?v=1741084702" alt="image" className={styles["small-image"]} />
-                    <img src="https://headsupfortails.com/cdn/shop/articles/Doberman_Pinscher_Dog_Breed_Information_2a31ffd8-3d3f-4dc2-b495-fbc47dd27ef3.jpg?v=1741084702" alt="image" className={styles["small-image"]} />
-                    <img src="https://headsupfortails.com/cdn/shop/articles/Doberman_Pinscher_Dog_Breed_Information_2a31ffd8-3d3f-4dc2-b495-fbc47dd27ef3.jpg?v=1741084702" alt="image" className={styles["small-image"]} />
-                    <img src="https://headsupfortails.com/cdn/shop/articles/Doberman_Pinscher_Dog_Breed_Information_2a31ffd8-3d3f-4dc2-b495-fbc47dd27ef3.jpg?v=1741084702" alt="image" className={styles["small-image"]} />
-                    <img src="https://headsupfortails.com/cdn/shop/articles/Doberman_Pinscher_Dog_Breed_Information_2a31ffd8-3d3f-4dc2-b495-fbc47dd27ef3.jpg?v=1741084702" alt="image" className={styles["small-image"]} />
+                    {dog?.pictures.map((x) => <img src={x.pictureUrl} alt="image" className={styles["small-image"]} />)}
                 </section>
             </section>
         </section>
