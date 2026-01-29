@@ -32,7 +32,10 @@ export default function Details() {
             <section className={styles["gallery"]}>
                 <h2 className={styles["title2"]}>gallery</h2>
                 <section className={styles["gallery-container"]}>
-                    {dog?.pictures.map((x) => <img src={x.pictureUrl} alt="image" className={styles["small-image"]} />)}
+                    {dog?.pictures.length ?
+                        dog?.pictures.map((x) => <img src={x.pictureUrl} alt="image" key={dog._id} className={styles["small-image"]} />) : 
+                        <p>There is nothing here yet.</p>
+                }
                 </section>
             </section>
         </section>

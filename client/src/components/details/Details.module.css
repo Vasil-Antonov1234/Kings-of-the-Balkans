@@ -134,6 +134,12 @@ h3 {
     background-color: rgb(165, 112, 42);
 }
 
+.gallery-container p {
+    color: white;
+    text-align: center;
+    font-size: 2em;
+}
+
 @media (max-width: 1200px) {
 
     .wrapper {
