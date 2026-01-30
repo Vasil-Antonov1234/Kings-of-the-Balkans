@@ -1,67 +1,44 @@
 import useFetch from "../../hooks/useFetch.js";
 import useForm from "../../hooks/useForm.js";
-import styles from "./UploadPicture.module.css"
-import { useParams } from "react-router"
+import styles from "./UploadPicture.module.css";
+import { useNavigate } from "react-router";
 
 const initialValues = {
     pictureName: "",
-    pictureUrl: "",
-    picture: ""
+    pictureUrl: ""
 }
 
 export default function UploadPicture() {
 
-    const { dogId } = useParams();
+    const navigate = useNavigate();
 
     const { formHandler, formInputRegister } = useForm(initialValues, managePictureInputHandler);
-
-    const { request, data: dog } = useFetch(`/dogs/${dogId}/details`);
-    const { data: pictures } = useFetch("/pictures");
+    const { request } = useFetch();
 
     async function managePictureInputHandler(values) {
 
-        if (!dogId && !values.pictureName) {
+        if (!values.pictureName) {
             return alert("Picture name is required!");
         };
 
-        if (!dogId && !values.pictureUrl) {
+        if (!values.pictureUrl) {
             return alert("Picture url is required!");
         };
 
-        if (dogId && !values.picture) {
-            return alert("Picture to attach is required!")
+        try {
+            await request(`/pictures/upload`, "POST", values);
+
+            navigate("/pictures/uploaded-success");
+        } catch (error) {
+            alert(error);
         }
 
-        if (!dogId) {
-
-            try {
-                await request(`/pictures/upload`, "POST", values);
-            } catch (error) {
-                alert(error)
-            }
-        } else {
-
-            try {
-                await request(`/pictures/${dogId}/upload-picture`, "POST", values)
-            } catch (error) {
-                alert(error);
-            };
-
-        }
     }
 
     return (
         <section className={styles["main-ctr"]}>
             <div className={styles["wrapper"]}>
-                <h1>{dogId ? "Attach picture" : "Upload picture"}</h1>
-                {dogId ?
-                    <>
-                        <h2>{dog?.name}</h2>
-                        <div className={styles["image-ctr"]}>
-                            <img src={dog?.imageUrl} alt="image" />
-                        </div>
-                    </> : ""
-                }
+                <h1>Upload picture</h1>
                 <form action={formHandler}>
                     {/* Name */}
                     <div className={styles["name-ctr"]}>
@@ -81,22 +58,9 @@ export default function UploadPicture() {
                         />
                     </div>
 
-                    {/* Pictures selection */}
-                    {dogId ?
-                        <div className={styles["pictures-selection-wrapper"]}>
-                            <select
-                                {...formInputRegister("picture")}
-                                id="pictures"
-                            >
-                                <option value="none" selected>-----</option>
-                                {pictures?.map((x) => <option value={x._id}>{x.pictureName}</option>)}
-                            </select>
-                        </div> : ""
-                    }
-
-                    {/* Submit button */}
+                    {/* Upload button */}
                     <div className={styles["submit-btn-ctr"]}>
-                        <button className={styles["submit-btn"]}>{dogId ? "Attach" : "Upload"}</button>
+                        <button className={styles["submit-btn"]}>Upload</button>
                     </div>
                 </form>
             </div>
