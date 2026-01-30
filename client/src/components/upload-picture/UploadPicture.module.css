@@ -9,7 +9,6 @@
     background-color: white;
     padding: 1em;
     width: 70%;
-    /* min-width: 400px; */
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -66,7 +65,7 @@ h2 {
 .submit-btn-ctr {
     background-color: brown;
     padding: 1em 2em;
-    width: 10%;
+    width: fit-content;
     min-width: 100px;
     border-radius: 5px;
     text-align: center;
@@ -74,7 +73,7 @@ h2 {
 }
 
 .submit-btn-ctr:hover {
-    width: 14%;
+    padding: 1em 4em;
     background-color: rgb(165, 112, 42);
 }
 
@@ -102,6 +101,11 @@ h2 {
 
 .pictures-selection-wrapper select {
     width: 100%;
+}
+
+.success {
+    color: green;
+    text-align: center;
 }
 
 @media (max-width: 1000px) {

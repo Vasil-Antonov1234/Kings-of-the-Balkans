@@ -1,6 +1,7 @@
 import useFetch from "../../hooks/useFetch.js";
 import useForm from "../../hooks/useForm.js";
-import styles from "./UploadPicture.module.css"
+import styles from "./UploadPicture.module.css";
+import { useNavigate } from "react-router";
 
 const initialValues = {
     pictureName: "",
@@ -8,6 +9,8 @@ const initialValues = {
 }
 
 export default function UploadPicture1() {
+
+    const navigate = useNavigate();
 
     const { formHandler, formInputRegister } = useForm(initialValues, managePictureInputHandler);
     const { request } = useFetch();
@@ -24,8 +27,10 @@ export default function UploadPicture1() {
 
         try {
             await request(`/pictures/upload`, "POST", values);
+
+            navigate("/pictures/uploaded-success");
         } catch (error) {
-            alert(error)
+            alert(error);
         }
 
     }
