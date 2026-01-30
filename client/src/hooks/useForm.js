@@ -21,14 +21,14 @@ export default function useForm(values, callback, dogId) {
         return {
             name,
             value: data[name],
-            onChange: changeHandler 
+            onChange: changeHandler
         }
     }
 
     useEffect(() => {
 
         if (dogId) {
-            ( async () => {
+            (async () => {
 
                 try {
                     const dog = await request(`/dogs/:${dogId}/details`);
@@ -37,7 +37,7 @@ export default function useForm(values, callback, dogId) {
                 } catch (error) {
                     alert(error.message);
                 };
-                
+
             })();
         };
 
