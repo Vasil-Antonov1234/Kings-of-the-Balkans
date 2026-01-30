@@ -45,7 +45,7 @@ export default function UploadPicture() {
                         <input
                             {...formInputRegister("pictureName")}
                             type="text"
-                            placeholder="Picture name"
+                            placeholder="Picture name..."
                         />
                     </div>
 
@@ -54,9 +54,19 @@ export default function UploadPicture() {
                         <input
                             {...formInputRegister("pictureUrl")}
                             type="text"
-                            placeholder="Picture url"
+                            placeholder="Picture url..."
                         />
                     </div>
+
+                    {/* Add button */}
+                    <label htmlFor="image" className={styles["label"]}>Add picture</label>
+                    <input
+                        {...formInputRegister("pictureUrl")}
+                        type="file"
+                        placeholder="Add picture..."
+                        id="image"
+                        className={styles["add-picture"]}
+                    />
 
                     {/* Upload button */}
                     <div className={styles["submit-btn-ctr"]}>

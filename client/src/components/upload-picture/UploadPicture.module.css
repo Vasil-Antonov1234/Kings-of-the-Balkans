@@ -108,6 +108,16 @@ h2 {
     text-align: center;
 }
 
+.add-picture {
+    width: min-content;
+}
+
+.label {
+    margin-bottom: -1.4em;
+    font-size: clamp(1.3rem, 7vw, 3rem);
+    color: brown;
+}
+
 @media (max-width: 1000px) {
     .wrapper {
         width: 100%;
@@ -117,4 +127,10 @@ h2 {
     .image-ctr {
         width: 90%;
     }
+}
+
+@media (max-width: 400px) {
+    .add-picture {
+    font-size: 0.9em;
+}
 }
