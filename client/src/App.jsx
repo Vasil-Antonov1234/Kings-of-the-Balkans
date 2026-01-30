@@ -8,6 +8,7 @@ import Footer from "./components/footer/Footer.jsx";
 import DogDetails from "./components/dogs/dog-details/DogDetails.jsx";
 import Details from "./components/details/Details.jsx";
 import UploadPicture from "./components/upload-picture/UploadPicture.jsx";
+import UploadPicture1 from "./components/upload-picture/UploadPicture1.jsx";
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
         <Route path="/dogs/females" element={<DogDetails dogs={"females"} />}/>
         <Route path="/dogs/puppies" element={<DogDetails dogs={"puppies"}/>}/>
         <Route path="/dogs/:dogId/details" element={<Details />} />
-        <Route path="/pictures/upload-picture" element={<UploadPicture />} />
+        <Route path="/pictures/upload-picture" element={<UploadPicture1 />} />
         <Route path="/pictures/:dogId/upload-picture" element={<UploadPicture />} />
       </Routes>
 
