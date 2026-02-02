@@ -1,0 +1,107 @@
+.main-ctr {
+    width: 100%;
+    background-color: cadetblue;
+    margin: 10em auto 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10em 1em;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    padding: 3em;
+    justify-content: space-between;
+    gap: 3em;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
+legend {
+    font-size: 2rem;
+    color: white;
+    font-weight: 900;
+    padding: 1%;
+}
+
+input, textarea {
+    background-color: white;
+    padding: 0.3em 0.5em;
+    font-size: 1.9rem;
+    border-radius: 5px;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+    height: 10em;
+}
+
+label {
+    color: white;
+    font-size: 1.4rem;
+}
+
+.inputs-ctr {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+button {
+    border: none;
+    background-color: unset;
+    color: white;
+    font-size: 1.75em;
+    font-weight: 700;
+}
+
+.btn-ctr {
+    background-color: brown;
+    padding: 1em 2em;
+    width: fit-content;
+    min-width: 100px;
+    border-radius: 5px;
+    text-align: center;
+    transition: 1s all ease;
+}
+
+.btn-ctr:hover {
+    padding: 1em 4em;
+    background-color: rgb(165, 112, 42);
+}
+
+.btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+@media (max-width: 600px) {
+    .inputs-ctr {
+        flex-direction: column;
+    }
+
+    /* fieldset {
+        width: 50rem;
+    } */
+
+}
+
+@media (max-width: 400px) {
+    
+    .btn-wrapper {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    fieldset {
+        padding: 1em;
+    }
+
+    input, textarea {
+        font-size: 1.4rem;
+    }
+}

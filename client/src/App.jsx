@@ -10,6 +10,7 @@ import Details from "./components/details/Details.jsx";
 import UploadPicture from "./components/upload-picture/UploadPicture.jsx";
 import Success from "./components/upload-picture/Success.jsx";
 import AttachPicture from "./components/upload-picture/AttachPicture.jsx";
+import Contacts from "./components/contacts/Contacts.jsx";
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/pictures/upload-picture" element={<UploadPicture />} />
         <Route path="/pictures/:dogId/attach-picture" element={<AttachPicture />} />
         <Route path="/pictures/uploaded-success" element={<Success />} />
+        <Route path="/contacts" element={<Contacts />} />
       </Routes>
 
       <Footer />
