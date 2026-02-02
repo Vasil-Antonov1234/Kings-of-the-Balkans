@@ -23,7 +23,9 @@ export default function Footer() {
                     </div>
                     <div className={styles["street"]}>
                         <h5>Address:</h5>
-                        <span>San Francisco 49ers, Mcallister Street, California(CA)</span>
+                        <Link to="https://www.google.com/maps/search/San+Francisco+49ers,+Mcallister+Street/@37.7779926,-122.4354512,19.75z?entry=ttu&g_ep=EgoyMDI2MDEyOC4wIKXMDSoKLDEwMDc5MjA3M0gBUAM%3D" target="_blank">
+                            <span>San Francisco 49ers, Mcallister Street, California(CA)</span>
+                        </Link>
                     </div>
                     <div className={styles["icon-wrapper"]}>
                         <Link>
