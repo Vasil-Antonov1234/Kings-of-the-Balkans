@@ -1,4 +1,7 @@
 import styles from "./Contacts.module.css"
+import { Link } from "react-router"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSquareFacebook } from "@fortawesome/free-brands-svg-icons"
 
 export default function Contacts() {
     return (
@@ -32,6 +35,11 @@ export default function Contacts() {
                     </fieldset>
                 </section>
             </form>
+            <Link to="https://www.facebook.com/?locale=bg_BG" target="_blank">
+                <div className={styles["icon-wrapper"]}>
+                    <FontAwesomeIcon icon={faSquareFacebook} className={styles["icon"]} />
+                </div>
+            </Link>
         </section>
     );
 }

@@ -28,10 +28,10 @@ export default function Footer() {
                         </Link>
                     </div>
                     <div className={styles["icon-wrapper"]}>
-                        <Link>
+                        <Link to="https://www.facebook.com/?locale=bg_BG" target="_blank">
                             <FontAwesomeIcon icon={faSquareFacebook} className={styles["icon"]} />
                         </Link>
-                        <Link>
+                        <Link to="/contacts">
                             <FontAwesomeIcon icon={faEnvelope} className={styles["icon"]} />
                         </Link>
                     </div>

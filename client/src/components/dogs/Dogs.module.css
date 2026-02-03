@@ -11,7 +11,8 @@
     overflow: hidden;
 }
 
-.image, .image-puppies {
+.image,
+.image-puppies {
     position: absolute;
     top: 0%;
     left: 0%;
@@ -21,7 +22,8 @@
     transition: all 1s ease;
 }
 
-.image:hover, .image-puppies:hover {
+.image:hover,
+.image-puppies:hover {
     width: 140%;
     left: -20%;
 }
@@ -29,6 +31,7 @@
 .image-puppies {
     translate: 0% -30%;
 }
+
 .section-wrapper {
     position: sticky;
     top: 30%;
@@ -47,33 +50,3 @@
     left: 2vw;
     text-shadow: 3px 3px gray;
 }
-
-/* @media (max-width: 1450px) {
-    .section-main {
-        width: 80%;
-    }
-
-    .section-main:first-of-type {
-        margin-top: 10%;
-    }
-
-    .loading {
-        margin-top: 4%;
-    }
-}
-
-@media (max-width: 600px) {
-    .section-main:first-of-type {
-        margin-top: 10%;
-    }
-
-    .loading {
-        margin-top: 14%;
-    }
-} */
-
-/* @media only screen and (max-width: 1000px) {
-    .section {
-        display: ruby;
-    }
-} */
