@@ -97,23 +97,26 @@ h3 {
 }
 
 .small-image {
-    width: 14%;
+    width: 10rem;
+    height: 10rem;
     border: 1px solid white;
 }
 
-.small-image:focus {
+.small-image:active {
     width: 70%;
     position: absolute;
+    top: 20%;
+    z-index: 10;
 }
 
 .gallery-container {
-    position: relative;
+    /* position: relative; */
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
     margin: 10px auto 0 auto;
-    width: 70%;
+    /* width: 70%; */
     border-top: 1px solid white;
     border-bottom: 1px solid white;
     padding: 30px;

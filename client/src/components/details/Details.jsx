@@ -33,9 +33,9 @@ export default function Details() {
                 <h2 className={styles["title2"]}>gallery</h2>
                 <section className={styles["gallery-container"]}>
                     {dog?.pictures.length ?
-                        dog?.pictures.map((x) => <img src={x.pictureUrl} alt="image" key={dog._id} className={styles["small-image"]} />) : 
+                        dog?.pictures.map((x) => <img src={x.pictureUrl} alt="image" key={dog._id} className={styles["small-image"]} />) :
                         <p>There is nothing here yet.</p>
-                }
+                    }
                 </section>
             </section>
         </section>
