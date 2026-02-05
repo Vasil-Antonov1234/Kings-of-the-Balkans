@@ -1,46 +1,17 @@
 import { useState } from "react";
 import useFetch from "../../hooks/useFetch.js";
-// import useForm from "../../hooks/useForm.js";
 import styles from "./UploadPicture.module.css";
 import { useNavigate } from "react-router";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { storage } from "../../../firebase.js";
 
-// const initialValues = {
-//     pictureName: "",
-//     pictureUrl: ""
-// }
-
 export default function UploadPicture() {
 
     const navigate = useNavigate();
 
-    // const { formHandler, formInputRegister, imagePreview } = useForm(initialValues, managePictureInputHandler);
     const { request } = useFetch()
 
     const [imagePreview, setImagePreview] = useState(null);
-
-
-
-    // async function managePictureInputHandler(values) {
-
-    //     if (!values.pictureName) {
-    //         return alert("Picture name is required!");
-    //     };
-
-    //     if (!values.pictureUrl) {
-    //         return alert("Picture url is required!");
-    //     };
-
-    //     try {
-    //         await request(`/pictures/upload`, "POST", values);
-
-    //         navigate("/pictures/uploaded-success");
-    //     } catch (error) {
-    //         alert(error);
-    //     }
-
-    // }
 
     async function uploadPictureHandler(event) {
         event.preventDefault();
