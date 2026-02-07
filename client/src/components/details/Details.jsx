@@ -11,8 +11,7 @@ export default function Details() {
         <section className={styles["wrapper"]}>
             <section className={styles["container"]}>
                 <div className={styles["image-container"]}>
-                    <img src={dog?.imageUrl}
-                        alt="image" className={styles["base-image"]} />
+                    <img src={dog?.imageUrl} alt="image" className={styles["base-image"]} />
                 </div>
                 <div className={styles["tetx-container"]}>
                     <h1 className={styles["name"]}>{dog?.name}</h1>
