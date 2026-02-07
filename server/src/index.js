@@ -2,12 +2,17 @@ import express from "express";
 import cors from "cors";
 import routes from "./routes.js";
 import mongoose from "mongoose";
+import "dotenv/config";
 
 const server = express();
 
 // Setup mongoose
 try {
-    await mongoose.connect("mongodb://localhost:27017", {
+    // await mongoose.connect("mongodb://localhost:27017", {
+    //     dbName: "kings-of-the-balkans"
+    // });
+
+    await mongoose.connect(process.env.MONGO_URI, {
         dbName: "kings-of-the-balkans"
     });
 
