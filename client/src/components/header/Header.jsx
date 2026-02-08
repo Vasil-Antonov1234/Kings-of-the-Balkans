@@ -13,7 +13,7 @@ export default function Header() {
         <header className={styles["header"]}>
 
             <Link to="/" className={styles["image-container"]}>
-                <img src="../../public/images/Logo.png" alt="logo" className={styles["logo"]} />
+                <img src="https://firebasestorage.googleapis.com/v0/b/kings-of-the-balkans-storage.firebasestorage.app/o/images%2FLogo.png?alt=media&token=f2c8a018-89c0-464f-ba70-553b2189a44c" alt="logo" className={styles["logo"]} />
             </Link>
 
             <div className={styles["nav-container"]}>
@@ -35,9 +35,9 @@ export default function Header() {
                             <li>
                                 <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/about">About</NavLink>
                             </li>
-                            <li>
+                            {/* <li>
                                 <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/pictures/upload-picture">Upload picture</NavLink>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                 </nav>

@@ -25,9 +25,9 @@ export default function Details() {
                     <h3><span className={styles["born"]}>Lorem: </span> Consectetur adipisicing elit</h3>
                     <h3><span className={styles["born"]}>Lorem: </span> Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
                     <hr className={styles["line"]} />
-                    <div className={styles["button-container"]}>
+                    {/* <div className={styles["button-container"]}>
                         <Link to={`/pictures/${dogId}/attach-picture`} className={styles["attach"]}>Attach picture</Link>
-                    </div>
+                    </div> */}
                 </div>
             </section>
             <section className={styles["gallery"]}>

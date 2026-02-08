@@ -11,8 +11,8 @@ export default function Footer() {
             <section className={styles["text-logo-container"]}>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis est cupiditate qui dolorem. Nisi, error, eveniet maiores eligendi molestias incidunt facere explicabo cupiditate nemo obcaecati laudantium sapiente illum, reiciendis voluptas?</p>
                 <div className={styles["logo-wrapper"]}>
-                    <img src="../../../public/images/Logo.png" alt="logo" className={styles["logo"]} />
-                    <img src="../../../public/images/FCI_logo.svg.png" alt="logo-FCI" className={styles["logo-fci"]} />
+                    <img src="https://firebasestorage.googleapis.com/v0/b/kings-of-the-balkans-storage.firebasestorage.app/o/images%2FLogo.png?alt=media&token=f2c8a018-89c0-464f-ba70-553b2189a44c" alt="logo" className={styles["logo"]} />
+                    <img src="https://firebasestorage.googleapis.com/v0/b/kings-of-the-balkans-storage.firebasestorage.app/o/images%2FFCI_logo.svg.png?alt=media&token=9d278836-4358-4492-a7c9-be667fa82a2d" className={styles["logo-fci"]} />
                 </div>
             </section>
             <section className={styles["address-nav-container"]}>

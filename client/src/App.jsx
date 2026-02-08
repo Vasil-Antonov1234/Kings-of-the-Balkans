@@ -18,6 +18,8 @@ import { auth } from "../firebase.js";
 
 
 function App() {
+    console.log(import.meta.env.VITE_APP_SERVER_URL)
+
     useEffect(() => {
         signInAnonymously(auth).catch(error => console.error("Sign-in failed", error));
     }, []);

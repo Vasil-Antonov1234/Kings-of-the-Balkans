@@ -75,6 +75,6 @@ app.get("/", (req, res) => {
 // Add routes
 app.use(routes);
 
-// server.listen(5000, () => console.log("Server is listening on http://localhost:5000..."))
+// server.listen(5000, () => console.log("Server is listening on import.meta.env.VITE_APP_SERVER_URL..."))
 
 module.exports = app;
