@@ -23,11 +23,6 @@ const app = express();
 //         dbName: "kings-of-the-balkans"
 //     });
 
-//     // await mongoose.connect("mongodb+srv://vaskoantonov1234_db_user:dO3pBwXKeg48EXYz@cluster0.ateic0v.mongodb.net/?appName=Cluster0", {
-//     //     dbName: "kings-of-the-balkans"
-//     // });
-
-
 //     console.log("Succesfully connected to DB!");
 // } catch (error) {
 //     console.error("Cannot connect to BD!");
