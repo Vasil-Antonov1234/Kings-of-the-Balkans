@@ -6,7 +6,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 10em 1em;
+    padding: 10em 0.4em;
     gap: 1em;
 }
 
@@ -24,7 +24,7 @@ legend {
     font-size: 2rem;
     color: white;
     font-weight: 900;
-    padding: 1%;
+    padding: 10px;
 }
 
 input,
@@ -58,6 +58,10 @@ button {
     color: white;
     font-size: 1.75em;
     font-weight: 700;
+}
+
+.btn-ctr button:focus {
+    outline: none;
 }
 
 .btn-ctr {
