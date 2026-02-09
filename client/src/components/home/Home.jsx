@@ -9,16 +9,13 @@ export default function Home() {
                 <p className={styles["sub-text"]}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et delectus qui omnis iste, incidunt iusto?</p>
             </div>
             <section className={styles["images-container"]}>
-                <Link className={styles["wrapper"]} to="/dogs">
-                    <img src="https://media.istockphoto.com/id/901452286/photo/three-doberman-pincher-relaxing-in-the-park.jpg?s=612x612&w=0&k=20&c=82UiXd_KuHtCSg_WgxT-jolgzNn_8FstJ97-GMQ4dQE=" alt="image-dog-one" />
+                <Link className={`${styles.wrapper} ${styles.ourDogs}`} to="/dogs">
                     <span>OUR DOGS</span>
                 </Link>
-                <Link className={styles["wrapper"]} to="/story">
-                    <img src="https://www.shutterstock.com/image-photo/three-doberman-runaway-camera-back-260nw-2497401555.jpg" alt="image-dog-one" />
+                <Link className={`${styles.wrapper} ${styles.story}`} to="/story">
                     <span>STORY</span>
                 </Link>
-                <Link className={styles["wrapper"]} to="/contacts">
-                    <img src="https://www.shutterstock.com/image-photo/using-laptop-show-icon-address-600nw-2521386695.jpg" alt="image-dog-one" />
+                <Link className={`${styles.wrapper} ${styles.contacts}`} to="/contacts">
                     <span>CONTACTS</span>
                 </Link>
             </section>

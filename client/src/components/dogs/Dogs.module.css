@@ -1,4 +1,4 @@
-.section-main {
+.sectionMain {
     margin: auto;
     width: 70%;
     max-height: 24rem;
@@ -8,15 +8,25 @@
     border-radius: 10px;
     aspect-ratio: 2/1;
     /* overflow: hidden; */
-    background-image: url(../../public/images/Male.avif);
+    background-image: url(../../../public/images/Male.avif);
     background-size: 100%; 
+    background-position: 100% 20%;
     transition: background-size 1s ease;
     position: relative;
     /* transition: all 1s ease; */
 }
 
-.section-main:hover {
+.sectionMain:hover {
     background-size: 140%;
+}
+
+.females {
+    background-image: url(../../../public/images/Female.jpg);
+}
+
+.puppies {
+    background-image: url(../../../public/images/Puppies.jpg);
+    background-position: 100% 40%;
 }
 
 /* .image,

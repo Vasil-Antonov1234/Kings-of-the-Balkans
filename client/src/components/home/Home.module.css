@@ -44,8 +44,9 @@
 .wrapper {
     position: relative;
     overflow: hidden;
-    background-color: black;
+    /* background-color: black; */
     border: 4px solid white;
+    width: 30em;
     height: 17em;
     border-radius: 10px;
     transition: transform 0.4s ease;
@@ -53,6 +54,22 @@
 
 .wrapper:hover {
     transform: rotate3d(3, 4, 1, 30deg);
+}
+
+.ourDogs {
+    background-image: url(../../../public/images/Our-dogs.jpg);
+    background-size: 100%;
+    background-position: 100% 50%;
+}
+
+.story {
+    background-image: url(../../../public/images/Story.webp);
+    background-size: 100%;
+}
+
+.contacts {
+    background-image: url(../../../public/images/Contacts.webp);
+    background-size: 100%;
 }
 
 .images-container span {
