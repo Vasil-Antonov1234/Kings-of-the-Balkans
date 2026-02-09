@@ -98,10 +98,11 @@ button {
 @media (max-width: 600px) {
     .inputs-ctr {
         flex-direction: column;
+        width: calc(10em + 57vw)
     }
-
+    
     /* fieldset {
-        width: 50rem;
+        width: clamp(1.5rem, 10vw, 12rem);
     } */
 
 }
@@ -121,5 +122,15 @@ button {
     input,
     textarea {
         font-size: 1.4rem;
+    }
+
+    .inputs-ctr {
+        width: calc(10em + 50vw)
+    }
+}
+
+@media (max-width: 250px) {
+    .inputs-ctr {
+        width: calc(10em + 40vw)
     }
 }
