@@ -21,19 +21,19 @@ export default function Header() {
                     <div className={styles["nav-bar"]}>
                         <ul>
                             <li>
-                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/">Home</NavLink>
+                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/" onClick={openMenuHandler}>Home</NavLink>
                             </li>
                             <li>
-                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/story">Story</NavLink>
+                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/story" onClick={openMenuHandler}>Story</NavLink>
                             </li>
                             <li>
-                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/dogs">Dogs</NavLink>
+                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/dogs" onClick={openMenuHandler}>Dogs</NavLink>
                             </li>
                             <li>
-                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/contacts">Contacts</NavLink>
+                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/contacts" onClick={openMenuHandler}>Contacts</NavLink>
                             </li>
                             <li>
-                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/about">About</NavLink>
+                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/about" onClick={openMenuHandler}>About</NavLink>
                             </li>
                             {/* <li>
                                 <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/pictures/upload-picture">Upload picture</NavLink>
