@@ -6,8 +6,12 @@ export default function Header() {
     const [smallMenuOpen, setSmalMenuOpen] = useState(false);
 
     function openMenuHandler() {
-        setSmalMenuOpen(!smallMenuOpen)
-    }
+        setSmalMenuOpen(!smallMenuOpen);
+    };
+
+    function closeMenuHandler() {
+        setSmalMenuOpen(false);
+    };
 
     return (
         <header className={styles["header"]}>
@@ -21,19 +25,19 @@ export default function Header() {
                     <div className={styles["nav-bar"]}>
                         <ul>
                             <li>
-                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/" onClick={openMenuHandler}>Home</NavLink>
+                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/" onClick={closeMenuHandler}>Home</NavLink>
                             </li>
                             <li>
-                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/story" onClick={openMenuHandler}>Story</NavLink>
+                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/story" onClick={closeMenuHandler}>Story</NavLink>
                             </li>
                             <li>
-                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/dogs" onClick={openMenuHandler}>Dogs</NavLink>
+                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/dogs" onClick={closeMenuHandler}>Dogs</NavLink>
                             </li>
                             <li>
-                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/contacts" onClick={openMenuHandler}>Contacts</NavLink>
+                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/contacts" onClick={closeMenuHandler}>Contacts</NavLink>
                             </li>
                             <li>
-                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/about" onClick={openMenuHandler}>About</NavLink>
+                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/about" onClick={closeMenuHandler}>About</NavLink>
                             </li>
                             {/* <li>
                                 <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/pictures/upload-picture">Upload picture</NavLink>

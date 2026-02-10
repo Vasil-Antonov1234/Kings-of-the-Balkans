@@ -1,5 +1,7 @@
 .home-container {
     align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .title {
@@ -24,7 +26,7 @@
     color: white;
     margin-top: 30px;
     font-weight: 700;
-    font-size: clamp(0.75rem, 1.35vw, 8rem);
+    font-size: clamp(0.75rem, 3vw, 2rem);
 }
 
 .images-container {
@@ -86,13 +88,26 @@
     width: 100%;
 }
 
-@media(max-width: 400px) {
-
-    .images-container a img {
-        width: 100%;
+@media (max-width: 600px) {
+    .title {
+        font-size: clamp(1.5rem, 12vw, 12rem);
     }
+}
+
+@media (max-width: 400px) {
 
     .images-container a {
-        width: 70%;
+        width: 27em;
+    }
+
+    .title {
+        font-size: clamp(1.5rem, 14vw, 12rem);
+        width: 5ch;
+    }
+}
+
+@media (max-width: 270px) {
+    .images-container a {
+        width: 20em;
     }
 }
