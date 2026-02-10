@@ -1,11 +1,31 @@
 import { useParams, Link } from "react-router";
 import styles from "./Details.module.css"
 import useFetch from "../../hooks/useFetch.js";
+import { useState } from "react";
 
 export default function Details() {
+
     const { dogId } = useParams();
 
     const { data: dog } = useFetch(`/dogs/${dogId}/details`);
+
+    const [isModalView, setIsModalView] = useState(false);
+    const [url, setUrl] = useState(null);
+
+    function modalViewHandler(pictureUrl) {
+        setIsModalView(true);
+        setUrl(pictureUrl);
+    };
+
+    function modalViewCloseHandler() {
+        setIsModalView(false);
+    };
+
+    function test(event) {
+        if (event.target.id === "imgModal") {
+            setIsModalView(false);
+        }
+    };
 
     return (
         <section className={styles["wrapper"]}>
@@ -34,9 +54,13 @@ export default function Details() {
                 <h2 className={styles["title2"]}>gallery</h2>
                 <section className={styles["gallery-container"]}>
                     {dog?.pictures.length ?
-                        dog?.pictures.map((x) => <div className={styles["small-image-container"]}><img src={x.pictureUrl} alt="image" key={dog._id} className={styles["small-image"]} /></div>) :
+                        dog?.pictures.map((x) => <div className={styles["small-image-container"]}><img src={x.pictureUrl} alt="image" key={x._id} className={styles["small-image"]} onClick={() => modalViewHandler(x.pictureUrl)} /></div>) :
                         <p>There is nothing here yet.</p>
                     }
+                    <div id="imgModal" className={isModalView ? `${styles.modal} ${styles.flex}` : styles.modal} onClick={test}>
+                        <span className={styles.close} onClick={modalViewCloseHandler}>&times;</span>
+                        <img className={styles["modal-content"]} id="modalImg" src={url} />
+                    </div>
                 </section>
             </section>
         </section>

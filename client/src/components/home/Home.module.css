@@ -9,6 +9,7 @@
     display: inline-block;
     color: white;
     font-size: clamp(1.5rem, 10vw, 12rem);
+    text-shadow: 3px 3px 10px black;
     margin: 0;
 }
 
