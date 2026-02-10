@@ -12,7 +12,7 @@ export default function DogCard({
                     <img src={dog.imageUrl} alt="dog image" className={styles["image"]} />
                 </div>
             </article>
-            <span className={styles["details"]}>Details</span>
+            <span className={styles["details"]}>Show more</span>
         </Link>
     );
 }

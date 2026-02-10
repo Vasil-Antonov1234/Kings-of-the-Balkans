@@ -77,7 +77,8 @@
     display: none;
     position: absolute;
     top: 2.7em;
-    right: 4em;;
+    right: 4em;
+    ;
     flex-direction: column;
     justify-content: space-between;
     width: 2.74%;
@@ -102,8 +103,8 @@
 }
 
 .close {
-        display: none;
-    }
+    display: none;
+}
 
 @media (max-width: 900px) {
     .nav-container {
@@ -190,18 +191,15 @@
         flex-direction: column;
         align-items: start;
         margin-bottom: -10px;
-    }
-
-    .logo {
-        margin: -10px 0 -30px 0;
-    }
-
-    .header {
         background-color: gainsboro;
         margin: 10px;
         width: 96%;
         /* border: 0.3px solid darkgray; */
         box-shadow: 1px 1px 10px gray;
+    }
+
+    .logo {
+        margin: -10px 0 -30px 0;
     }
 }
 
