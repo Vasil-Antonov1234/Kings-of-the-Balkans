@@ -4,7 +4,7 @@ export default function Story() {
     return (
         <section className={styles.story}>
             <header className={styles.storyHeader}>
-                <img src="../../../public/images/Story.jpg" alt="header-image" />
+                <img src="https://firebasestorage.googleapis.com/v0/b/kings-of-the-balkans-storage.firebasestorage.app/o/images%2FStory.jpg?alt=media&token=5af9ca2f-37fc-4266-bf90-4d15b4f12332" alt="header-image" />
                 <h1>story</h1>
             </header>
             <section className={styles["main-container"]}>
@@ -19,7 +19,7 @@ export default function Story() {
                 </article>
                 <article className={styles["card"]}>
                     <span className={styles["image-container"]}>
-                        <img src="../../../public/images/Female.jpg" alt="image" />
+                        <img src="https://firebasestorage.googleapis.com/v0/b/kings-of-the-balkans-storage.firebasestorage.app/o/images%2FCJt1JE3RTii9njxJJBbN2w.webp?alt=media&token=9900ced9-c49b-4da2-a7ac-058544fd6417" alt="image" />
                     </span>
                     <div className={styles["text-container"]}>
                         <h2>Lorem ipsum</h2>
@@ -35,7 +35,7 @@ export default function Story() {
                 </article>
                 <article className={`${styles.card} ${styles.reverse}`}>
                     <span className={styles["image-container"]}>
-                        <img src="../../../public/images/Male.avif" alt="image" />
+                        <img src="https://firebasestorage.googleapis.com/v0/b/kings-of-the-balkans-storage.firebasestorage.app/o/images%2FDoberman-pinscher-dog.webp?alt=media&token=409fdd41-85f4-44c2-9160-f4acd379ad65" alt="image" />
                     </span>
                     <div className={styles["text-container"]}>
                         <h2>Lorem ipsum</h2>
