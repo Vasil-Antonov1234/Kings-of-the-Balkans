@@ -16,6 +16,7 @@ import { useEffect } from "react";
 import { signInAnonymously } from "firebase/auth";
 import { auth } from "../firebase.js";
 import UnderConstruction from "./components/under-construction/UnderConstruction.jsx";
+import Story from "./components/story/Story.jsx";
 
 
 function App() {
@@ -41,7 +42,7 @@ function App() {
                 <Route path="/pictures/:dogId/attach-picture" element={<AttachPicture />} />
                 <Route path="/pictures/uploaded-success" element={<Success />} />
                 <Route path="/contacts" element={<Contacts />} />
-                <Route path="/story" element={<UnderConstruction />} />
+                <Route path="/story" element={<Story />} />
                 <Route path="/about" element={<UnderConstruction />} />
             </Routes>
 

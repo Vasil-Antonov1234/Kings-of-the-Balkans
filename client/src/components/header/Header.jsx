@@ -16,7 +16,7 @@ export default function Header() {
     return (
         <header className={styles["header"]}>
 
-            <Link to="/" className={styles["image-container"]}>
+            <Link to="/" className={styles["logo-container"]}>
                 <img src="https://firebasestorage.googleapis.com/v0/b/kings-of-the-balkans-storage.firebasestorage.app/o/images%2FLogo.png?alt=media&token=f2c8a018-89c0-464f-ba70-553b2189a44c" alt="logo" className={styles["logo"]} />
             </Link>
 
