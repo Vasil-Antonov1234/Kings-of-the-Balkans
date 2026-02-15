@@ -115,20 +115,26 @@ h3 {
 
 .small-image-container {
     width: 10rem;
-    height: 10rem;
+    /* height: 10rem; */
     background-color: rgba(0, 0, 0, 0.753);
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid white;
     border-radius: 5px;
+    overflow: hidden;
     transition: transform 0.2s;
 }
 
 .small-image {
-    max-width: 100%;
-    max-height: 100%;
+    /* max-width: 100%;
+    max-height: 100%; */
     cursor: pointer;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center;
 }
 
 .small-image-container:hover {
