@@ -42,7 +42,7 @@
     font-weight: 700;
 }
 
-.link {
+.wrapper {
     display: inline;
     text-decoration: none;
     color: black;
@@ -65,7 +65,7 @@
     top: 50%;
 }
 
-.link:hover .details {
+.wrapper:hover .details {
     display: inline-block;
     transition: all 1s ease;
     border: 1px solid gray;
@@ -81,7 +81,7 @@
 
 @media (max-width: 780px) {
 
-    .link {
+    .wrapper {
         width: 100%;
         max-height: 250px;
         display: flex;
