@@ -17,12 +17,8 @@ export default function Details() {
         setUrl(pictureUrl);
     };
 
-    function modalViewCloseHandler() {
-        setIsModalView(false);
-    };
-
-    function test(event) {
-        if (event.target.id === "imgModal") {
+    function modalViewCloseHandler(event) {
+        if (event.target.id === "imgModal" || event.target.id === "xModal") {
             setIsModalView(false);
         }
     };
@@ -57,8 +53,8 @@ export default function Details() {
                         dog?.pictures.map((x) => <div className={styles["small-image-container"]}><img src={x.pictureUrl} alt="image" key={x._id} className={styles["small-image"]} onClick={() => modalViewHandler(x.pictureUrl)} /></div>) :
                         <p>There is nothing here yet.</p>
                     }
-                    <div id="imgModal" className={isModalView ? `${styles.modal} ${styles.flex}` : styles.modal} onClick={test}>
-                        <span className={styles.close} onClick={modalViewCloseHandler}>&times;</span>
+                    <div id="imgModal" className={isModalView ? `${styles.modal} ${styles.flex}` : styles.modal} onClick={modalViewCloseHandler}>
+                        <span id="xModal" className={styles.close} onClick={modalViewCloseHandler}>&times;</span>
                         <img className={styles["modal-content"]} id="modalImg" src={url} />
                     </div>
                 </section>
