@@ -12,16 +12,43 @@ export default function Details() {
     const [isModalView, setIsModalView] = useState(false);
     const [url, setUrl] = useState(null);
 
+    const [galleryUrls, setGalleryUrls] = useState([]);
+
+    const [currentIndex, setCurrentIndex] = useState(-1);
+
     function modalViewHandler(pictureUrl) {
         setIsModalView(true);
         setUrl(pictureUrl);
+
+        if (!galleryUrls.length) {
+            const galleryArr = [];
+            dog.pictures.forEach((pic) => galleryArr.push(pic.pictureUrl));
+
+            setGalleryUrls(galleryArr);
+        };
+
+        const index = galleryUrls.indexOf(pictureUrl);
+        setCurrentIndex(index);
     };
+
+    // console.log(`Length = ${galleryUrls.length}`)
+    // console.log(`Index = ${currentIndex}`)
 
     function modalViewCloseHandler(event) {
         if (event.target.id === "imgModal" || event.target.id === "xModal") {
             setIsModalView(false);
         }
     };
+
+    function nexImageHandler() {
+        setUrl(galleryUrls[currentIndex + 1]);
+        setCurrentIndex((currentIndex) => currentIndex + 1);
+    };
+
+    function previousImageHandler() {
+        setUrl(galleryUrls[currentIndex - 1]);
+        setCurrentIndex((currentIndex) => currentIndex - 1);
+    }
 
     return (
         <section className={styles["wrapper"]}>
@@ -56,10 +83,11 @@ export default function Details() {
                     <div id="imgModal" className={isModalView ? `${styles.modal} ${styles.flex}` : styles.modal} onClick={modalViewCloseHandler}>
                         <span id="xModal" className={styles.close} onClick={modalViewCloseHandler}>&times;</span>
                         <img className={styles["modal-content"]} id="modalImg" src={url} />
+                        <span className={currentIndex < galleryUrls.length - 1 ? `${styles.next} ${styles.flex}` : styles.next} onClick={nexImageHandler}>&gt;</span>
+                        <span className={currentIndex > 0 ? `${styles.previous} ${styles.flex}` : styles.previous} onClick={previousImageHandler}>&lt;</span>
                     </div>
                 </section>
             </section>
         </section>
-
     );
 }
