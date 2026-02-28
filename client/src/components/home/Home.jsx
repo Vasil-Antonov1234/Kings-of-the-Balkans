@@ -9,14 +9,23 @@ export default function Home() {
                 <p className={styles["sub-text"]}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et delectus qui omnis iste, incidunt iusto?</p>
             </div>
             <section className={styles["images-container"]}>
-                <Link className={`${styles.wrapper} ${styles.ourDogs}`} to="/dogs">
-                    <span>OUR DOGS</span>
+                <Link className={styles.wrapper} to="/dogs">
+                    <div className={styles.line}></div>
+                    <div className={`${styles["img-container"]} ${styles.ourDogs}`}>
+                        <span>OUR DOGS</span>
+                    </div>
                 </Link>
-                <Link className={`${styles.wrapper} ${styles.story}`} to="/story">
-                    <span>STORY</span>
+                <Link className={styles.wrapper} to="/story">
+                    <div className={styles.line}></div>
+                    <div className={`${styles["img-container"]} ${styles.story}`}>
+                        <span>STORY</span>
+                    </div>
                 </Link>
-                <Link className={`${styles.wrapper} ${styles.contacts}`} to="/contacts">
-                    <span>CONTACTS</span>
+                <Link className={styles.wrapper} to="/contacts">
+                    <div className={styles.line}></div>
+                    <div className={`${styles["img-container"]} ${styles.contacts}`}>
+                        <span>CONTACTS</span>
+                    </div>
                 </Link>
             </section>
         </div>
