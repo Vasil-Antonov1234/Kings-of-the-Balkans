@@ -1,10 +1,10 @@
-// import { Router } from "express";
-// import picturesService from "../services/picturesService.js";
-// import dogsService from "../services/dogsService.js";
+import { Router } from "express";
+import picturesService from "../services/picturesService.js";
+import dogsService from "../services/dogsService.js";
 
-const { Router } = require("express");
-const picturesService = require("../services/picturesService.js");
-const dogsService = require("../services/dogsService.js");
+// const { Router } = require("express");
+// const picturesService = require("../services/picturesService.js");
+// const dogsService = require("../services/dogsService.js");
 
 const picturesController = Router();
 
@@ -34,6 +34,6 @@ picturesController.post("/:dogId/upload-picture", async (req, res) => {
     res.json(result)
 })
 
-// export default picturesController;
+export default picturesController;
 
-module.exports = picturesController;
+// module.exports = picturesController;

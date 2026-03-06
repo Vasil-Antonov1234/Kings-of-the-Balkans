@@ -1,15 +1,16 @@
-// import express from "express";
-// import cors from "cors";
-// import routes from "./routes.js";
-// import mongoose from "mongoose";
-// import "dotenv/config";
+import express from "express";
+import cors from "cors";
+import routes from "./routes.js";
+import mongoose from "mongoose";
+import "dotenv/config";
+import * as functions from "firebase-functions";
 
-const functions = require("firebase-functions");
-const express = require("express");
-const cors = require("cors");
-const routes = require("./routes.js");
-const mongoose = require("mongoose");
-require('dotenv').config();
+// const functions = require("firebase-functions");
+// const express = require("express");
+// const cors = require("cors");
+// const routes = require("./routes.js");
+// const mongoose = require("mongoose");
+// require('dotenv').config();
 
 const app = express();
 
@@ -72,4 +73,6 @@ app.use(routes);
 
 // server.listen(5000, () => console.log("Server is listening on import.meta.env.VITE_APP_SERVER_URL..."))
 
-module.exports = app;
+// module.exports = app;
+
+export default app;

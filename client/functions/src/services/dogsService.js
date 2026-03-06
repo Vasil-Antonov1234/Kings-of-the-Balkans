@@ -1,6 +1,6 @@
-// import Dog from "../models/Dog.js"
+import Dog from "../models/Dog.js"
 
-const Dog = require("../models/Dog.js");
+// const Dog = require("../models/Dog.js");
 
 // export default {
 //     async getAll() {
@@ -44,4 +44,6 @@ const dogsService = {
     }
 }
 
-module.exports = dogsService;
+// module.exports = dogsService;
+
+export default dogsService;

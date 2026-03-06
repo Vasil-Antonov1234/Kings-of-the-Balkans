@@ -1,6 +1,6 @@
-// import Picture from "../models/Picture.js"
+import Picture from "../models/Picture.js"
 
-const Picture = require("../models/Picture.js");
+// const Picture = require("../models/Picture.js");
 
 // export default {
 //     async getAll() {
@@ -22,4 +22,6 @@ const pictureService = {
     }
 }
 
-module.exports = pictureService;
+// module.exports = pictureService;
+
+export default pictureService;

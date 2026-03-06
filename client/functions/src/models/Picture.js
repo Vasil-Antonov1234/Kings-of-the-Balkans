@@ -1,6 +1,6 @@
-// import { Schema, model } from "mongoose"
+import { Schema, model } from "mongoose"
 
-const { Schema, model } = require("mongoose");
+// const { Schema, model } = require("mongoose");
 
 const pictureSchema = new Schema({
     pictureName: {
@@ -18,6 +18,6 @@ const pictureSchema = new Schema({
 
 const Picture = model("Picture", pictureSchema);
 
-// export default Picture;
+// module.exports = Picture;
 
-module.exports = Picture;
+export default Picture;

@@ -1,6 +1,6 @@
-// import { Schema, Types, model } from "mongoose";
+import { Schema, Types, model } from "mongoose";
 
-const { Schema, Types, model } = require("mongoose");
+// const { Schema, Types, model } = require("mongoose");
 
 const dogSchema = new Schema({
     name: {
@@ -38,6 +38,6 @@ const dogSchema = new Schema({
 
 const Dog = model("Dog", dogSchema);
 
-// export default Dog;
+// module.exports = Dog;
 
-module.exports = Dog;
+export default Dog;

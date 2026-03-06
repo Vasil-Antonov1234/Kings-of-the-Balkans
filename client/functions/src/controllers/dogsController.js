@@ -1,8 +1,8 @@
-// import { Router } from "express";
-// import dogsService from "../services/dogsService.js";
+import { Router } from "express";
+import dogsService from "../services/dogsService.js";
 
-const { Router } = require("express");
-const dogsService = require("../services/dogsService.js");
+// const { Router } = require("express");
+// const dogsService = require("../services/dogsService.js");
 
 const dogsController = Router();
 
@@ -51,6 +51,6 @@ dogsController.get("/:dogId/details", async (req, res) => {
 })
 
 
-// export default dogsController;
+export default dogsController;
 
-module.exports = dogsController;
+// module.exports = dogsController;
