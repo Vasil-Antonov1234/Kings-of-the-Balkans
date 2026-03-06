@@ -17,6 +17,7 @@ import { signInAnonymously } from "firebase/auth";
 import { auth } from "../firebase.js";
 import UnderConstruction from "./components/under-construction/UnderConstruction.jsx";
 import Story from "./components/story/Story.jsx";
+import Login from "./components/login/Login.jsx";
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
                 <Route path="/contacts" element={<Contacts />} />
                 <Route path="/story" element={<Story />} />
                 <Route path="/about" element={<UnderConstruction />} />
+                <Route path="/login" element={<Login />} />
             </Routes>
 
             <Footer />
