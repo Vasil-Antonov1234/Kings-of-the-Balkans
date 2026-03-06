@@ -45,7 +45,7 @@ function App() {
                 <Route path="/contacts" element={<Contacts />} />
                 <Route path="/story" element={<Story />} />
                 <Route path="/about" element={<UnderConstruction />} />
-                <Route path="/login" element={<Login />} />
+                <Route path="/admin/login" element={<Login />} />
             </Routes>
 
             <Footer />
