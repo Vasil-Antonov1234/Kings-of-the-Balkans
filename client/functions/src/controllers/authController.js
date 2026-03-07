@@ -3,10 +3,11 @@ import authService from "../services/authService.js";
 
 const authController = Router();
 
-authController.post("/login", (req, res) => {
+authController.post("/login", async (req, res) => {
     const userData = req.body;
 
-    authService.register(userData);
+    // await authService.register(userData);
+    await authService.login(userData);
 })
 
 export default authController;
