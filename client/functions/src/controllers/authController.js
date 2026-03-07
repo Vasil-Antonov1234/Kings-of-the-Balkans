@@ -7,7 +7,9 @@ authController.post("/login", async (req, res) => {
     const userData = req.body;
 
     // await authService.register(userData);
-    await authService.login(userData);
+    const token = await authService.login(userData);
+
+    res.end();
 })
 
 export default authController;
