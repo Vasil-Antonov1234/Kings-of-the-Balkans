@@ -11,10 +11,10 @@ const initialValues = {
 
 export default function Login() {
 
-    const { formHandler, formInputRegister } = useForm(initialValues, onSubmitHandler, "");
+    const { formHandler, formInputRegister } = useForm(initialValues, onLoginHandler, "");
     const { request } = useFetch()
 
-    async function onSubmitHandler(userData) {
+    async function onLoginHandler(userData) {
         const { username, password } = userData;
 
         if (!username || !password) {
@@ -22,7 +22,7 @@ export default function Login() {
         };
 
         try {
-            const result = request("/admin/login", "POST", userData);
+            const result = await request("/admin/login", "POST", userData);
 
 
             console.log(result);
