@@ -16,11 +16,6 @@ export default function Login() {
     const { loginHandler } = useContext(UserContext)
 
     async function onSubmit(userData) {
-        const { username, password } = userData;
-
-        if (!username || !password) {
-            return alert("Username and password are required!");
-        };
 
         loginHandler(userData);
     };

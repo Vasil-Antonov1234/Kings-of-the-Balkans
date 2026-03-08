@@ -29,6 +29,10 @@ export function UserProvider({
         try {
             const result = await request("/admin/login", "POST", userData);
 
+            if(!result) {
+                return
+            }
+
             setUser(result);
 
         } catch (error) {

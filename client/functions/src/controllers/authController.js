@@ -8,11 +8,19 @@ authController.post("/login", async (req, res) => {
 
     // await authService.register(userData);
     // res.end();
-    const token = await authService.login(userData);
-
-    // Attach token to cookie
-    res.cookie("auth", token);
-    res.json({auth: "auth", token});
+    
+    try {
+        
+        const token = await authService.login(userData);
+    
+        // Attach token to cookie
+        // res.cookie("auth", token);
+        res.json({auth: "auth", token});
+    } catch (error) {
+        res.status(400)
+        res.send(JSON.stringify(error.message))
+    }
+    
 })
 
 export default authController;
