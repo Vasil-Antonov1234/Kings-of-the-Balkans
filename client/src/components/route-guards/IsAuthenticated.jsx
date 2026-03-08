@@ -1,13 +1,13 @@
 import { useContext } from "react";
 import UserContext from "../../contexts/UserContext.jsx";
-import { Navigate, Outlet } from "react-router";
+import { Navigate } from "react-router";
 
 export default function IsAuthenticated() {
-    const { isAuthentcated } = useContext(UserContext);
+    const { isAuthentcated } = useContext(UserContext)
 
-    if (!isAuthentcated) {
-        return <Navigate to="admin/login" />
+    if (isAuthentcated) {
+        return <Navigate to="/" />
     }
-    
-    return <Outlet />
-}
+
+    return <Outlet />;
+};
