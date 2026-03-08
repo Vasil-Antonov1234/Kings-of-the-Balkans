@@ -1,6 +1,7 @@
 import styles from "./Login.module.css";
-import useFetch from "../../hooks/useFetch.js";
 import useForm from "../../hooks/useForm.js";
+import { useContext } from "react";
+import UserContext from "../../contexts/UserContext.jsx";
 // import { useParams, useNavigate } from "react-router";
 
 const initialValues = {
@@ -11,25 +12,18 @@ const initialValues = {
 
 export default function Login() {
 
-    const { formHandler, formInputRegister } = useForm(initialValues, onLoginHandler, "");
-    const { request } = useFetch()
+    const { formHandler, formInputRegister } = useForm(initialValues, onSubmit, "");
+    const { loginHandler } = useContext(UserContext)
 
-    async function onLoginHandler(userData) {
+    async function onSubmit(userData) {
         const { username, password } = userData;
 
         if (!username || !password) {
             return alert("Username and password are required!");
         };
 
-        try {
-            const result = await request("/admin/login", "POST", userData);
-
-
-            console.log(result);
-        } catch (error) {
-            alert(error.message);
-        }
-    }
+        loginHandler(userData);
+    };
 
 
 

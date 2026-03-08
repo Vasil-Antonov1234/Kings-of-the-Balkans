@@ -1,19 +1,23 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import useFetch from "../../hooks/useFetch.js";
 import styles from "./UploadPicture.module.css";
 import { useNavigate } from "react-router";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { storage } from "../../../firebase.js";
+import UserContext from "../../contexts/UserContext.jsx";
 
 export default function UploadPicture() {
 
     const navigate = useNavigate();
-
     const { request } = useFetch()
-
     const [imagePreview, setImagePreview] = useState(null);
 
+    const { user } = useContext(UserContext);
+
     async function uploadPictureHandler(event) {
+       
+        const accessToken = user.accessToken;
+
         event.preventDefault();
         const formData = new FormData(event.target);
 
@@ -33,7 +37,7 @@ export default function UploadPicture() {
             await uploadBytes(imageRef, pictureUrl);
             data.pictureUrl = await getDownloadURL(imageRef);
 
-            await request(`/pictures/upload`, "POST", data);
+            await request(`/pictures/upload`, "POST", data, { accessToken });
 
             navigate("/pictures/uploaded-success");
         } catch (error) {

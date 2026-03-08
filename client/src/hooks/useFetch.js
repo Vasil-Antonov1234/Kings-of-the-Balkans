@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import UserContext from "../contexts/UserContext.jsx";
 
 // const BASE_URL = import.meta.env.VITE_APP_SERVER_URL;
 // const BASE_URL = "http://localhost:5001/kings-of-the-balkans-storage/us-central1/api";
@@ -8,6 +9,8 @@ export default function useFetch(url, initialState) {
 
     const [data, setData] = useState(initialState);
     const [isPending, setIsPending] = useState(true);
+
+    const { isAuthentcated } = useContext(UserContext);
 
     useEffect(() => {
 
@@ -53,13 +56,20 @@ export default function useFetch(url, initialState) {
 
     }, [url]);
 
-    async function request(url, method = "GET", body) {
+    async function request(url, method = "GET", body, config = {}) {
         const options = { method: method };
 
         if (body) {
             options.headers = { "content-type": "application/json" };
             options.body = JSON.stringify(body);
         };
+
+        if (config.accessToken && isAuthentcated) {
+            options.headers = {
+                ...options.headers,
+                "X-Authorization": config.accessToken
+            }
+        }
 
         try {
             const response = await fetch(`${BASE_URL}${url}`, options);

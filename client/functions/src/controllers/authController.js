@@ -7,6 +7,7 @@ authController.post("/login", async (req, res) => {
     const userData = req.body;
 
     // await authService.register(userData);
+    // res.end();
     const token = await authService.login(userData);
 
     // Attach token to cookie

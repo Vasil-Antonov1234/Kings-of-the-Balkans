@@ -18,6 +18,7 @@ import { auth } from "../firebase.js";
 import UnderConstruction from "./components/under-construction/UnderConstruction.jsx";
 import Story from "./components/story/Story.jsx";
 import Login from "./components/login/Login.jsx";
+import IsAuthenticated from "./components/route-guards/IsAuthenticated.jsx";
 
 
 function App() {
@@ -39,9 +40,13 @@ function App() {
                 <Route path="/dogs/females" element={<DogDetails dogs={"females"} />} />
                 <Route path="/dogs/puppies" element={<DogDetails dogs={"puppies"} />} />
                 <Route path="/dogs/:dogId/details" element={<Details />} />
-                <Route path="/pictures/upload-picture" element={<UploadPicture />} />
-                <Route path="/pictures/:dogId/attach-picture" element={<AttachPicture />} />
-                <Route path="/pictures/uploaded-success" element={<Success />} />
+
+                <Route element={<IsAuthenticated />}>
+                    <Route path="/pictures/upload-picture" element={<UploadPicture />} />
+                    <Route path="/pictures/:dogId/attach-picture" element={<AttachPicture />} />
+                    <Route path="/pictures/uploaded-success" element={<Success />} />
+                </Route>
+
                 <Route path="/contacts" element={<Contacts />} />
                 <Route path="/story" element={<Story />} />
                 <Route path="/about" element={<UnderConstruction />} />

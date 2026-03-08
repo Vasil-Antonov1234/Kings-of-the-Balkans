@@ -8,8 +8,8 @@ const UserContext = createContext({
         password: "",
         accessToken: ""
     },
-    loginHandler() {},
-    logoutHandler() {},
+    loginHandler() { },
+    logoutHandler() { },
     isAuthentcated: false
 })
 
@@ -31,7 +31,6 @@ export function UserProvider({
 
             setUser(result);
 
-            console.log(result);
         } catch (error) {
             alert(error.message);
         }
