@@ -85,8 +85,8 @@ export default function useFetch(url, initialState) {
             setIsPending(false);
 
             return result;
-        } catch (error) {
-            alert(error.message);
+        } catch (error) {            
+            alert(error);
         };
 
     }

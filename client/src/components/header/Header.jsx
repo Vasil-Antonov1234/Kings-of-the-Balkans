@@ -1,9 +1,12 @@
 import { Link, NavLink } from "react-router";
 import styles from "./Header.module.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import UserContext from "../../contexts/UserContext.jsx";
 
 export default function Header() {
     const [smallMenuOpen, setSmalMenuOpen] = useState(false);
+
+    const { isAuthentcated } = useContext(UserContext);
 
     function openMenuHandler() {
         setSmalMenuOpen(!smallMenuOpen);
@@ -39,9 +42,16 @@ export default function Header() {
                             <li>
                                 <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/about" onClick={closeMenuHandler}>About</NavLink>
                             </li>
-                            {/* <li>
-                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/pictures/upload-picture">Upload picture</NavLink>
-                            </li> */}
+                            {isAuthentcated ?
+                                <li>
+                                    <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/pictures/upload-picture">Upload picture</NavLink>
+                                </li> : ""
+                            }
+                            {isAuthentcated ?
+                                <li>
+                                    <Link className={styles.link} to="/logout">Logout</Link>
+                                </li> : ""
+                            }
                         </ul>
                     </div>
                 </nav>

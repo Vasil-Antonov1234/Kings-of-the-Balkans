@@ -48,6 +48,7 @@ export function UserProvider({
             alert(error.message);
         } finally {
             setUser(null);
+            localStorage.removeItem("auth");
         };
     }
 
