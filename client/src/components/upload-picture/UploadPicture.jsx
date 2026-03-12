@@ -12,16 +12,17 @@ export default function UploadPicture() {
     const { request } = useFetch()
     const [imagePreview, setImagePreview] = useState(null);
 
-    const { user } = useContext(UserContext);
+    const { user, logoutHandler } = useContext(UserContext);
 
     async function uploadPictureHandler(event) {
        
-        const accessToken = user.accessToken;
+        const accessToken = user.token;
 
         event.preventDefault();
         const formData = new FormData(event.target);
 
         const { pictureUrl, ...data } = Object.fromEntries(formData);
+        // const { ...data } = Object.fromEntries(formData);
 
         if (!data.pictureName) {
             return alert("Picture name is required!")
@@ -41,6 +42,7 @@ export default function UploadPicture() {
 
             navigate("/pictures/uploaded-success");
         } catch (error) {
+            logoutHandler();
             alert(error.message);
         };
     }

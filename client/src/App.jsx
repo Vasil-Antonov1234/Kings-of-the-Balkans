@@ -12,9 +12,9 @@ import Success from "./components/upload-picture/Success.jsx";
 import AttachPicture from "./components/upload-picture/AttachPicture.jsx";
 import Contacts from "./components/contacts/Contacts.jsx";
 
-import { useEffect } from "react";
-import { signInAnonymously } from "firebase/auth";
-import { auth } from "../firebase.js";
+// import { useEffect } from "react";
+// import { signInAnonymously } from "firebase/auth";
+// import { auth } from "../firebase.js";
 import UnderConstruction from "./components/under-construction/UnderConstruction.jsx";
 import Story from "./components/story/Story.jsx";
 import Login from "./components/login/Login.jsx";
@@ -26,9 +26,9 @@ import Logout from "./components/logout/Logout.jsx";
 function App() {
     console.log(import.meta.env.VITE_APP_SERVER_URL)
 
-    useEffect(() => {
-        signInAnonymously(auth).catch(error => console.error("Sign-in failed", error));
-    }, []);
+    // useEffect(() => {
+    //     signInAnonymously(auth).catch(error => console.error("Sign-in failed", error));
+    // }, []);
 
     return (
         <div className={styles["app"]}>

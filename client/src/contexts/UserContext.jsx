@@ -6,7 +6,7 @@ const UserContext = createContext({
     user: {
         username: "",
         password: "",
-        accessToken: ""
+        token: ""
     },
     loginHandler() { },
     logoutHandler() { },
@@ -29,7 +29,7 @@ export function UserProvider({
         try {
             const result = await request("/admin/login", "POST", userData);
 
-            if(!result) {
+            if (!result) {
                 return
             }
 
@@ -42,14 +42,17 @@ export function UserProvider({
 
     async function logoutHandler() {
 
-        try {
-            await request("/admin/logout", "GET", { accessToken: user?.accessToken });
-        } catch (error) {
-            alert(error.message);
-        } finally {
-            setUser(null);
-            localStorage.removeItem("auth");
-        };
+        // try {
+        //     await request("/admin/logout", "GET", { accessToken: user?.accessToken });
+        // } catch (error) {
+        //     alert(error.message);
+        // } finally {
+        //     setUser(null);
+        //     localStorage.removeItem("auth");
+        // };
+
+        setUser(null);
+        localStorage.removeItem("auth");
     }
 
     const userContextValues = {

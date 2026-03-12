@@ -58,7 +58,7 @@ export default function useFetch(url, initialState) {
 
     async function request(url, method = "GET", body, config = {}) {
         const options = { method: method };
-
+        
         if (body) {
             options.headers = { "content-type": "application/json" };
             options.body = JSON.stringify(body);
