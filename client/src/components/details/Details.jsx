@@ -1,13 +1,15 @@
 import { useParams, Link } from "react-router";
 import styles from "./Details.module.css"
 import useFetch from "../../hooks/useFetch.js";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import UserContext from "../../contexts/UserContext.jsx";
 
 export default function Details() {
 
     const { dogId } = useParams();
 
     const { data: dog } = useFetch(`/dogs/${dogId}/details`);
+    const { isAuthentcated } = useContext(UserContext);
 
     const [isModalView, setIsModalView] = useState(false);
     const [url, setUrl] = useState(null);
@@ -68,9 +70,11 @@ export default function Details() {
                     <h3><span className={styles["born"]}>Lorem: </span> Consectetur adipisicing elit</h3>
                     <h3><span className={styles["born"]}>Lorem: </span> Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
                     <hr className={styles["line"]} />
-                    {/* <div className={styles["button-container"]}>
-                        <Link to={`/pictures/${dogId}/attach-picture`} className={styles["attach"]}>Attach picture</Link>
-                    </div> */}
+                    {isAuthentcated ?
+                        <div className={styles["submit-btn-ctr"]}>
+                            <Link to={`/pictures/${dogId}/attach-picture`} className={styles["attach"]}>Attach picture</Link>
+                        </div> : ""
+                    }
                 </div>
             </section>
             <section className={styles["gallery"]}>

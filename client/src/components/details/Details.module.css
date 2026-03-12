@@ -246,17 +246,18 @@ h3 {
     padding: 30px;
 }
 
-.button-container {
+.submit-btn-ctr {
     background-color: brown;
     padding: 1em 2em;
     width: fit-content;
     min-width: 100px;
     border-radius: 5px;
     text-align: center;
+    margin: 0 auto;
     transition: 1s all ease;
 }
 
-.button-container:hover {
+.submit-btn-ctr:hover {
     padding: 1em 4em;
     background-color: rgb(165, 112, 42);
 }
