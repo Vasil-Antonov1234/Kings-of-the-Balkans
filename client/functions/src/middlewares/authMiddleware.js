@@ -10,6 +10,11 @@ export default function authMiddleware(req, res, next) {
 
     try {
         const decodedToken = jwt.verify(accessToken, JWT_SECRET);
+
+        // Attach authenticated user to request
+        req.user = decodedToken;
+        req.isAuthenticated = true;
+
         next();
     } catch (error) {
         res.status(401).json(error.message);
