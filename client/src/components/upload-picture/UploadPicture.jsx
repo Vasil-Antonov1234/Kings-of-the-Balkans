@@ -22,7 +22,6 @@ export default function UploadPicture() {
         const formData = new FormData(event.target);
 
         const { pictureUrl, ...data } = Object.fromEntries(formData);
-        // const { ...data } = Object.fromEntries(formData);
 
         if (!data.pictureName) {
             return alert("Picture name is required!")

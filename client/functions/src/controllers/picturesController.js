@@ -1,8 +1,7 @@
 import { Router } from "express";
 import picturesService from "../services/picturesService.js";
 import dogsService from "../services/dogsService.js";
-import jwt from "jsonwebtoken";
-import { JWT_SECRET } from "../config/constants.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 // const { Router } = require("express");
 // const picturesService = require("../services/picturesService.js");
@@ -15,14 +14,10 @@ picturesController.get("/", async (req, res) => {
     res.json(pictures || []);
 });
 
-picturesController.post("/upload", async (req, res) => {
+picturesController.post("/upload", authMiddleware, async (req, res) => {
     const data = req.body;
 
-    const accessToken = req.get("X-Authorization");
-
     try {
-        const decodedToken = jwt.verify(accessToken, JWT_SECRET);
-
         const result = await picturesService.create(data);
 
         res.json(result);
@@ -31,7 +26,7 @@ picturesController.post("/upload", async (req, res) => {
     };
 })
 
-picturesController.post("/:dogId/upload-picture", async (req, res) => {
+picturesController.post("/:dogId/upload-picture", authMiddleware, async (req, res) => {
     const dogId = req.params.dogId;
     const pictureId = req.body.picture;
 
