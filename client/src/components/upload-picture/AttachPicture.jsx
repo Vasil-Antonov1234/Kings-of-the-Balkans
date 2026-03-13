@@ -1,7 +1,9 @@
+import { useContext } from "react";
 import useFetch from "../../hooks/useFetch.js";
 import useForm from "../../hooks/useForm.js";
 import styles from "./UploadPicture.module.css"
 import { useParams, useNavigate } from "react-router"
+import UserContext from "../../contexts/UserContext.jsx";
 
 const initialValues = {
     picture: ""
@@ -10,6 +12,9 @@ const initialValues = {
 export default function AttachPicture() {
 
     const { dogId } = useParams();
+
+    const { user } = useContext(UserContext);
+    const accessToken = user.token;
 
     const { formHandler, formInputRegister } = useForm(initialValues, managePictureInputHandler);
 
@@ -25,7 +30,7 @@ export default function AttachPicture() {
         }
 
         try {
-            await request(`/pictures/${dogId}/upload-picture`, "POST", values);
+            await request(`/pictures/${dogId}/upload-picture`, "POST", values, { accessToken });
 
             navigate(`/dogs/${dogId}/details`);
         } catch (error) {

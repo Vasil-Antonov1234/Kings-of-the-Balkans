@@ -5,8 +5,8 @@ export default function authMiddleware(req, res, next) {
     const accessToken = req.get("X-Authorization");
 
     if (!accessToken) {
-        throw new Error("Unauthorized!")
-    }
+        throw new Error("Unauthorized!");
+    };
 
     try {
         const decodedToken = jwt.verify(accessToken, JWT_SECRET);
