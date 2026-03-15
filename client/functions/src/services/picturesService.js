@@ -16,13 +16,23 @@ const pictureService = {
     async getAll() {
         return (await Picture.find()).filter((pic) => pic.isAttached === false);
     },
+
     create(data) {
         data.isAttached = false;
         
         return Picture.create(data);
     },
-    async changeIsAttached(pictureId) {
+
+    async changeIsAttachedTrue(pictureId) {
         return await Picture.findByIdAndUpdate(pictureId, { isAttached: true });
+    },
+
+    async changeIsAttachedFalse(pictureUrl) {
+        const picture =  await Picture.findOne({pictureUrl: pictureUrl});
+        picture.isAttached = false;
+        picture.save();
+
+        return picture;
     }
 }
 

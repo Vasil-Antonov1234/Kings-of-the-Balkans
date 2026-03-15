@@ -8,7 +8,7 @@ export default function Details() {
 
     const { dogId } = useParams();
 
-    const { data: dog } = useFetch(`/dogs/${dogId}/details`);
+    const { data: dog, request } = useFetch(`/dogs/${dogId}/details`);
     const { isAuthentcated } = useContext(UserContext);
 
     const [isModalView, setIsModalView] = useState(false);
@@ -52,6 +52,13 @@ export default function Details() {
         setCurrentIndex((currentIndex) => currentIndex - 1);
     }
 
+    async function removePictureHandler(event) {
+        const container = event.target.parentElement;
+        const pictureUrl = container.children[0].src;
+
+        const result = request("/dogs/remove-attached-picture", "POST", { dogId, pictureUrl })
+    }
+
     return (
         <section className={styles["wrapper"]}>
             <section className={styles["container"]}>
@@ -81,7 +88,7 @@ export default function Details() {
                 <h2 className={styles["title2"]}>gallery</h2>
                 <section className={styles["gallery-container"]}>
                     {dog?.pictures.length ?
-                        dog?.pictures.map((x) => <div className={styles["small-image-container"]}><img src={x.pictureUrl} alt="image" key={x._id} className={styles["small-image"]} onClick={() => modalViewHandler(x.pictureUrl)} /><span className={styles.remove}>&times;</span></div>) :
+                        dog?.pictures.map((x) => <div className={styles["small-image-container"]}><img src={x.pictureUrl} alt="image" key={x._id} className={styles["small-image"]} onClick={() => modalViewHandler(x.pictureUrl)} /><span className={styles.remove} onClick={removePictureHandler}>&times;</span></div>) :
                         <p>There is nothing here yet.</p>
                     }
                     <div id="imgModal" className={isModalView ? `${styles.modal} ${styles.flex}` : styles.modal} onClick={modalViewCloseHandler}>

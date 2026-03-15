@@ -47,7 +47,15 @@ dogsController.get("/:dogId/details", async (req, res) => {
     } catch (error) {
         res.status(400);
         res.json(error.message);
-    }
+    };
+});
+
+dogsController.post("/remove-attached-picture", async (req, res) => {
+    const { dogId, pictureUrl } = req.body;
+
+    const dog = await dogsService.remove(dogId, pictureUrl);
+
+    res.json(dog);
 })
 
 
