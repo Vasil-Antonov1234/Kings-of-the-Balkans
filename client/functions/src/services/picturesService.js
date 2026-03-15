@@ -16,11 +16,13 @@ const pictureService = {
     async getAll() {
         return (await Picture.find()).filter((pic) => pic.isAttached === false);
     },
-
     create(data) {
         data.isAttached = false;
         
         return Picture.create(data);
+    },
+    async changeIsAttached(pictureId) {
+        return await Picture.findByIdAndUpdate(pictureId, { isAttached: true });
     }
 }
 

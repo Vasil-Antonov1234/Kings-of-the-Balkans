@@ -1,4 +1,5 @@
 import Dog from "../models/Dog.js"
+import pictureService from "./picturesService.js";
 
 // const Dog = require("../models/Dog.js");
 
@@ -39,6 +40,7 @@ const dogsService = {
     async attach(dogId, pictureId) {
         const dog = await Dog.findById(dogId);
         dog.pictures.push(pictureId);
+        await pictureService.changeIsAttached(pictureId);
 
         return dog.save();
     }

@@ -30,9 +30,13 @@ picturesController.post("/:dogId/upload-picture", authMiddleware, async (req, re
     const dogId = req.params.dogId;
     const pictureId = req.body.picture;
 
-    const result = await dogsService.attach(dogId, pictureId);
-
-    res.json(result)
+    try {
+        const result = await dogsService.attach(dogId, pictureId);
+        
+        res.json(result)
+    } catch (error) {
+        res.status(400).json(error.message);
+    };
 })
 
 export default picturesController;
