@@ -56,7 +56,7 @@ export default function Details() {
         const container = event.target.parentElement;
         const pictureUrl = container.children[0].src;
 
-        const result = request("/dogs/remove-attached-picture", "POST", { dogId, pictureUrl })
+        await request("/dogs/remove-attached-picture", "POST", { dogId, pictureUrl });
     }
 
     return (
@@ -88,7 +88,7 @@ export default function Details() {
                 <h2 className={styles["title2"]}>gallery</h2>
                 <section className={styles["gallery-container"]}>
                     {dog?.pictures.length ?
-                        dog?.pictures.map((x) => <div className={styles["small-image-container"]}><img src={x.pictureUrl} alt="image" key={x._id} className={styles["small-image"]} onClick={() => modalViewHandler(x.pictureUrl)} /><span className={styles.remove} onClick={removePictureHandler}>&times;</span></div>) :
+                        dog?.pictures.map((x) => <div className={styles["small-image-container"]}><img src={x.pictureUrl} alt="image" key={x._id} className={styles["small-image"]} onClick={() => modalViewHandler(x.pictureUrl)} />{isAuthentcated ? <span className={styles.remove} onClick={removePictureHandler}>&times;</span> : ""}</div>) :
                         <p>There is nothing here yet.</p>
                     }
                     <div id="imgModal" className={isModalView ? `${styles.modal} ${styles.flex}` : styles.modal} onClick={modalViewCloseHandler}>

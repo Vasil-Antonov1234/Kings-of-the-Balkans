@@ -30,7 +30,7 @@ const pictureService = {
     async changeIsAttachedFalse(pictureUrl) {
         const picture =  await Picture.findOne({pictureUrl: pictureUrl});
         picture.isAttached = false;
-        picture.save();
+        await picture.save();
 
         return picture;
     }

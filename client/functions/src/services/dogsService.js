@@ -52,7 +52,7 @@ const dogsService = {
         const index = dog.pictures.indexOf(pictureId);
         dog.pictures.splice(index, 1);
 
-        dog.save();
+        await dog.save();
 
         return dog;
     }
