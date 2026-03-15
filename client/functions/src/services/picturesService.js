@@ -14,7 +14,7 @@ import Picture from "../models/Picture.js"
 
 const pictureService = {
     async getAll() {
-        return await Picture.find();
+        return (await Picture.find()).filter((pic) => pic.isAttached === false);
     },
 
     create(data) {
