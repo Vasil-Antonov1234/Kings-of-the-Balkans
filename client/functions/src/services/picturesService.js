@@ -18,6 +18,8 @@ const pictureService = {
     },
 
     create(data) {
+        data.isAttached = false;
+        
         return Picture.create(data);
     }
 }

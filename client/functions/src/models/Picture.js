@@ -12,8 +12,10 @@ const pictureSchema = new Schema({
         type: String,
         required: [true, "Picture url is required!"],
         match: [/^https?:\/\/.+/, "Invalid url!"]
+    },
+    isAttached: {
+        type: Boolean
     }
-
 });
 
 const Picture = model("Picture", pictureSchema);
