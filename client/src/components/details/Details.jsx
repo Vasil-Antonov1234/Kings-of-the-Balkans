@@ -3,6 +3,7 @@ import styles from "./Details.module.css"
 import useFetch from "../../hooks/useFetch.js";
 import { useContext, useState } from "react";
 import UserContext from "../../contexts/UserContext.jsx";
+import PictureCard from "../picture/PictureCard.jsx";
 
 export default function Details() {
 
@@ -88,7 +89,7 @@ export default function Details() {
                 <h2 className={styles["title2"]}>gallery</h2>
                 <section className={styles["gallery-container"]}>
                     {dog?.pictures.length ?
-                        dog?.pictures.map((x) => <div className={styles["small-image-container"]}><img src={x.pictureUrl} alt="image" key={x._id} className={styles["small-image"]} onClick={() => modalViewHandler(x.pictureUrl)} />{isAuthentcated ? <span className={styles.remove} onClick={removePictureHandler}>&times;</span> : ""}</div>) :
+                        dog?.pictures.map((pic) => <PictureCard key={pic._id} pic={pic} onModal={modalViewHandler} onRemovePicture={removePictureHandler} />) :
                         <p>There is nothing here yet.</p>
                     }
                     <div id="imgModal" className={isModalView ? `${styles.modal} ${styles.flex}` : styles.modal} onClick={modalViewCloseHandler}>
