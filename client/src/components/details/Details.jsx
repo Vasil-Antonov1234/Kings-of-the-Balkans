@@ -53,11 +53,13 @@ export default function Details() {
         setCurrentIndex((currentIndex) => currentIndex - 1);
     }
 
-    async function removePictureHandler(event) {
-        const container = event.target.parentElement;
-        const pictureUrl = container.children[0].src;
+    async function removePictureHandler(pictureId) {
+        // const container = event.target.parentElement;
+        // const pictureUrl = container.children[0].src;
 
-        await request("/dogs/remove-attached-picture", "POST", { dogId, pictureUrl });
+        // await request("/dogs/remove-attached-picture", "POST", { dogId, pictureUrl });
+
+        await request("/dogs/remove-attached-picture", "POST", { dogId, pictureId })
     }
 
     return (

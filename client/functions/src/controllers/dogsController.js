@@ -51,9 +51,9 @@ dogsController.get("/:dogId/details", async (req, res) => {
 });
 
 dogsController.post("/remove-attached-picture", async (req, res) => {
-    const { dogId, pictureUrl } = req.body;
+    const { dogId, pictureId } = req.body;
 
-    const dog = await dogsService.remove(dogId, pictureUrl);
+    const dog = await dogsService.remove(dogId, pictureId);
 
     res.json(dog);
 })

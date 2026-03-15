@@ -27,11 +27,9 @@ const pictureService = {
         return await Picture.findByIdAndUpdate(pictureId, { isAttached: true });
     },
 
-    async changeIsAttachedFalse(pictureUrl) {
-        const picture =  await Picture.findOne({pictureUrl: pictureUrl});
-        picture.isAttached = false;
-        await picture.save();
-
+    async changeIsAttachedFalse(pictureId) {
+        const picture =  await Picture.findByIdAndUpdate(pictureId, { isAttached: false })
+        
         return picture;
     }
 }

@@ -45,10 +45,9 @@ const dogsService = {
         return dog.save();
     },
 
-    async remove(dogId, pictureUrl) {
+    async remove(dogId, pictureId) {
         const dog = await Dog.findById(dogId);
-        const picture = await pictureService.changeIsAttachedFalse(pictureUrl);
-        const pictureId = picture._id;
+        await pictureService.changeIsAttachedFalse(pictureId);
         const index = dog.pictures.indexOf(pictureId);
         dog.pictures.splice(index, 1);
 
