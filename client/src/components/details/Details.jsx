@@ -1,13 +1,36 @@
 import { useParams, Link } from "react-router";
 import styles from "./Details.module.css"
 import useFetch from "../../hooks/useFetch.js";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useReducer, useState } from "react";
 import UserContext from "../../contexts/UserContext.jsx";
 import PictureCard from "../picture/PictureCard.jsx";
+import picturesReducer from "../../reducers/pictureReducer.js";
 
 export default function Details() {
-
     const { dogId } = useParams();
+
+    const [pictures, dispatch] = useReducer(picturesReducer, []);
+
+    useEffect(() => {
+
+        (async () => {
+
+            try {
+                const response = await fetch(`http://localhost:5001/kings-of-the-balkans-storage/us-central1/api/dogs/${dogId}/details`);
+
+                const result = await response.json();
+
+                dispatch({
+                    type: "GET_ALL",
+                    payload: result
+                })
+            } catch (error) {
+                alert(error)
+            }
+
+        })()
+
+    }, [dogId])
 
     const { data: dog, request } = useFetch(`/dogs/${dogId}/details`);
     const { isAuthentcated } = useContext(UserContext);
@@ -59,7 +82,19 @@ export default function Details() {
 
         // await request("/dogs/remove-attached-picture", "POST", { dogId, pictureUrl });
 
-        await request("/dogs/remove-attached-picture", "POST", { dogId, pictureId })
+        try {
+
+            await request("/dogs/remove-attached-picture", "POST", { dogId, pictureId })
+
+            dispatch({
+                type: "REMOVE",
+                payload: pictureId
+            })
+
+        } catch (error) {
+            alert(error)
+        }
+
     }
 
     return (
@@ -90,8 +125,8 @@ export default function Details() {
             <section className={styles["gallery"]}>
                 <h2 className={styles["title2"]}>gallery</h2>
                 <section className={styles["gallery-container"]}>
-                    {dog?.pictures.length ?
-                        dog?.pictures.map((pic) => <PictureCard key={pic._id} pic={pic} onModal={modalViewHandler} onRemovePicture={removePictureHandler} />) :
+                    {pictures.length ?
+                        pictures.map((pic) => <PictureCard key={pic._id} pic={pic} onModal={modalViewHandler} onRemovePicture={removePictureHandler} />) :
                         <p>There is nothing here yet.</p>
                     }
                     <div id="imgModal" className={isModalView ? `${styles.modal} ${styles.flex}` : styles.modal} onClick={modalViewCloseHandler}>

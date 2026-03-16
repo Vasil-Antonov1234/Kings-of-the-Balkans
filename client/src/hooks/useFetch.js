@@ -86,7 +86,8 @@ export default function useFetch(url, initialState) {
 
             return result;
         } catch (error) {            
-            alert(error);
+            alert(error)
+            throw error;
         };
 
     }

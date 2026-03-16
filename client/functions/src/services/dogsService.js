@@ -34,7 +34,7 @@ const dogsService = {
     },
     
     async getById(dogId) {
-        return Dog.findById(dogId).populate("pictures");
+        return await Dog.findById(dogId).populate("pictures");
     },
 
     async attach(dogId, pictureId) {
