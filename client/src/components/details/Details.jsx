@@ -16,7 +16,7 @@ export default function Details() {
         (async () => {
 
             try {
-                const response = await fetch(`http://localhost:5001/kings-of-the-balkans-storage/us-central1/api/dogs/${dogId}/details`);
+                const response = await fetch(`https://api-klv2ldtjma-uc.a.run.app/dogs/${dogId}/details`);
 
                 const result = await response.json();
 
