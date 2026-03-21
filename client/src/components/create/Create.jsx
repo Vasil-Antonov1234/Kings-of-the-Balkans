@@ -2,6 +2,8 @@ import { useContext } from "react";
 import styles from "./Create.module.css"
 import UserContext from "../../contexts/UserContext.jsx";
 import useForm from "../../hooks/useForm.js";
+import useFetch from "../../hooks/useFetch.js";
+import { useNavigate } from "react-router";
 
 const initialValues = {
     name: "",
@@ -17,13 +19,49 @@ export default function Create() {
     const { isAuthentcated } = useContext(UserContext);
     const { formHandler, formInputRegister } = useForm(initialValues, manageDogDataHandler)
 
+    const { request } = useFetch()
+    const navigate = useNavigate();
+
     async function manageDogDataHandler(values) {
-        console.log(values)
+
+        if(!isAuthentcated) {
+            navigate("/admin/login");
+        };
+        
+        if(!values.name) {
+            return alert("Name is required!")
+        }
+
+        if(!values.fullName) {
+            return alert("Full name is required!")
+        }
+
+        if(!values.dateOfBirth) {
+            return alert("Date of birth is required!")
+        }
+
+        if(!values.parents) {
+            return alert("Parents is required!")
+        }
+
+        if(!values.imageUrl) {
+            return alert("Image Url is required!")
+        }
+
+        if(!values.gender) {
+            return alert("Gender is required!")
+        }
+    
+        try {
+            await request("/dogs/create", "POST", values)
+        } catch (error) {
+            alert(error);
+        };
     }
 
     return (
         <section className={styles["main-ctr"]}>
-            <h1>Create new record</h1>
+            <h1 className={styles.title}>Create new record</h1>
             <form action={formHandler}>
                 {/* Name */}
                 <div>

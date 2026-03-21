@@ -28,12 +28,12 @@ dogsController.get("/females", async (req, res) => {
 dogsController.get("/puppies", async (req, res) => {
 
     try {
-    const dogs = await dogsService.getByField("Puppy");
+        const dogs = await dogsService.getByField("Puppy");
 
-    res.json(dogs || []);
+        res.json(dogs || []);
     } catch (error) {
         res.status(400)
-        res.json(error.message);        
+        res.json(error.message);
     };
 });
 
@@ -53,9 +53,27 @@ dogsController.get("/:dogId/details", async (req, res) => {
 dogsController.post("/remove-attached-picture", async (req, res) => {
     const { dogId, pictureId } = req.body;
 
-    const dog = await dogsService.remove(dogId, pictureId);
+    try {
+        const dog = await dogsService.remove(dogId, pictureId);
 
-    res.json(dog);
+        res.json(dog);
+    } catch (error) {
+        res.status(400).json(error.message);
+    }
+
+})
+
+dogsController.post("/create", async (req, res) => {
+
+    const newDogData = req.body;
+
+    try {
+        const newDog = await dogsService.create(newDogData);
+
+        res.json(newDog);
+    } catch (error) {
+        res.status(400).json(error.message);
+    };
 })
 
 

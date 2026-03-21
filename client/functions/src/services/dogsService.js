@@ -54,6 +54,12 @@ const dogsService = {
         await dog.save();
 
         return dog;
+    },
+
+    async create(newDogData) {
+        const dog = await Dog.create(newDogData);
+
+        return dog;
     }
 }
 
