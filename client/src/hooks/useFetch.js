@@ -2,8 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import UserContext from "../contexts/UserContext.jsx";
 
 // const BASE_URL = import.meta.env.VITE_APP_SERVER_URL;
-// const BASE_URL = "http://localhost:5001/kings-of-the-balkans-storage/us-central1/api";
-const BASE_URL = "https://api-klv2ldtjma-uc.a.run.app";
+const BASE_URL = "http://localhost:5001/kings-of-the-balkans-storage/us-central1/api";
+// const BASE_URL = "https://api-klv2ldtjma-uc.a.run.app";
 
 export default function useFetch(url, initialState) {
 

@@ -101,6 +101,10 @@
     margin-top: 10em;
 }
 
+p {
+    color: black;
+}
+
 @media (max-width: 1024px) {
     .top {
         margin-top: 30em;

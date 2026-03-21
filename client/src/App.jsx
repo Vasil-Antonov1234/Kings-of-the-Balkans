@@ -22,6 +22,7 @@ import IsGuest from "./components/route-guards/IsGuest.jsx";
 import IsAuthenticated from "./components/route-guards/IsAuthenticated.jsx";
 import Logout from "./components/logout/Logout.jsx";
 import Create from "./components/create/Create.jsx";
+import About from "./components/about/About.jsx";
 
 
 function App() {
@@ -54,7 +55,7 @@ function App() {
 
                 <Route path="/contacts" element={<Contacts />} />
                 <Route path="/story" element={<Story />} />
-                <Route path="/about" element={<UnderConstruction />} />
+                <Route path="/about" element={<About />} />
 
                 <Route element={<IsAuthenticated />} >
                     <Route path="/admin/login" element={<Login />} />
