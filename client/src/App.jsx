@@ -49,7 +49,7 @@ function App() {
                     <Route path="/pictures/:dogId/attach-picture" element={<AttachPicture />} />
                     <Route path="/pictures/uploaded-success" element={<Success />} />
                     <Route path="/logout" element={<Logout />} />
-                    <Route path="/dogs/create" element={<Create />} />
+                    <Route path="/create" element={<Create />} />
                 </Route>
 
                 <Route path="/contacts" element={<Contacts />} />
