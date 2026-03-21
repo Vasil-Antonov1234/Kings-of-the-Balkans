@@ -49,6 +49,11 @@ export default function Header() {
                             }
                             {isAuthentcated ?
                                 <li>
+                                    <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/dogs/create">Create</NavLink>
+                                </li> : ""
+                            }
+                            {isAuthentcated ?
+                                <li>
                                     <Link className={styles.link} to="/logout">Logout</Link>
                                 </li> : ""
                             }

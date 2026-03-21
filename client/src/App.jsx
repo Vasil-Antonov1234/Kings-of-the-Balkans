@@ -21,6 +21,7 @@ import Login from "./components/login/Login.jsx";
 import IsGuest from "./components/route-guards/IsGuest.jsx";
 import IsAuthenticated from "./components/route-guards/IsAuthenticated.jsx";
 import Logout from "./components/logout/Logout.jsx";
+import Create from "./components/create/Create.jsx";
 
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
                     <Route path="/pictures/:dogId/attach-picture" element={<AttachPicture />} />
                     <Route path="/pictures/uploaded-success" element={<Success />} />
                     <Route path="/logout" element={<Logout />} />
+                    <Route path="/dogs/create" element={<Create />} />
                 </Route>
 
                 <Route path="/contacts" element={<Contacts />} />

@@ -1,0 +1,42 @@
+.main-ctr {
+    width: 100%;
+    background-color: cadetblue;
+    margin: 10em auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10em 0.4em;
+    gap: 1em;
+}
+
+
+h1 {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-size: clamp(1.5rem, 10vw, 5rem);
+    color: white;
+}
+
+.submit-btn {
+    border: none;
+    background-color: unset;
+    color: white;
+    font-size: 1.75em;
+    font-weight: 700;
+}
+
+.submit-btn-ctr {
+    background-color: brown;
+    padding: 1em 2em;
+    width: fit-content;
+    min-width: 100px;
+    border-radius: 5px;
+    text-align: center;
+    transition: 1s all ease;
+}
+
+.submit-btn-ctr:hover {
+    padding: 1em 4em;
+    background-color: rgb(165, 112, 42);
+}
