@@ -3,7 +3,7 @@ import styles from "./Create.module.css"
 import UserContext from "../../contexts/UserContext.jsx";
 import useForm from "../../hooks/useForm.js";
 import useFetch from "../../hooks/useFetch.js";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 
 const initialValues = {
     name: "",
@@ -15,14 +15,15 @@ const initialValues = {
 };
 
 export default function Create() {
+    const { dogId } = useParams();
 
-    const { isAuthentcated } = useContext(UserContext);
-    const { formHandler, formInputRegister } = useForm(initialValues, manageDogDataHandler)
+    const { isAuthentcated, user } = useContext(UserContext);
+    const { formHandler, formInputRegister } = useForm(initialValues, manageDogDataHandler, dogId)
 
     const { request } = useFetch()
     const navigate = useNavigate();
 
-    async function manageDogDataHandler(values) {
+    async function manageDogDataHandler(values, dogId) {
 
         if(!isAuthentcated) {
             navigate("/admin/login");
@@ -51,17 +52,27 @@ export default function Create() {
         if(!values.gender) {
             return alert("Gender is required!")
         }
-    
-        try {
-            await request("/dogs/create", "POST", values)
-        } catch (error) {
-            alert(error);
+
+        if(dogId) {
+            try {
+                await request(`/dogs/${dogId}/edit`, "POST", values, {accessToken: user.token});
+                navigate(`/dogs/${dogId}/details`)
+            } catch (error) {
+                alert(error);
+            };
+        } else {
+            try {
+                await request("/dogs/create", "POST", values, {accessToken: user.token})
+                navigate("/dogs");
+            } catch (error) {
+                alert(error);
+            };
         };
     }
 
     return (
         <section className={styles["main-ctr"]}>
-            <h1 className={styles.title}>Create new record</h1>
+            <h1 className={styles.title}>{dogId ? `Edit` : "Create new record"}</h1>
             <form action={formHandler}>
                 {/* Name */}
                 <div>

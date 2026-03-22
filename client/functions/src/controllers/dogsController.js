@@ -1,5 +1,6 @@
 import { Router } from "express";
 import dogsService from "../services/dogsService.js";
+import authMiddleware from "../middlewares/authMiddleware.js";
 
 // const { Router } = require("express");
 // const dogsService = require("../services/dogsService.js");
@@ -63,12 +64,25 @@ dogsController.post("/remove-attached-picture", async (req, res) => {
 
 })
 
-dogsController.post("/create", async (req, res) => {
+dogsController.post("/create", authMiddleware, async (req, res) => {
 
     const newDogData = req.body;
 
     try {
         const newDog = await dogsService.create(newDogData);
+
+        res.json(newDog);
+    } catch (error) {
+        res.status(400).json(error.message);
+    };
+})
+
+dogsController.post("/:dogId/edit", authMiddleware, async (req, res) => {
+    const newDogData = req.body;
+    const dogId = req.params.dogId;
+
+    try {
+        const newDog = await dogsService.edit(newDogData, dogId);
 
         res.json(newDog);
     } catch (error) {

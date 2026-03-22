@@ -116,9 +116,18 @@ export default function Details() {
                     <h3><span className={styles["born"]}>Lorem: </span> Lorem ipsum dolor sit amet, consectetur adipisicing elit</h3>
                     <hr className={styles["line"]} />
                     {isAuthentcated ?
-                        <div className={styles["submit-btn-ctr"]}>
-                            <Link to={`/pictures/${dogId}/attach-picture`} className={styles["attach"]}>Attach picture</Link>
-                        </div> : ""
+                        <div className={styles["buttons-wrapper"]}>
+                            <div className={styles["submit-btn-ctr"]}>
+                                <Link to={`/pictures/${dogId}/attach-picture`} className={styles["attach"]}>Attach picture</Link>
+                            </div>
+                            <div className={styles["submit-btn-ctr"]}>
+                                <Link to={`/dogs/${dogId}/edit`} className={styles["attach"]}>Edit</Link>
+                            </div>
+                            <div className={`${styles["submit-btn-ctr"]} ${styles["delete-btn"]}`}>
+                                <Link className={styles["attach"]}>Delete</Link>
+                            </div>
+                        </div>
+                        : ""
                     }
                 </div>
             </section>

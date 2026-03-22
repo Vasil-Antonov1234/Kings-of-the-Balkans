@@ -51,6 +51,7 @@ function App() {
                     <Route path="/pictures/uploaded-success" element={<Success />} />
                     <Route path="/logout" element={<Logout />} />
                     <Route path="/create" element={<Create />} />
+                    <Route path="/dogs/:dogId/edit" element={<Create />} />
                 </Route>
 
                 <Route path="/contacts" element={<Contacts />} />

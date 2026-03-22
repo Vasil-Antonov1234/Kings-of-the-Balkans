@@ -60,6 +60,10 @@ const dogsService = {
         const dog = await Dog.create(newDogData);
 
         return dog;
+    },
+
+    async edit(newDogData, dogId) {
+        return Dog.findByIdAndUpdate(dogId, newDogData, { runValidators: true });
     }
 }
 

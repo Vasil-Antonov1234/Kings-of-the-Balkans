@@ -31,7 +31,7 @@ export default function useForm(values, callback, dogId) {
             (async () => {
 
                 try {
-                    const dog = await request(`/dogs/:${dogId}/details`);
+                    const dog = await request(`/dogs/${dogId}/details`);
 
                     setData(dog);
                 } catch (error) {
