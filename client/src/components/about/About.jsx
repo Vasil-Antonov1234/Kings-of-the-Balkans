@@ -62,7 +62,7 @@ export default function About() {
                         <p>Iron Crest Dobermans was born in 2008 from a single ambition: to produce Dobermans that are not only physically extraordinary, but emotionally balanced, loyal, and built for real family life.</p>
                         <p>Founder Maria Ivanova grew up alongside working dogs in the Bulgarian countryside. Her first Doberman, Czar von Eisenberg, ignited a lifelong dedication to the breed. Within five years, Iron Crest dogs were earning Best in Show titles across Europe.</p>
                         <p>Today, our kennel is home to six adult Dobermans — each carefully selected for health, structure, drive, and most importantly, character. Every puppy we produce is a reflection of that standard.</p>
-                        <Link to="/dogs" className={styles["btn btn--outline"]}>  Meet Our Dogs →</Link>
+                        <Link to="/dogs" className={`${styles["btn--outline"]} ${styles["btn"]}`}>  Meet Our Dogs →</Link>
                     </div >
                 </div >
             </section >
@@ -119,7 +119,7 @@ export default function About() {
                     <h2>Behind the Kennel</h2>
                     <div className={styles["team__grid"]}>
                         <div className={styles["team-card"]}>
-                            <div className={styles["team-card"]}>
+                            <div className={styles["team-card-in"]}>
                                 <div className={styles["team-card__photo"]}>
                                     <div className={styles["team-card__avatar"]} >
                                         JD
@@ -133,7 +133,7 @@ export default function About() {
                                 </div>
                             </div>
 
-                            <div className={styles["team-card"]}>
+                            <div className={styles["team-card-in"]}>
                                 <div className={styles["team-card__photo"]}>
                                     <div className={styles["team-card__avatar"]} >
                                         PG
@@ -147,7 +147,7 @@ export default function About() {
                                 </div>
                             </div>
 
-                            <div className={styles["team-card"]}>
+                            <div className={styles["team-card-in"]}>
                                 <div className={styles["team-card__photo"]}>
                                     <div className={styles["team-card__avatar"]}>
                                         Dr.HS
@@ -169,7 +169,7 @@ export default function About() {
                     <h2>Ready to Welcome<br />a Doberman?</h2>
                     <p>We occasionally have litters available. Reach out to start a conversation — we'd love to learn about your
                         family.</p>
-                    <Link to="/contacts" className={styles["btn btn--gold"]}> Contact Us Today</Link>
+                    <Link to="/contacts" className={`${styles["btn"]} ${styles["btn--gold"]}`}> Contact Us Today</Link>
                 </div>
             </section >
         </>

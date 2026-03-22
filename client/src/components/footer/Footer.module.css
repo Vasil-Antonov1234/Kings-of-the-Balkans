@@ -71,8 +71,9 @@ a:hover {
     max-width: 120px;
 }
 
-p {
+footer p {
     flex-basis: 70%;
+    color: white;
 }
 
 h5 {

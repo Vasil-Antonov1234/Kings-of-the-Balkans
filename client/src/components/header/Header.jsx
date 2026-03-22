@@ -40,7 +40,7 @@ export default function Header() {
                                 <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/contacts" onClick={closeMenuHandler}>Contacts</NavLink>
                             </li>
                             <li>
-                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/about" onClick={closeMenuHandler}>About</NavLink>
+                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/about" onClick={closeMenuHandler}>About us</NavLink>
                             </li>
                             {isAuthentcated ?
                                 <li>

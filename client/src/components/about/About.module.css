@@ -1,10 +1,10 @@
-*,
+/* *,
 *::before,
 *::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
+} */
 
 :root {
     --gold: #c8962c;
@@ -29,7 +29,7 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
+/* body {
     background-color: var(--black);
     color: var(--light);
     font-family: var(--font-body);
@@ -37,13 +37,13 @@ body {
     font-size: 16px;
     line-height: 1.75;
     overflow-x: hidden;
-}
+} */
 
 .white {
     color: white;
 }
 
-a {
+Link {
     color: inherit;
     text-decoration: none;
 }
@@ -56,7 +56,7 @@ em {
 /* ---------- UTILITY ---------- */
 .section-label {
     font-family: var(--font-cond);
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.22em;
     text-transform: uppercase;
@@ -99,55 +99,6 @@ em {
     border-color: var(--gold-light);
 }
 
-/* ---------- NAV ---------- */
-.nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.4rem 4rem;
-    background: rgba(13, 13, 13, 0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(200, 150, 44, 0.15);
-}
-
-.nav__logo {
-    font-family: var(--font-display);
-    font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    color: var(--white);
-}
-
-.nav__logo span {
-    color: var(--gold);
-}
-
-.nav__links {
-    list-style: none;
-    display: flex;
-    gap: 2.5rem;
-}
-
-.nav__links a {
-    font-family: var(--font-cond);
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--muted);
-    transition: color var(--transition);
-}
-
-.nav__links a:hover,
-.nav__links a.active {
-    color: var(--gold);
-}
-
 /* ---------- HERO ---------- */
 .hero {
     position: relative;
@@ -167,8 +118,8 @@ em {
     background-image: repeating-linear-gradient(-55deg,
             transparent,
             transparent 60px,
-            rgba(200, 150, 44, 0.025) 60px,
-            rgba(200, 150, 44, 0.025) 61px);
+            rgba(200, 151, 44, 0.144) 60px,
+            rgba(200, 151, 44, 0.144) 61px);
     pointer-events: none;
 }
 
@@ -199,7 +150,7 @@ em {
 
 .hero__eyebrow {
     font-family: var(--font-cond);
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0.25em;
     text-transform: uppercase;
@@ -209,7 +160,7 @@ em {
 
 .hero__title {
     font-family: var(--font-display);
-    font-size: clamp(3.5rem, 7vw, 6.5rem);
+    font-size: clamp(3.5rem, 7vw, 7.5rem);
     font-weight: 900;
     line-height: 1.05;
     color: var(--white);
@@ -223,7 +174,7 @@ em {
 
 .hero__sub {
     max-width: 480px;
-    font-size: 1.05rem;
+    font-size: 1.3rem;
     color: var(--muted);
     line-height: 1.8;
     margin-bottom: 2.5rem;
@@ -264,9 +215,9 @@ em {
     left: 50%;
     transform: translateX(-50%);
     font-family: var(--font-cond);
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     letter-spacing: 0.2em;
-    color: var(--mid);
+    color: var(--white);
     text-transform: uppercase;
     animation: bounce 2s infinite;
 }
@@ -301,7 +252,7 @@ em {
 
 .mission-strip__item span {
     font-family: var(--font-cond);
-    font-size: 0.72rem;
+    font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -324,7 +275,7 @@ em {
 
 .story__label {
     font-family: var(--font-cond);
-    font-size: 0.72rem;
+    font-size: 1.4rem;
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--gold);
@@ -362,11 +313,16 @@ em {
     justify-content: center;
 }
 
-.story__img-placeholder svg {
+.story__img-placeholder img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* .story__img-placeholder svg {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
+} */
 
 .story__img-tag {
     position: absolute;
@@ -375,7 +331,7 @@ em {
     background: var(--gold);
     color: var(--black);
     font-family: var(--font-cond);
-    font-size: 0.7rem;
+    font-size: 1rem;
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -391,11 +347,11 @@ em {
 
 .story__accent-block p {
     font-family: var(--font-display);
-    font-size: 1.05rem;
+    font-size: 1.3rem;
     font-style: italic;
     color: var(--white);
     line-height: 1.6;
-    margin-bottom: 0.75rem;
+    /* margin-bottom: 0.45rem; */
 }
 
 .story__accent-block cite {
@@ -417,7 +373,7 @@ em {
 
 .story__text p {
     color: var(--muted);
-    font-size: 1rem;
+    font-size: 1.2rem;
     line-height: 1.85;
     margin-bottom: 1.5rem;
 }
@@ -507,21 +463,22 @@ em {
 }
 
 .phil-card__icon {
-    font-size: 1.8rem;
+    font-size: 2.8rem;
     margin-bottom: 1.2rem;
     display: block;
+    color: var(--gold-light);
 }
 
 .phil-card h3 {
     font-family: var(--font-display);
-    font-size: 1.15rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: var(--white);
     margin-bottom: 0.9rem;
 }
 
 .phil-card p {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     color: var(--muted);
     line-height: 1.8;
 }
@@ -542,9 +499,9 @@ em {
 }
 
 .team__grid {
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    gap: 2rem; */
 }
 
 .team-card {
@@ -552,6 +509,19 @@ em {
     padding: 2.5rem 2rem 2rem;
     background: var(--dark2);
     transition: var(--transition);
+    display: flex;
+    gap: 1em;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.team-card-in {
+    border: 1px solid var(--mid);
+    padding: 2.5rem 2rem 2rem;
+    background: var(--dark2);
+    transition: var(--transition);
+    width: 30%;
+    gap: 1em;
 }
 
 .team-card:hover {
@@ -572,7 +542,7 @@ em {
     align-items: center;
     justify-content: center;
     font-family: var(--font-cond);
-    font-size: 0.8rem;
+    font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: 0.05em;
     color: var(--gold);
@@ -580,7 +550,7 @@ em {
 
 .team-card__info h3 {
     font-family: var(--font-display);
-    font-size: 1.25rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: var(--white);
     margin-bottom: 0.3rem;
@@ -589,7 +559,7 @@ em {
 .team-card__role {
     display: block;
     font-family: var(--font-cond);
-    font-size: 0.72rem;
+    font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 0.15em;
     text-transform: uppercase;
@@ -598,7 +568,7 @@ em {
 }
 
 .team-card p {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     color: var(--muted);
     line-height: 1.75;
 }
@@ -772,5 +742,19 @@ em {
 
     .team__grid {
         grid-template-columns: 1fr;
+    }
+
+    .team-card {
+        flex-direction: column;
+    }
+
+    .team-card-in {
+        width: 100%;
+    }
+}
+
+@media (max-width: 260px) {
+    .hero__title {
+        font-size: clamp(2rem, 7vw, 7.5rem);
     }
 }
