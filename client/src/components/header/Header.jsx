@@ -44,17 +44,17 @@ export default function Header() {
                             </li>
                             {isAuthentcated ?
                                 <li>
-                                    <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/pictures/upload-picture">Upload picture</NavLink>
+                                    <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/pictures/upload-picture" onClick={closeMenuHandler}>Upload picture</NavLink>
                                 </li> : ""
                             }
                             {isAuthentcated ?
                                 <li>
-                                    <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/create">Create</NavLink>
+                                    <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/create" onClick={closeMenuHandler}>Create</NavLink>
                                 </li> : ""
                             }
                             {isAuthentcated ?
                                 <li>
-                                    <Link className={styles.link} to="/logout">Logout</Link>
+                                    <Link className={styles.link} to="/logout" onClick={closeMenuHandler}>Logout</Link>
                                 </li> : ""
                             }
                         </ul>
