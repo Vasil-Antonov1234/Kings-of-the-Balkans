@@ -4,6 +4,7 @@ import UserContext from "../../contexts/UserContext.jsx";
 import useForm from "../../hooks/useForm.js";
 import useFetch from "../../hooks/useFetch.js";
 import { useNavigate, useParams } from "react-router";
+import { toast } from "react-toastify";
 
 const initialValues = {
     name: "",
@@ -30,35 +31,35 @@ export default function Create() {
         };
         
         if(!values.name) {
-            return alert("Name is required!")
-        }
+            return toast.warning("Name is required!");
+        };
 
         if(!values.fullName) {
-            return alert("Full name is required!")
-        }
+            return toast.warning("Full name is required!");
+        };
 
         if(!values.dateOfBirth) {
-            return alert("Date of birth is required!")
-        }
+            return toast.warning("Date of birth is required!");
+        };
 
         if(!values.parents) {
-            return alert("Parents is required!")
-        }
+            return toast.warning("Parents is required!");
+        };
 
         if(!values.imageUrl) {
-            return alert("Image Url is required!")
-        }
+            return toast.warning("Image Url is required!");
+        };
 
         if(!values.gender) {
-            return alert("Gender is required!")
-        }
+            return toast.warning("Gender is required!");
+        };
 
         if(dogId) {
             try {
                 await request(`/dogs/${dogId}/edit`, "PUT", values, {accessToken: user.token});
                 navigate(`/dogs/${dogId}/details`)
             } catch (error) {
-                alert(error);
+                toast.error(error);
             };
         } else {
             try {
@@ -79,7 +80,7 @@ export default function Create() {
                 };
 
             } catch (error) {
-                alert(error);
+                toast.error(error);
             };
         };
     }

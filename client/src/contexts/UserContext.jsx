@@ -1,6 +1,7 @@
 import { createContext } from "react";
 import usePersistedState from "../hooks/usePersistedState.js";
 import useFetch from "../hooks/useFetch.js";
+import { toast } from "react-toastify"
 
 const UserContext = createContext({
     user: {
@@ -23,7 +24,8 @@ export function UserProvider({
         const { username, password } = userData;
 
         if (!username || !password) {
-            return alert("Username and password are required!");
+            
+            return toast.warning("Username and password are required!");
         };
 
         try {
@@ -36,7 +38,7 @@ export function UserProvider({
             setUser(result);
 
         } catch (error) {
-            alert(error.message);
+            toast.error(error.message)
         }
     }
 

@@ -23,6 +23,7 @@ import IsAuthenticated from "./components/route-guards/IsAuthenticated.jsx";
 import Logout from "./components/logout/Logout.jsx";
 import Create from "./components/create/Create.jsx";
 import About from "./components/about/About.jsx";
+import { ToastContainer } from "react-toastify";
 
 
 function App() {
@@ -36,6 +37,8 @@ function App() {
         <div className={styles["app"]}>
 
             <Header />
+
+            <ToastContainer />
 
             <Routes>
                 <Route path="/" element={<Home />} />

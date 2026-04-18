@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import useFetch from "./useFetch.js";
+import { toast } from "react-toastify";
 
 export default function useForm(values, callback, dogId) {
     const { request } = useFetch();
@@ -35,7 +36,7 @@ export default function useForm(values, callback, dogId) {
 
                     setData(dog);
                 } catch (error) {
-                    alert(error.message);
+                    toast.error(error.message);
                 };
 
             })();

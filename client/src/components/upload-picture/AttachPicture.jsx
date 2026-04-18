@@ -4,6 +4,7 @@ import useForm from "../../hooks/useForm.js";
 import styles from "./UploadPicture.module.css"
 import { useParams, useNavigate } from "react-router"
 import UserContext from "../../contexts/UserContext.jsx";
+import { toast } from "react-toastify";
 
 const initialValues = {
     picture: ""
@@ -26,15 +27,15 @@ export default function AttachPicture() {
     async function managePictureInputHandler(values) {
 
         if (!values.picture) {
-            return alert("Picture to attach is required!")
-        }
+            return toast.warning("Picture to attach is required!");
+        };
 
         try {
             await request(`/pictures/${dogId}/upload-picture`, "POST", values, { accessToken });
 
             navigate(`/dogs/${dogId}/details`);
         } catch (error) {
-            alert(error);
+            toast.error(error);
         };
 
     }

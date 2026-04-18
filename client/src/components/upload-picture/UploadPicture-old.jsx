@@ -1,3 +1,4 @@
+import { toast } from "react-toastify";
 import useFetch from "../../hooks/useFetch.js";
 import useForm from "../../hooks/useForm.js";
 import styles from "./UploadPicture.module.css"
@@ -21,15 +22,15 @@ export default function UploadPictureOld() {
     async function managePictureInputHandler(values) {
 
         if (!dogId && !values.pictureName) {
-            return alert("Picture name is required!");
+            return toast.warning("Picture name is required!");
         };
 
         if (!dogId && !values.pictureUrl) {
-            return alert("Picture url is required!");
+            return toast.warning("Picture url is required!");
         };
 
         if (dogId && !values.picture) {
-            return alert("Picture to attach is required!")
+            return toast.warning("Picture to attach is required!")
         }
 
         if (!dogId) {
@@ -37,14 +38,14 @@ export default function UploadPictureOld() {
             try {
                 await request(`/pictures/upload`, "POST", values);
             } catch (error) {
-                alert(error)
+                toast.error(error)
             }
         } else {
 
             try {
                 await request(`/pictures/${dogId}/upload-picture`, "POST", values)
             } catch (error) {
-                alert(error);
+                toast.error(error);
             };
 
         }

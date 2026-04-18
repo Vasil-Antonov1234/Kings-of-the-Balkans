@@ -5,6 +5,7 @@ import { useContext, useEffect, useReducer, useState } from "react";
 import UserContext from "../../contexts/UserContext.jsx";
 import PictureCard from "../picture/PictureCard.jsx";
 import picturesReducer from "../../reducers/pictureReducer.js";
+import { toast } from "react-toastify";
 
 export default function Details() {
     const { dogId } = useParams();
@@ -25,7 +26,7 @@ export default function Details() {
                     payload: result
                 })
             } catch (error) {
-                alert(error)
+                toast.error(error)
             }
 
         })()
@@ -92,7 +93,7 @@ export default function Details() {
             })
 
         } catch (error) {
-            alert(error)
+            toast.error(error)
         }
 
     }

@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import UserContext from "../contexts/UserContext.jsx";
 import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
 
 // const BASE_URL = import.meta.env.VITE_APP_SERVER_URL;
 const BASE_URL = "http://localhost:5001/kings-of-the-balkans-storage/us-central1/api";
@@ -42,12 +43,12 @@ export default function useFetch(url, initialState) {
 
                     if (error.message === "Failed to fetch") {
                         setIsPending(false);
-                        return alert("Server is unavailable");
+                        return toast.warning("Server is unavailable");
                     };
 
                     setIsPending(false);
 
-                    alert(error.message)
+                    toast.error(error.message)
 
                 }
             };
@@ -89,7 +90,7 @@ export default function useFetch(url, initialState) {
 
             return result;
         } catch (error) {
-            alert(error)
+            toast.error(error)
             throw error;
         };
 
@@ -116,7 +117,7 @@ export default function useFetch(url, initialState) {
                 }
 
             } catch (error) {
-                alert(error.message);
+                toast.error(error.message);
             };
         };
 

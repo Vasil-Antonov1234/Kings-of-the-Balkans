@@ -5,6 +5,7 @@ import { useNavigate } from "react-router";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { storage } from "../../../firebase.js";
 import UserContext from "../../contexts/UserContext.jsx";
+import { toast } from "react-toastify";
 
 export default function UploadPicture() {
 
@@ -24,11 +25,11 @@ export default function UploadPicture() {
         const { pictureUrl, ...data } = Object.fromEntries(formData);
 
         if (!data.pictureName) {
-            return alert("Picture name is required!")
+            return toast.warning("Picture name is required!")
         }
 
         if (!imagePreview) {
-            return alert("Picture for upload is required!")
+            return toast.warning("Picture for upload is required!")
         }
 
         const imageRef = ref(storage, `images/${pictureUrl.name}`);
@@ -42,7 +43,7 @@ export default function UploadPicture() {
             navigate("/pictures/uploaded-success");
         } catch (error) {
             logoutHandler();
-            alert(error.message);
+            toast.error(error.message);
         };
     }
 
