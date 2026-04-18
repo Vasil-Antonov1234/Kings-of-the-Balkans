@@ -62,8 +62,22 @@ export default function Create() {
             };
         } else {
             try {
-                await request("/dogs/create", "POST", values, {accessToken: user.token})
-                navigate("/dogs");
+
+                await request("/dogs/create", "POST", values, {accessToken: user.token});
+
+                if (values.gender === "Puppy") {
+                    
+                    navigate("/dogs/puppies");
+                };
+
+                if (values.gender === "Male") {
+                    navigate("/dogs/males");
+                };
+
+                if (values.gender === "Female") {
+                    navigate("/dogs/females");
+                };
+
             } catch (error) {
                 alert(error);
             };
