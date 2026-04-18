@@ -136,7 +136,7 @@ export default function Create() {
 
                 {/* Submit button */}
                 <div className={styles["submit-btn-ctr"]}>
-                    <button className={styles["submit-btn"]}>Create</button>
+                    <button className={styles["submit-btn"]}>{ dogId ? "Edit" : "Create" }</button>
                 </div>
             </form>
         </section>
