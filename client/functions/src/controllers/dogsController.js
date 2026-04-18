@@ -90,7 +90,7 @@ dogsController.put("/:dogId/edit", authMiddleware, async (req, res) => {
     };
 })
 
-dogsController.delete("/:dogId", async (req, res) => {
+dogsController.delete("/:dogId", authMiddleware, async (req, res) => {
     const dogId = req.params.dogId;
 
     try {

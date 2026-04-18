@@ -11,7 +11,7 @@ export default function useFetch(url, initialState) {
     const [data, setData] = useState(initialState);
     const [isPending, setIsPending] = useState(true);
 
-    const { isAuthentcated } = useContext(UserContext);
+    const { isAuthentcated, user } = useContext(UserContext);
 
     const navigate = useNavigate();
 
@@ -96,11 +96,11 @@ export default function useFetch(url, initialState) {
     }
 
     async function deleteRecord(id, name, dogGender) {
-        const isConfirm = confirm(`Are you sure you want to delete ${name} with id: ${id}?`);
+        const isConfirm = confirm(`Are you sure you want to delete ${name}?`);
 
         if (isConfirm) {
             try {
-                await request(`/dogs/${id}`, "DELETE");
+                await request(`/dogs/${id}`, "DELETE", null, {accessToken: user.token});
 
                 if (dogGender === "Puppy") {
 

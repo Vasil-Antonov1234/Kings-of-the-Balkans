@@ -4,11 +4,11 @@ import { JWT_SECRET } from "../config/constants.js";
 export default function authMiddleware(req, res, next) {
     const accessToken = req.get("X-Authorization");
 
-    if (!accessToken) {
-        throw new Error("Unauthorized!");
-    };
-
     try {
+        if (!accessToken) {
+            throw new Error("Unauthorized!");
+        };
+
         const decodedToken = jwt.verify(accessToken, JWT_SECRET);
 
         // Attach authenticated user to request
