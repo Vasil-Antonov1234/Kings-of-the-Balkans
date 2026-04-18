@@ -32,7 +32,7 @@ export default function Details() {
 
     }, [dogId])
 
-    const { data: dog, request } = useFetch(`/dogs/${dogId}/details`);
+    const { data: dog, request, deleteRecord } = useFetch(`/dogs/${dogId}/details`);
     const { isAuthentcated } = useContext(UserContext);
 
     const [isModalView, setIsModalView] = useState(false);
@@ -124,7 +124,7 @@ export default function Details() {
                                 <Link to={`/dogs/${dogId}/edit`} className={styles["attach"]}>Edit</Link>
                             </div>
                             <div className={`${styles["submit-btn-ctr"]} ${styles["delete-btn"]}`}>
-                                <Link className={styles["attach"]}>Delete</Link>
+                                <button onClick={() => deleteRecord(dogId, dog.name, dog.gender)} className={styles["attach"]}>Delete</button>
                             </div>
                         </div>
                         : ""

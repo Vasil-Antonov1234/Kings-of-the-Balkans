@@ -77,7 +77,7 @@ dogsController.post("/create", authMiddleware, async (req, res) => {
     };
 })
 
-dogsController.post("/:dogId/edit", authMiddleware, async (req, res) => {
+dogsController.put("/:dogId/edit", authMiddleware, async (req, res) => {
     const newDogData = req.body;
     const dogId = req.params.dogId;
 
@@ -88,6 +88,19 @@ dogsController.post("/:dogId/edit", authMiddleware, async (req, res) => {
     } catch (error) {
         res.status(400).json(error.message);
     };
+})
+
+dogsController.delete("/:dogId", async (req, res) => {
+    const dogId = req.params.dogId;
+
+    try {
+        const dog = await dogsService.delete(dogId);
+
+        res.status(200).json(dog);
+    } catch (error) {
+        res.status(404).json(error.message);        
+    };
+
 })
 
 

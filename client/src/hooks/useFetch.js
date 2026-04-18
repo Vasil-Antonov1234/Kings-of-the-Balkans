@@ -1,9 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import UserContext from "../contexts/UserContext.jsx";
+import { useNavigate } from "react-router";
 
 // const BASE_URL = import.meta.env.VITE_APP_SERVER_URL;
-// const BASE_URL = "http://localhost:5001/kings-of-the-balkans-storage/us-central1/api";
-const BASE_URL = "https://api-klv2ldtjma-uc.a.run.app";
+const BASE_URL = "http://localhost:5001/kings-of-the-balkans-storage/us-central1/api";
+// const BASE_URL = "https://api-klv2ldtjma-uc.a.run.app";
 
 export default function useFetch(url, initialState) {
 
@@ -11,6 +12,8 @@ export default function useFetch(url, initialState) {
     const [isPending, setIsPending] = useState(true);
 
     const { isAuthentcated } = useContext(UserContext);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
 
@@ -58,7 +61,7 @@ export default function useFetch(url, initialState) {
 
     async function request(url, method = "GET", body, config = {}) {
         const options = { method: method };
-        
+
         if (body) {
             options.headers = { "content-type": "application/json" };
             options.body = JSON.stringify(body);
@@ -85,12 +88,39 @@ export default function useFetch(url, initialState) {
             setIsPending(false);
 
             return result;
-        } catch (error) {            
+        } catch (error) {
             alert(error)
             throw error;
         };
 
     }
 
-    return { data, setData, isPending, request };
+    async function deleteRecord(id, name, dogGender) {
+        const isConfirm = confirm(`Are you sure you want to delete ${name} with id: ${id}?`);
+
+        if (isConfirm) {
+            try {
+                await request(`/dogs/${id}`, "DELETE");
+
+                if (dogGender === "Puppy") {
+
+                    navigate("/dogs/puppies");
+                };
+
+                if (dogGender === "Male") {
+                    navigate("/dogs/males");
+                };
+
+                if (dogGender === "Female") {
+                    navigate("/dogs/females");
+                }
+
+            } catch (error) {
+                alert(error.message);
+            };
+        };
+
+    };
+
+    return { data, setData, isPending, request, deleteRecord };
 };

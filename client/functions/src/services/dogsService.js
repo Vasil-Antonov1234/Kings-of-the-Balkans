@@ -63,7 +63,19 @@ const dogsService = {
     },
 
     async edit(newDogData, dogId) {
+        
         return Dog.findByIdAndUpdate(dogId, newDogData, { runValidators: true });
+    },
+    
+    async delete(dogId) {
+        const dog = await Dog.findById(dogId).populate("pictures");
+        const attachedPictures = dog.pictures;
+
+        attachedPictures.forEach(async (x) => await pictureService.changeIsAttachedFalse(x._id))
+
+        await Dog.findByIdAndDelete(dogId);
+        
+        return `${dog.name} has been deleted!`;
     }
 }
 

@@ -55,7 +55,7 @@ export default function Create() {
 
         if(dogId) {
             try {
-                await request(`/dogs/${dogId}/edit`, "POST", values, {accessToken: user.token});
+                await request(`/dogs/${dogId}/edit`, "PUT", values, {accessToken: user.token});
                 navigate(`/dogs/${dogId}/details`)
             } catch (error) {
                 alert(error);
@@ -136,7 +136,7 @@ export default function Create() {
 
                 {/* Submit button */}
                 <div className={styles["submit-btn-ctr"]}>
-                    <button className={styles["submit-btn"]}>{ dogId ? "Edit" : "Create" }</button>
+                    <button className={styles["submit-btn"]}>{ dogId ? "Update" : "Create" }</button>
                 </div>
             </form>
         </section>
