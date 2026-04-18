@@ -42,6 +42,9 @@ export default function Header() {
                             <li>
                                 <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/about" onClick={closeMenuHandler}>About us</NavLink>
                             </li>
+                            <li>
+                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/admin/login" onClick={closeMenuHandler}>Login</NavLink>
+                            </li>
                             {isAuthentcated ?
                                 <li>
                                     <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/pictures/upload-picture" onClick={closeMenuHandler}>Upload picture</NavLink>
