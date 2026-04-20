@@ -18,7 +18,7 @@ const initialValues = {
 export default function Create() {
     const { dogId } = useParams();
 
-    const { isAuthentcated, user } = useContext(UserContext);
+    const { isAuthentcated, user, logoutHandler } = useContext(UserContext);
     const { formHandler, formInputRegister } = useForm(initialValues, manageDogDataHandler, dogId)
 
     const { request } = useFetch()
@@ -26,48 +26,53 @@ export default function Create() {
 
     async function manageDogDataHandler(values, dogId) {
 
-        if(!isAuthentcated) {
+        if (!isAuthentcated) {
             navigate("/admin/login");
         };
-        
-        if(!values.name) {
+
+        if (!values.name) {
             return toast.warning("Name is required!");
         };
 
-        if(!values.fullName) {
+        if (!values.fullName) {
             return toast.warning("Full name is required!");
         };
 
-        if(!values.dateOfBirth) {
+        if (!values.dateOfBirth) {
             return toast.warning("Date of birth is required!");
         };
 
-        if(!values.parents) {
+        if (!values.parents) {
             return toast.warning("Parents is required!");
         };
 
-        if(!values.imageUrl) {
+        if (!values.imageUrl) {
             return toast.warning("Image Url is required!");
         };
 
-        if(!values.gender) {
+        if (!values.gender) {
             return toast.warning("Gender is required!");
         };
 
-        if(dogId) {
+        if (dogId) {
             try {
-                await request(`/dogs/${dogId}/edit`, "PUT", values, {accessToken: user.token});
+                await request(`/dogs/${dogId}/edit`, "PUT", values, { accessToken: user.token });
                 navigate(`/dogs/${dogId}/details`)
             } catch (error) {
+
+                if (error === "Unauthorized!") {
+                    logoutHandler();
+                };
+
                 toast.error(error);
             };
         } else {
             try {
 
-                await request("/dogs/create", "POST", values, {accessToken: user.token});
+                await request("/dogs/create", "POST", values, { accessToken: user.token });
 
                 if (values.gender === "Puppy") {
-                    
+
                     navigate("/dogs/puppies");
                 };
 
@@ -80,6 +85,11 @@ export default function Create() {
                 };
 
             } catch (error) {
+
+                if (error === "Unauthorized!") {
+                    logoutHandler();
+                };
+
                 toast.error(error);
             };
         };
@@ -151,7 +161,7 @@ export default function Create() {
 
                 {/* Submit button */}
                 <div className={styles["submit-btn-ctr"]}>
-                    <button className={styles["submit-btn"]}>{ dogId ? "Update" : "Create" }</button>
+                    <button className={styles["submit-btn"]}>{dogId ? "Update" : "Create"}</button>
                 </div>
             </form>
         </section>
