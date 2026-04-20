@@ -23,6 +23,18 @@ authController.post("/login", async (req, res) => {
     
 })
 
+authController.post("/logout", async (req, res) => {
+    const accessToken = req.body.accessToken;
+
+    try {
+        await authService.logout(accessToken);
+        res.status(200).json("Ok")
+    } catch (error) {
+        res.status(400).json(error.message);
+    };
+
+})
+
 // authController.get("/logout", (req, res) => {
     
 // })
