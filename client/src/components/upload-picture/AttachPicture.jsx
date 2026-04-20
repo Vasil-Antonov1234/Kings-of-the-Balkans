@@ -14,7 +14,7 @@ export default function AttachPicture() {
 
     const { dogId } = useParams();
 
-    const { user } = useContext(UserContext);
+    const { user, logoutHandler } = useContext(UserContext);
     const accessToken = user.token;
 
     const { formHandler, formInputRegister } = useForm(initialValues, managePictureInputHandler);
@@ -35,6 +35,15 @@ export default function AttachPicture() {
 
             navigate(`/dogs/${dogId}/details`);
         } catch (error) {
+            
+            if (error === "Unauthorized!") {
+                    logoutHandler();
+                };
+
+                if (error === "jwt expired") {
+                    logoutHandler();
+                };
+            
             toast.error(error);
         };
 

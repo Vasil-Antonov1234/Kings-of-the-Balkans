@@ -12,6 +12,8 @@ export default function useFetch(url, initialState) {
     const [data, setData] = useState(initialState);
     const [isPending, setIsPending] = useState(true);
 
+    const { logoutHandler } = useContext(UserContext);
+
     const { isAuthentcated, user } = useContext(UserContext);
 
     const navigate = useNavigate();
@@ -117,6 +119,15 @@ export default function useFetch(url, initialState) {
                 }
 
             } catch (error) {
+
+                if (error === "Unauthorized!") {
+                    logoutHandler();
+                };
+
+                if (error === "jwt expired") {
+                    logoutHandler();
+                };
+
                 toast.error(error.message);
             };
         };

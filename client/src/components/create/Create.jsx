@@ -64,6 +64,10 @@ export default function Create() {
                     logoutHandler();
                 };
 
+                if (error === "jwt expired") {
+                    logoutHandler();
+                };
+
                 toast.error(error);
             };
         } else {
@@ -89,6 +93,10 @@ export default function Create() {
                 if (error === "Unauthorized!") {
                     logoutHandler();
                 };
+
+                if (error === "jwt expired") {
+                    logoutHandler();
+                }
 
                 toast.error(error);
             };
