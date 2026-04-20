@@ -77,8 +77,7 @@
     display: none;
     position: absolute;
     top: 2.7em;
-    right: 4em;
-    ;
+    right: 5em;
     flex-direction: column;
     justify-content: space-between;
     width: 2.74%;
@@ -196,15 +195,45 @@
         align-items: start;
         margin-bottom: -10px;
         background-color: gainsboro;
+        padding: 0;
         margin: 10px;
         width: 96%;
-        /* border: 0.3px solid darkgray; */
         box-shadow: 1px 1px 10px gray;
+    }
+}
+
+@media(max-width: 800px) {
+    .x-mark {
+        left: 92%;
+    }
+}
+
+@media(max-width: 600px) {
+    .x-mark {
+        left: 91%;
+    }
+}
+
+@media(max-width: 500px) {
+    .x-mark {
+        left: 89%;
     }
 }
 
 @media(max-width: 450px) {
     .x-mark {
-        left: 90%;
+        left: 87%;
+    }
+}
+
+@media(max-width: 300px) {
+    .x-mark {
+        left: 84%;
+    }
+}
+
+@media(max-width: 300px) {
+    .x-mark {
+        left: 80%;
     }
 }

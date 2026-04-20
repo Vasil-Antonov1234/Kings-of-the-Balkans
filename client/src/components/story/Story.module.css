@@ -1,6 +1,7 @@
 .story {
     background-color: white;
-    aspect-ratio: 10/7;
+    /* aspect-ratio: 10/7; */
+    height: 100%;
 }
 
 .main-container {
@@ -21,7 +22,8 @@
 
 .storyHeader h1 {
     font-family: "Unbounded", sans-serif;
-    font-size: 6rem;
+    /* font-size: 6rem; */
+    font-size: clamp(1.5rem, 10vw, 5rem);
     position: absolute;
     top: 30%;
     left: 45%;
@@ -107,17 +109,16 @@ p {
 
 @media (max-width: 1024px) {
     .top {
-        margin-top: 30em;
+        margin-top: 15em;
     }
 
-    .storyHeader {
+    /* .storyHeader {
         max-height: 340px;
-    }
-
-    /* .storyHeader img {
-        height: 400px;
-        width: 1100px;
     } */
+
+    .storyHeader img {
+        width: 100%;
+    }
 
     .main-container {
         width: 100%;
@@ -141,25 +142,51 @@ p {
 
 @media (max-width: 900px) {
 
-    .storyHeader {
-        top: 4%;
-    }
-
-    .storyHeader img {
-        height: 400px;
+    .story {
+        margin-top: -100px;
+        background-color: #ebd19c;
     }
 
     .storyHeader h1 {
-        top: 40%;
+        top: 50%;
     }
 
     .top {
-        margin-top: 40em;
+        margin-top: 24em;
     }
 }
 
 @media (max-width: 600px) {
+
+    .main-container {
+        gap: 0;
+    }
+
     .storyHeader h1 {
         left: 10%;
+    }
+
+    .top {
+        margin-top: 25em;
+    }
+}
+
+@media (max-width: 400px) {
+    .card {
+        justify-content: flex-start;
+        height: 430px
+    }
+    
+    .storyHeader {
+        height: 100%;
+    }
+
+    .storyHeader img {
+        height: 90%;
+    }
+
+    .storyHeader h1 {
+        font-size: 40px;
+        top: 50%;
     }
 }

@@ -52,6 +52,7 @@ h1 {
 
 h2 {
     color: black;
+    font-size: clamp(1.5rem, 7vw, 4rem);
 }
 
 .submit-btn {
@@ -78,21 +79,20 @@ h2 {
 }
 
 .image-ctr {
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1em solid white;
     border-radius: 10px;
     box-shadow: 0 0 10px 0 gray;
-    width: 50%;
-    height: 40em;
+    max-width: 70%;
     overflow: hidden;
     min-width: 200px;
 }
 
 .image-ctr img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    translate: -40% -20%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .pictures-selection-wrapper {
@@ -131,6 +131,9 @@ h2 {
 
     .image-ctr {
         width: 90%;
+        height: fit-content;
+        justify-content: flex-start;
+        align-items: flex-start;
     }
 }
 
