@@ -12,6 +12,8 @@ export default function Details() {
 
     const [pictures, dispatch] = useReducer(picturesReducer, []);
 
+    const { logoutHandler } = useContext(UserContext)
+
     useEffect(() => {
 
         (async () => {
@@ -93,6 +95,11 @@ export default function Details() {
             })
 
         } catch (error) {
+
+            if (error === "Unauthorized!") {
+                logoutHandler();
+            };
+
             toast.error(error)
         }
 

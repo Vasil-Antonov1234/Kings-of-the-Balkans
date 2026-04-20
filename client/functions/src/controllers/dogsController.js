@@ -51,7 +51,7 @@ dogsController.get("/:dogId/details", async (req, res) => {
     };
 });
 
-dogsController.post("/remove-attached-picture", async (req, res) => {
+dogsController.post("/remove-attached-picture", authMiddleware, async (req, res) => {
     const { dogId, pictureId } = req.body;
 
     try {
