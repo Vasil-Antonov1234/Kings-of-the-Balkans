@@ -96,7 +96,7 @@ export default function useFetch(url, initialState) {
 
     }
 
-    async function deleteRecord(id, name, dogGender) {
+    async function deleteDog(id, name, dogGender) {
         const isConfirm = confirm(`Are you sure you want to delete ${name}?`);
 
         if (isConfirm) {
@@ -123,5 +123,5 @@ export default function useFetch(url, initialState) {
 
     };
 
-    return { data, setData, isPending, request, deleteRecord };
+    return { data, setData, isPending, request, deleteDog };
 };

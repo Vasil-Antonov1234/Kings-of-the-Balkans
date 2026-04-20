@@ -44,17 +44,17 @@ export function UserProvider({
 
     async function logoutHandler() {
 
-        // try {
-        //     await request("/admin/logout", "GET", { accessToken: user?.accessToken });
-        // } catch (error) {
-        //     alert(error.message);
-        // } finally {
-        //     setUser(null);
-        //     localStorage.removeItem("auth");
-        // };
+        try {
+            await request("/admin/logout", "POST", { accessToken: user.token }, { accessToken: user.token });
+        } catch (error) {
+            toast.error(error.message);
+        } finally {
+            setUser(null);
+            localStorage.removeItem("auth");
+        };
 
-        setUser(null);
-        localStorage.removeItem("auth");
+        // setUser(null);
+        // localStorage.removeItem("auth");
     }
 
     const userContextValues = {
