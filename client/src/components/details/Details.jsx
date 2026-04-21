@@ -67,20 +67,25 @@ export default function Details() {
     function modalViewHandler(pictureUrl) {
         setIsModalView(true);
         setUrl(pictureUrl);
+        
+        const galleryArr = [];
 
         if (!galleryUrls.length) {
-            const galleryArr = [];
             dog.pictures.forEach((pic) => galleryArr.push(pic.pictureUrl));
 
             setGalleryUrls(galleryArr);
         };
+                
+        let index = 0;
 
-        const index = galleryUrls.indexOf(pictureUrl);
+        if (!galleryUrls.length) {
+            index = galleryArr.indexOf(pictureUrl);
+        } else {
+            index = galleryUrls.indexOf(pictureUrl);
+        };
+
         setCurrentIndex(index);
     };
-
-    // console.log(`Length = ${galleryUrls.length}`)
-    // console.log(`Index = ${currentIndex}`)
 
     function modalViewCloseHandler(event) {
         if (event.target.id === "imgModal" || event.target.id === "xModal") {

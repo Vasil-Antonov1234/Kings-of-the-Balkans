@@ -8,7 +8,7 @@ export default function PictureCard({
     onRemovePicture
 }) {
     const { isAuthentcated } = useContext(UserContext)
-
+    
     return (
         <div className={styles["small-image-container"]}>
             <img src={pic.pictureUrl} alt="image" className={styles["small-image"]} onClick={() => onModal(pic.pictureUrl)} />
