@@ -188,7 +188,7 @@ export default function Details() {
                     }
                     <div id="imgModal" className={isModalView ? `${styles.modal} ${styles.flex}` : styles.modal} onClick={modalViewCloseHandler}>
                         <span id="xModal" className={styles.close} onClick={modalViewCloseHandler}>&times;</span>
-                        <img className={isChangingImg ? `${styles["modal-content"]} ${styles["moveIn"]}` : styles["modal-content"]}
+                        <img className={isChangingImg ? `${styles["modal-content"]} ${styles["changeImg"]}` : styles["modal-content"]}
                             id="modalImg"
                             src={url}
                             onTouchStart={(event) => startPositionHandrel(event)}
@@ -200,7 +200,4 @@ export default function Details() {
             </section>
         </section>
     );
-
-
-    // isChangingImgRight ? `${styles["modal-content"]} ${styles["moveIn"]}` : styles["modal-content"]
 }

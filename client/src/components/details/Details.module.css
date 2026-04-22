@@ -164,8 +164,8 @@ h3 {
     border: 3px solid white;
 }
 
-.moveIn {
-    animation: moveInAnimation 1s ease-out forwards;
+.changeImg {
+    animation: moveInAnimation 1s ease-in-out both;
 }
 
 @keyframes moveInAnimation {
@@ -187,16 +187,6 @@ h3 {
 
     100% {
         opacity: 1;
-    }
-}
-
-.moveOut {
-    animation: moveOutAnimation 1s ease-out forwards;
-}
-
-@keyframes moveOutAnimation {
-    to {
-        transform: translateX(-700px);
     }
 }
 
