@@ -105,12 +105,12 @@ export default function Details() {
 
         setTimeout(() => {
             setIsChangingImg("")
-        }, 3000);
+        }, 2500);
 
         setTimeout(() => {
             setUrl(galleryUrls[currentIndex + 1]);
             setCurrentIndex((currentIndex) => currentIndex + 1);
-        }, 1000);
+        }, 500);
 
     };
 
@@ -124,12 +124,12 @@ export default function Details() {
 
         setTimeout(() => {
             setIsChangingImg("")
-        }, 3000);
+        }, 2500);
 
         setTimeout(() => {
             setUrl(galleryUrls[currentIndex - 1]);
             setCurrentIndex((currentIndex) => currentIndex - 1);
-        }, 1000);
+        }, 500);
 
     }
 

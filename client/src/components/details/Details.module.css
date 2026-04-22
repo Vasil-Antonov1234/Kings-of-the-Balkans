@@ -165,7 +165,7 @@ h3 {
 }
 
 .changeImg-right {
-    animation: moveInAnimationRight 3s ease-in-out both;
+    animation: moveInAnimationRight 2s ease-in-out both;
 }
 
 @keyframes moveInAnimationRight {
@@ -189,7 +189,7 @@ h3 {
 }
 
 .changeImg-left {
-    animation: moveInAnimationLeft 2.5s ease-in-out both;
+    animation: moveInAnimationLeft 2s ease-in-out both;
 }
 
 @keyframes moveInAnimationLeft {
