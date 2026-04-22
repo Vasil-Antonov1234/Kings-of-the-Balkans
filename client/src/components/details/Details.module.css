@@ -164,6 +164,42 @@ h3 {
     border: 3px solid white;
 }
 
+.moveIn {
+    animation: moveInAnimation 1s ease-out forwards;
+}
+
+@keyframes moveInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0.25;
+    }
+
+    50% {
+        opacity: 0.50;
+    }
+
+    75% {
+        opacity: 0.75;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.moveOut {
+    animation: moveOutAnimation 1s ease-out forwards;
+}
+
+@keyframes moveOutAnimation {
+    to {
+        transform: translateX(-700px);
+    }
+}
+
 .close {
     position: absolute;
     top: 5%;

@@ -46,6 +46,8 @@ export default function Details() {
     const [startPosition, setStartPosition] = useState(0);
     const [endPosition, setEndPosition] = useState(0);
 
+    const [isChangingImg, setIsChangingImg] = useState(false);
+
     function startPositionHandrel(event) {
         setStartPosition(event.touches[0].clientX)
     }
@@ -67,7 +69,7 @@ export default function Details() {
     function modalViewHandler(pictureUrl) {
         setIsModalView(true);
         setUrl(pictureUrl);
-        
+
         const galleryArr = [];
 
         if (!galleryUrls.length) {
@@ -75,7 +77,7 @@ export default function Details() {
 
             setGalleryUrls(galleryArr);
         };
-                
+
         let index = 0;
 
         if (!galleryUrls.length) {
@@ -94,11 +96,25 @@ export default function Details() {
     };
 
     function nextImageHandler() {
+
+        setIsChangingImg((state) => !state)
+
+        setTimeout(() => {
+            setIsChangingImg((state) => !state)
+        }, 1000);
+
         setUrl(galleryUrls[currentIndex + 1]);
         setCurrentIndex((currentIndex) => currentIndex + 1);
     };
 
     function previousImageHandler() {
+
+        setIsChangingImg((state) => !state)
+
+        setTimeout(() => {
+            setIsChangingImg((state) => !state)
+        }, 1000);
+
         setUrl(galleryUrls[currentIndex - 1]);
         setCurrentIndex((currentIndex) => currentIndex - 1);
     }
@@ -117,7 +133,7 @@ export default function Details() {
                 type: "REMOVE",
                 payload: pictureId
             })
-            
+
         } catch (error) {
 
             if (error === "Unauthorized!") {
@@ -172,7 +188,11 @@ export default function Details() {
                     }
                     <div id="imgModal" className={isModalView ? `${styles.modal} ${styles.flex}` : styles.modal} onClick={modalViewCloseHandler}>
                         <span id="xModal" className={styles.close} onClick={modalViewCloseHandler}>&times;</span>
-                        <img className={styles["modal-content"]} id="modalImg" src={url} onTouchStart={(event) => startPositionHandrel(event)} onTouchEnd={(event) => endPositionHandler(event)} />
+                        <img className={isChangingImg ? `${styles["modal-content"]} ${styles["moveIn"]}` : styles["modal-content"]}
+                            id="modalImg"
+                            src={url}
+                            onTouchStart={(event) => startPositionHandrel(event)}
+                            onTouchEnd={(event) => endPositionHandler(event)} />
                         <span className={currentIndex < galleryUrls.length - 1 ? `${styles.next} ${styles.flex}` : styles.next} onClick={nextImageHandler}>&gt;</span>
                         <span className={currentIndex > 0 ? `${styles.previous} ${styles.flex}` : styles.previous} onClick={previousImageHandler}>&lt;</span>
                     </div>
@@ -180,4 +200,7 @@ export default function Details() {
             </section>
         </section>
     );
+
+
+    // isChangingImgRight ? `${styles["modal-content"]} ${styles["moveIn"]}` : styles["modal-content"]
 }
