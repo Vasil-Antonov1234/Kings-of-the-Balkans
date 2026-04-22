@@ -97,6 +97,10 @@ export default function Details() {
 
     function nextImageHandler() {
 
+        if (isChangingImg) {
+            return
+        };
+
         setIsChangingImg("right")
 
         setTimeout(() => {
@@ -107,10 +111,14 @@ export default function Details() {
             setUrl(galleryUrls[currentIndex + 1]);
             setCurrentIndex((currentIndex) => currentIndex + 1);
         }, 1000);
-        
+
     };
 
     function previousImageHandler() {
+
+        if (isChangingImg) {
+            return
+        };
 
         setIsChangingImg("left")
 
