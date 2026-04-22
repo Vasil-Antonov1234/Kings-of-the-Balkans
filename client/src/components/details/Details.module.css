@@ -164,29 +164,51 @@ h3 {
     border: 3px solid white;
 }
 
-.changeImg {
-    animation: moveInAnimation 1s ease-in-out both;
+.changeImg-right {
+    animation: moveInAnimationRight 2s ease-in-out both;
 }
 
-@keyframes moveInAnimation {
+@keyframes moveInAnimationRight {
     0% {
-        opacity: 0;
+        transform: translateX(0px);
     }
 
     25% {
-        opacity: 0.25;
+        opacity: 0;
+        transform: translateX(1700px);
     }
 
     50% {
-        opacity: 0.50;
-    }
-
-    75% {
-        opacity: 0.75;
+        opacity: 0;
+        transform: translateX(-1700px);
     }
 
     100% {
-        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.changeImg-left {
+    animation: moveInAnimationLeft 2s ease-in-out both;
+}
+
+@keyframes moveInAnimationLeft {
+    0% {
+        transform: translateX(0px);
+    }
+
+    25% {
+        opacity: 0;
+        transform: translateX(-1700px);
+    }
+
+    50% {
+        opacity: 0;
+        transform: translateX(1700px);
+    }
+
+    100% {
+        transform: translateX(0px);
     }
 }
 

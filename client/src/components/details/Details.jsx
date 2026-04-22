@@ -46,7 +46,7 @@ export default function Details() {
     const [startPosition, setStartPosition] = useState(0);
     const [endPosition, setEndPosition] = useState(0);
 
-    const [isChangingImg, setIsChangingImg] = useState(false);
+    const [isChangingImg, setIsChangingImg] = useState("");
 
     function startPositionHandrel(event) {
         setStartPosition(event.touches[0].clientX)
@@ -97,26 +97,32 @@ export default function Details() {
 
     function nextImageHandler() {
 
-        setIsChangingImg((state) => !state)
+        setIsChangingImg("right")
 
         setTimeout(() => {
-            setIsChangingImg((state) => !state)
-        }, 1000);
+            setIsChangingImg("")
+        }, 2000);
 
-        setUrl(galleryUrls[currentIndex + 1]);
-        setCurrentIndex((currentIndex) => currentIndex + 1);
+        setTimeout(() => {
+            setUrl(galleryUrls[currentIndex + 1]);
+            setCurrentIndex((currentIndex) => currentIndex + 1);
+        }, 1000);
+        
     };
 
     function previousImageHandler() {
 
-        setIsChangingImg((state) => !state)
+        setIsChangingImg("left")
 
         setTimeout(() => {
-            setIsChangingImg((state) => !state)
+            setIsChangingImg("")
+        }, 2000);
+
+        setTimeout(() => {
+            setUrl(galleryUrls[currentIndex - 1]);
+            setCurrentIndex((currentIndex) => currentIndex - 1);
         }, 1000);
 
-        setUrl(galleryUrls[currentIndex - 1]);
-        setCurrentIndex((currentIndex) => currentIndex - 1);
     }
 
     async function removePictureHandler(pictureId) {
@@ -188,7 +194,7 @@ export default function Details() {
                     }
                     <div id="imgModal" className={isModalView ? `${styles.modal} ${styles.flex}` : styles.modal} onClick={modalViewCloseHandler}>
                         <span id="xModal" className={styles.close} onClick={modalViewCloseHandler}>&times;</span>
-                        <img className={isChangingImg ? `${styles["modal-content"]} ${styles["changeImg"]}` : styles["modal-content"]}
+                        <img className={isChangingImg ? `${styles["modal-content"]} ${styles[`changeImg-${isChangingImg}`]}` : styles["modal-content"]}
                             id="modalImg"
                             src={url}
                             onTouchStart={(event) => startPositionHandrel(event)}
