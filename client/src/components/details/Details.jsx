@@ -105,7 +105,7 @@ export default function Details() {
 
         setTimeout(() => {
             setIsChangingImg("")
-        }, 2000);
+        }, 3000);
 
         setTimeout(() => {
             setUrl(galleryUrls[currentIndex + 1]);
@@ -124,7 +124,7 @@ export default function Details() {
 
         setTimeout(() => {
             setIsChangingImg("")
-        }, 2000);
+        }, 3000);
 
         setTimeout(() => {
             setUrl(galleryUrls[currentIndex - 1]);

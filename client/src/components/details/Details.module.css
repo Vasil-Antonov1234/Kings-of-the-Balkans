@@ -165,7 +165,7 @@ h3 {
 }
 
 .changeImg-right {
-    animation: moveInAnimationRight 2s ease-in-out both;
+    animation: moveInAnimationRight 3s ease-in-out both;
 }
 
 @keyframes moveInAnimationRight {
@@ -175,12 +175,12 @@ h3 {
 
     25% {
         opacity: 0;
-        transform: translateX(1700px);
+        transform: translateX(-1700px);
     }
 
     50% {
         opacity: 0;
-        transform: translateX(-1700px);
+        transform: translateX(1700px);
     }
 
     100% {
@@ -189,7 +189,7 @@ h3 {
 }
 
 .changeImg-left {
-    animation: moveInAnimationLeft 2s ease-in-out both;
+    animation: moveInAnimationLeft 2.5s ease-in-out both;
 }
 
 @keyframes moveInAnimationLeft {
@@ -199,12 +199,12 @@ h3 {
 
     25% {
         opacity: 0;
-        transform: translateX(-1700px);
+        transform: translateX(1700px);
     }
 
     50% {
         opacity: 0;
-        transform: translateX(1700px);
+        transform: translateX(-1700px);
     }
 
     100% {
