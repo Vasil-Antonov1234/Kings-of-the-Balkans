@@ -366,6 +366,32 @@ hr {
     }
 }
 
+@media (max-width: 600px) {
+    .next,
+    .previous,
+    .close {
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 300px) {
+    .next,
+    .previous,
+    .close {
+        font-size: 30px;
+    }
+
+    .next {
+        right: 0%;
+    }
+
+    .previous {
+        left: 0%;
+    }
+}
+
 @media (max-width: 240px) {
     .remove {
         width: 30%;
