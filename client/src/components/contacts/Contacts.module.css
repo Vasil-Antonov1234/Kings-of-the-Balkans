@@ -4,9 +4,10 @@
     margin: 10em auto 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    padding: 10em 0.4em;
+    margin-top: -1em;
+    padding: 10em 0.4em 20em 0.4em;
     gap: 1em;
 }
 
@@ -95,7 +96,17 @@ button {
     height: 100%;
 }
 
+@media (max-width: 900px) {
+    .main-ctr {
+        margin-top: -20em;
+    }
+}
+
 @media (max-width: 600px) {
+    .main-ctr {
+        margin-top: -30em;
+    }
+    
     .inputs-ctr {
         flex-direction: column;
         width: calc(10em + 57vw)
