@@ -107,6 +107,7 @@ em {
     align-items: center;
     padding: 12rem 4rem 6rem;
     background: var(--dark);
+    margin-top: -10em;
     overflow: hidden;
 }
 
@@ -700,6 +701,12 @@ em {
     }
 }
 
+@media (max-width: 900px) {
+    .hero {
+        margin-top: -33em;
+    }
+}
+
 @media (max-width: 768px) {
     .nav {
         padding: 1.2rem 1.5rem;
@@ -711,6 +718,7 @@ em {
 
     .hero {
         padding: 9rem 1.5rem 5rem;
+        margin-top: -40em;
     }
 
     .hero__badge {
@@ -753,8 +761,16 @@ em {
     }
 }
 
+@media (max-width: 340px) {
+    .hero {
+        margin-top: -43em;
+    }
+
+}
+
 @media (max-width: 260px) {
     .hero__title {
         font-size: clamp(2rem, 7vw, 7.5rem);
     }
+
 }
