@@ -1,6 +1,5 @@
 import jwt from "jsonwebtoken";
 import { JWT_SECRET } from "../config/constants.js";
-import Token from "../models/Token.js";
 import authService from "../services/authService.js";
 
 export default async function authMiddleware(req, res, next) {
