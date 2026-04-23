@@ -117,9 +117,11 @@ export default function Details() {
 
         setTimeout(() => {
             setIsChangingImg("")
-        }, 2500);
+        }, 1500);
 
         setTimeout(() => {
+            setUrl("invalidUrl");
+            
             setUrl(galleryUrls[currentIndex + 1]);
             setCurrentIndex((currentIndex) => currentIndex + 1);
         }, 500);
@@ -136,9 +138,11 @@ export default function Details() {
 
         setTimeout(() => {
             setIsChangingImg("")
-        }, 2500);
+        }, 1500);
 
         setTimeout(() => {
+            setUrl("invalidUrl");
+
             setUrl(galleryUrls[currentIndex - 1]);
             setCurrentIndex((currentIndex) => currentIndex - 1);
         }, 500);
@@ -217,6 +221,7 @@ export default function Details() {
                         <img className={isChangingImg ? `${styles["modal-content"]} ${styles[`changeImg-${isChangingImg}`]}` : styles["modal-content"]}
                             id="modalImg"
                             src={url}
+                            alt="Loading image..."
                             onTouchStart={(event) => startPositionHandrel(event)}
                             onTouchEnd={(event) => endPositionHandler(event)} />
                         <span className={currentIndex < galleryUrls.length - 1 ? `${styles.next} ${styles.flex}` : styles.next} onClick={nextImageHandler}>&gt;</span>
