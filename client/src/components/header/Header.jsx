@@ -9,7 +9,7 @@ export default function Header() {
     const { isAuthentcated } = useContext(UserContext);
 
     function openMenuHandler() {
-        setSmalMenuOpen(!smallMenuOpen);
+        setSmalMenuOpen((state) => !state);
     };
 
     function closeMenuHandler() {
@@ -17,62 +17,64 @@ export default function Header() {
     };
 
     return (
-        <header className={styles["header"]}>
+        <>
+            <header className={smallMenuOpen ? `${styles["header"]} ${styles["open"]}` : `${styles["header"]} ${styles["close"]}`}>
 
-            <Link to="/" className={styles["logo-container"]}>
-                <img src="https://firebasestorage.googleapis.com/v0/b/kings-of-the-balkans-storage.firebasestorage.app/o/images%2FLogo.png?alt=media&token=f2c8a018-89c0-464f-ba70-553b2189a44c" alt="logo" className={styles["logo"]} />
-            </Link>
+                <Link to="/" className={styles["logo-container"]}>
+                    <img src="https://firebasestorage.googleapis.com/v0/b/kings-of-the-balkans-storage.firebasestorage.app/o/images%2FLogo.png?alt=media&token=f2c8a018-89c0-464f-ba70-553b2189a44c" alt="logo" className={styles["logo"]} />
+                </Link>
 
-            <div className={styles["nav-container"]}>
-                <nav className={smallMenuOpen ? styles["open"] : ""}>
-                    <div className={styles["nav-bar"]}>
-                        <ul>
-                            <li>
-                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/" onClick={closeMenuHandler}>Home</NavLink>
-                            </li>
-                            <li>
-                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/story" onClick={closeMenuHandler}>Story</NavLink>
-                            </li>
-                            <li>
-                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/dogs" onClick={closeMenuHandler}>Dogs</NavLink>
-                            </li>
-                            <li>
-                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/contacts" onClick={closeMenuHandler}>Contacts</NavLink>
-                            </li>
-                            <li>
-                                <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/about" onClick={closeMenuHandler}>About us</NavLink>
-                            </li>
-                            {isAuthentcated ?
-                                "" :
+                <div className={styles["nav-container"]}>
+                    <nav className={smallMenuOpen ? styles["open"] : styles["close"]}>
+                        <div className={styles["nav-bar"]}>
+                            <ul>
                                 <li>
-                                    <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/admin/login" onClick={closeMenuHandler}>Login</NavLink>
+                                    <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/" onClick={closeMenuHandler}>Home</NavLink>
                                 </li>
-                            }
-                            {isAuthentcated ?
                                 <li>
-                                    <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/pictures/upload-picture" onClick={closeMenuHandler}>Upload picture</NavLink>
-                                </li> : ""
-                            }
-                            {isAuthentcated ?
+                                    <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/story" onClick={closeMenuHandler}>Story</NavLink>
+                                </li>
                                 <li>
-                                    <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/create" onClick={closeMenuHandler}>Create</NavLink>
-                                </li> : ""
-                            }
-                            {isAuthentcated ?
+                                    <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/dogs" onClick={closeMenuHandler}>Dogs</NavLink>
+                                </li>
                                 <li>
-                                    <Link className={styles.link} to="/logout" onClick={closeMenuHandler}>Logout</Link>
-                                </li> : ""
-                            }
-                        </ul>
-                    </div>
-                </nav>
-                <span className={smallMenuOpen ? styles["x-mark"] : styles["close"]} onClick={openMenuHandler}>X</span>
-                <div className={smallMenuOpen ? styles["close"] : styles["small-nav-bar"]} onClick={openMenuHandler}>
-                    <span className={smallMenuOpen ? styles["close"] : ""}></span>
-                    <span></span>
-                    <span></span>
+                                    <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/contacts" onClick={closeMenuHandler}>Contacts</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/about" onClick={closeMenuHandler}>About us</NavLink>
+                                </li>
+                                {isAuthentcated ?
+                                    "" :
+                                    <li>
+                                        <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/admin/login" onClick={closeMenuHandler}>Login</NavLink>
+                                    </li>
+                                }
+                                {isAuthentcated ?
+                                    <li>
+                                        <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/pictures/upload-picture" onClick={closeMenuHandler}>Upload picture</NavLink>
+                                    </li> : ""
+                                }
+                                {isAuthentcated ?
+                                    <li>
+                                        <NavLink className={({ isActive }) => isActive ? styles["selected"] : styles["link"]} to="/create" onClick={closeMenuHandler}>Create</NavLink>
+                                    </li> : ""
+                                }
+                                {isAuthentcated ?
+                                    <li>
+                                        <Link className={styles.link} to="/logout" onClick={closeMenuHandler}>Logout</Link>
+                                    </li> : ""
+                                }
+                            </ul>
+                        </div>
+                    </nav>
+                    <span className={smallMenuOpen ? styles["x-mark"] : styles["close"]} onClick={openMenuHandler}>X</span>
                 </div>
-            </div>
-        </header>
+            </header>
+                    <div className={smallMenuOpen ? styles["close"] : styles["small-nav-bar"]} onClick={openMenuHandler}>
+                        <span className={smallMenuOpen ? styles["close"] : ""}></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+        </>
     );
 }
