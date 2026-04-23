@@ -52,7 +52,7 @@
 
 .section-wrapper {
     position: sticky;
-    top: 30%;
+    top: 15%;
     display: flexbox;
     /* overflow: scroll; */
 }
@@ -67,4 +67,11 @@
     top: 1vh;
     left: 2vw;
     text-shadow: 3px 3px gray;
+}
+
+@media (max-width: 900px) {
+    .section-wrapper {
+        top: 0%;
+        margin-top: -30em;
+    }
 }
