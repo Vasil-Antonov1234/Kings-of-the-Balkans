@@ -12,16 +12,22 @@ export default function Details() {
 
     const [pictures, dispatch] = useReducer(picturesReducer, []);
 
-    const { logoutHandler } = useContext(UserContext)
+    const { logoutHandler } = useContext(UserContext);
+
+    const [dog, setDog] = useState({});
 
     useEffect(() => {
+
+        const abortController = new AbortController();
 
         (async () => {
 
             try {
-                const response = await fetch(`https://api-klv2ldtjma-uc.a.run.app/dogs/${dogId}/details`);
+                const response = await fetch(`https://api-klv2ldtjma-uc.a.run.app/dogs/${dogId}/details`, { signal: abortController.signal });
 
                 const result = await response.json();
+
+                setDog(result);
 
                 dispatch({
                     type: "GET_ALL",
@@ -31,12 +37,18 @@ export default function Details() {
                 toast.error(error)
             }
 
-        })()
+        })();
+
+        return () => {
+            abortController.abort();
+        };
 
     }, [dogId])
 
-    const { data: dog, request, deleteDog } = useFetch(`/dogs/${dogId}/details`);
-    const { isAuthentcated } = useContext(UserContext);
+    // const { data: dog, request, deleteDog } = useFetch(`/dogs/${dogId}/details`);
+
+    const { request, deleteDog } = useFetch()
+    const { isAuthentcated, user } = useContext(UserContext);
 
     const [isModalView, setIsModalView] = useState(false);
     const [url, setUrl] = useState(null);
@@ -141,7 +153,7 @@ export default function Details() {
 
         try {
 
-            await request("/dogs/remove-attached-picture", "POST", { dogId, pictureId })
+            await request("/dogs/remove-attached-picture", "POST", { dogId, pictureId }, { accessToken: user.token })
 
             dispatch({
                 type: "REMOVE",
