@@ -37,16 +37,30 @@
     color: brown;
 }
 
+@media (max-width: 900px) {
+    .wrapper {
+        margin-top: -24em;
+    }
+}
+
 @media (max-width: 780px) {
     .main-container {
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
+
+    .wrapper {
+        margin-top: -30em;
+    }
 }
 
 @media (max-width: 500px) {
     .main-container {
         padding: 4em 0;
+    }
+
+    .wrapper {
+        margin-top: -33em;
     }
 }
