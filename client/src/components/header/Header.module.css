@@ -87,17 +87,7 @@
     background-color: gainsboro;
     box-shadow: 1px 1px 10px gray;
     z-index: 100;
-    animation: fadeInAnimation 2s ease;
-}
-
-@keyframes fadeInAnimation {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+    animation: openMobileNavBar 1s cubic-bezier(0.81, -0.32, 0.43, 1.5) forwards;
 }
 
 .small-nav-bar span {
@@ -117,8 +107,33 @@
     display: none;
 }
 
+.close-nav-bar {
+    transform: translateX(70px);
+    animation: closeMobileNavBar 1s cubic-bezier(0.81, 4.11, 0.43, 1.04) forwards;
+}
+
+@keyframes closeMobileNavBar {
+    from {
+        transform: translateX(0px) rotate(0deg);
+    }
+
+    to {
+        transform: translateX(70px) rotate(90deg);
+    }
+}
+
+@keyframes openMobileNavBar {
+    from {
+        transform: translateX(70px) rotate(90deg);
+    }
+
+    to {
+        transform: translateX(0px) rotate(0deg);
+    }
+}
 
 @media (max-width: 900px) {
+
 
     .nav-container span {
         display: inline-block;

@@ -70,7 +70,7 @@ export default function Header() {
                     <span className={smallMenuOpen ? styles["x-mark"] : styles["close"]} onClick={openMenuHandler}>X</span>
                 </div>
             </header>
-                    <div className={smallMenuOpen ? styles["close"] : styles["small-nav-bar"]} onClick={openMenuHandler}>
+                    <div className={smallMenuOpen ? `${styles["close-nav-bar"]} ${styles["small-nav-bar"]}` : styles["small-nav-bar"]} onClick={openMenuHandler}>
                         <span className={smallMenuOpen ? styles["close"] : ""}></span>
                         <span></span>
                         <span></span>
