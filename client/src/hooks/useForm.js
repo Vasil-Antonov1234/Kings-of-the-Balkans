@@ -15,7 +15,6 @@ export default function useForm(values, callback, dogId) {
 
     async function formHandler() {
         await callback(data, dogId);
-        setData(values);
     };
 
     function formInputRegister(name) {
@@ -44,5 +43,5 @@ export default function useForm(values, callback, dogId) {
 
     }, [dogId]);
 
-    return { data, changeHandler, formHandler, formInputRegister }
+    return { data, changeHandler, formHandler, formInputRegister, setData }
 };

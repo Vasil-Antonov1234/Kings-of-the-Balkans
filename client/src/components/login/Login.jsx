@@ -12,12 +12,13 @@ const initialValues = {
 
 export default function Login() {
 
-    const { formHandler, formInputRegister } = useForm(initialValues, onSubmit, "");
+    const { formHandler, formInputRegister, setData } = useForm(initialValues, onSubmit, "");
     const { loginHandler } = useContext(UserContext)
 
     async function onSubmit(userData) {
 
         loginHandler(userData);
+        setData(initialValues);
     };
 
 
