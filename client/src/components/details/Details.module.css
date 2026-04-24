@@ -366,6 +366,12 @@ hr {
     }
 }
 
+@media (max-width: 900px) {
+    .wrapper {
+        margin-top: -20em;
+    }
+}
+
 @media (max-width: 600px) {
     .next,
     .previous,
@@ -373,6 +379,19 @@ hr {
         background-color: rgba(255, 255, 255, 0);
         color: white;
         font-size: 50px;
+    }
+
+    .wrapper {
+        margin-top: -30em;
+    }
+
+    .image-container {
+        height: fit-content;
+    }
+
+    .container {
+        justify-content: flex-start;
+        height: fit-content;
     }
 }
 
